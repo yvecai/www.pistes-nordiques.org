@@ -512,6 +512,14 @@ function baseLayers() {
                 opacity: 0.5,minScale: 3000000, visibility: true
             });
     map.addLayer(layerSRTM);
+// Layer 3.5
+    var snowCover = new OpenLayers.Layer.TMS( "Aster Hillshade",
+                    "http://tiles.pistes-nordiques.org/tiles-aster-hillshade/",
+                    {   
+                    getURL: get_osm_url,
+                    isBaseLayer: false, visibility: true
+                    });
+    map.addLayer(snowCover);
 // layer 4
     var layerContours = new OpenLayers.Layer.XYZ("Contour",
     "http://tiles.pistes-nordiques.org/tiles-contours/",{
