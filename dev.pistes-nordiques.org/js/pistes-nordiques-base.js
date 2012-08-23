@@ -509,7 +509,7 @@ function baseLayers() {
                 type: 'png', getURL: get_tms_url, alpha: true, 
                 buffer: 0,
                 isBaseLayer: false, 
-                opacity: 0.5,minScale: 3000000, visibility: true
+                opacity: 0.5,minScale: 3000000, visibility: false
             });
     map.addLayer(layerSRTM);
 // Layer 3.5
@@ -518,7 +518,7 @@ function baseLayers() {
                     {   
                     getURL: get_osm_url,
 					minScale: 3000000,
-                    isBaseLayer: false, visibility: false
+                    isBaseLayer: false, visibility: true
                     });
     map.addLayer(asterHS);
 // layer 4
