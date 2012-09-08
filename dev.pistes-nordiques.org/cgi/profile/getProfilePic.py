@@ -37,12 +37,12 @@ def handle(req):
     data= req.readline()
     tracks=listTracks(data)
     
-    #~ for track in tracks:
-        #~ for d in track:
-            #~ if d['lat'] >= 60:
-                #~ req.content_type = 'text/plain'
-                #~ req.write('Sorry, SRTM dataset does not contain elevation data over 60 deg. latitude')
-                #~ return apache.OK
+    for track in tracks:
+        for d in track:
+            if d['lat'] > 71.9999:
+                req.content_type = 'text/plain'
+                req.write('Sorry, dataset does not contain elevation data beyond 72 deg. latitude')
+                return apache.OK
 
     tracks=processData(tracks)
     req.content_type = 'image/png'

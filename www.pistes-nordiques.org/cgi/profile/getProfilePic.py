@@ -39,9 +39,9 @@ def handle(req):
     
     for track in tracks:
         for d in track:
-            if d['lat'] >= 60:
+            if d['lat'] > 71.9999:
                 req.content_type = 'text/plain'
-                req.write('Sorry, SRTM dataset does not contain elevation data over 60 deg. latitude')
+                req.write('Sorry, dataset does not contain elevation data beyond 72 deg. latitude')
                 return apache.OK
 
     tracks=processData(tracks)
@@ -404,26 +404,20 @@ class SrtmLayer(object):
         ilon = abs(floor(lon))
         ilat = abs(floor(lat))
         
-        if lon > 0 and lat > 0 :return 'N%02dE%03d.hgt' % (ilat, ilon)
-        if lon < 0 and lat > 0 :return 'N%02dW%03d.hgt' % (ilat, ilon)
-        if lon > 0 and lat < 0 :return 'S%02dE%03d.hgt' % (ilat, ilon)
-        if lon < 0 and lat < 0 :return 'S%02dW%03d.hgt' % (ilat, ilon)
+        if lon > 0 and lat > 0 :return 'N%02dE%03d.tif' % (ilat, ilon)
+        if lon < 0 and lat > 0 :return 'N%02dW%03d.tif' % (ilat, ilon)
+        if lon > 0 and lat < 0 :return 'S%02dE%03d.tif' % (ilat, ilon)
+        if lon < 0 and lat < 0 :return 'S%02dW%03d.tif' % (ilat, ilon)
     def get_elevation(self, lat, lon):
         """
         Returns the elevation in metres of point (lat, lon).
         """
         srtm_filename = self.get_srtm_filename(lat, lon)
-        #if srtm_filename not in self._cache:
-        #srtm_path = os.path.join(os.path.expanduser('~/.gpxtools'), srtm_filename)
-        SRTMFilesDir='/home/website/SRTM-data'
-        #SRTMFilesDir='SRTM/' #XX
+        SRTMFilesDir='/home/website/SRTM-filled'
         srtm_path = os.path.join(SRTMFilesDir, srtm_filename)
         if not os.path.isfile(srtm_path):
             self._unzip_srtm_tiff(srtm_path)
-                        
-        #self._cache[srtm_filename] = SrtmTiff(srtm_path)
         
-        #srtm = self._cache[srtm_filename]
         srtm=SrtmTiff(srtm_path)
         return srtm.get_elevation(lat, lon)
 #
