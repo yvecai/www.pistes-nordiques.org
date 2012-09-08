@@ -404,26 +404,20 @@ class SrtmLayer(object):
         ilon = abs(floor(lon))
         ilat = abs(floor(lat))
         
-        if lon > 0 and lat > 0 :return 'N%02dE%03d.hgt' % (ilat, ilon)
-        if lon < 0 and lat > 0 :return 'N%02dW%03d.hgt' % (ilat, ilon)
-        if lon > 0 and lat < 0 :return 'S%02dE%03d.hgt' % (ilat, ilon)
-        if lon < 0 and lat < 0 :return 'S%02dW%03d.hgt' % (ilat, ilon)
+        if lon > 0 and lat > 0 :return 'N%02dE%03d.tif' % (ilat, ilon)
+        if lon < 0 and lat > 0 :return 'N%02dW%03d.tif' % (ilat, ilon)
+        if lon > 0 and lat < 0 :return 'S%02dE%03d.tif' % (ilat, ilon)
+        if lon < 0 and lat < 0 :return 'S%02dW%03d.tif' % (ilat, ilon)
     def get_elevation(self, lat, lon):
         """
         Returns the elevation in metres of point (lat, lon).
         """
         srtm_filename = self.get_srtm_filename(lat, lon)
-        #if srtm_filename not in self._cache:
-        #srtm_path = os.path.join(os.path.expanduser('~/.gpxtools'), srtm_filename)
-        SRTMFilesDir='/home/website/SRTM-data'
-        #SRTMFilesDir='SRTM/' #XX
+        SRTMFilesDir='/home/website/SRTM-filled'
         srtm_path = os.path.join(SRTMFilesDir, srtm_filename)
         if not os.path.isfile(srtm_path):
             self._unzip_srtm_tiff(srtm_path)
-                        
-        #self._cache[srtm_filename] = SrtmTiff(srtm_path)
         
-        #srtm = self._cache[srtm_filename]
         srtm=SrtmTiff(srtm_path)
         return srtm.get_elevation(lat, lon)
 #
