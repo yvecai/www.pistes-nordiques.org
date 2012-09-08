@@ -504,23 +504,15 @@ function baseLayers() {
             });
     map.addLayer(layerGTOPO30);
 
-// layer 3
-    var layerSRTM = new OpenLayers.Layer.TMS( "SRTM", "http://tiles2.pistes-nordiques.org/hillshade/",{ 
-                type: 'png', getURL: get_tms_url, alpha: true, 
-                buffer: 0,
-                isBaseLayer: false, 
-                opacity: 0.5,minScale: 3000000, visibility: false
-            });
-    map.addLayer(layerSRTM);
-// Layer 3.5
-    var asterHS = new OpenLayers.Layer.TMS( "Aster Hillshade",
-                    "http://tiles.pistes-nordiques.org/tiles-aster-hillshade/",
+// Layer 3
+    var hillshading = new OpenLayers.Layer.TMS( "Hillshade",
+                    "http://tiles.pistes-nordiques.org/hillshading/",
                     {   
                     getURL: get_osm_url,
 					minScale: 3000000,
                     isBaseLayer: false, visibility: true
                     });
-    map.addLayer(asterHS);
+    map.addLayer(hillshading);
 // layer 4
     var layerContours = new OpenLayers.Layer.XYZ("Contour",
     "http://tiles.pistes-nordiques.org/tiles-contours/",{
