@@ -506,7 +506,7 @@ function baseLayers() {
 
 // Layer 3
     var hillshading = new OpenLayers.Layer.TMS( "Hillshade",
-                    "http://tiles.pistes-nordiques.org/hillshading/",
+                    "http://tiles.pistes-nordiques.org/tiles-hillshading/",
                     {   
                     getURL: get_osm_url,
 					minScale: 3000000,
