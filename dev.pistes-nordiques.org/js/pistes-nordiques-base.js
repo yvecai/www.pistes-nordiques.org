@@ -506,10 +506,10 @@ function baseLayers() {
 
 // Layer 3
     var hillshading = new OpenLayers.Layer.TMS( "Hillshade",
-                    "http://tiles.pistes-nordiques.org/tiles-hillshading/",
+                    "http://tiles2.pistes-nordiques.org/hillshade/",
                     {   
-                    getURL: get_osm_url,
-					minScale: 3000000,
+                    getURL: get_tms_url,
+					minScale: 3000000,opacity: 0.5,
                     isBaseLayer: false, visibility: true
                     });
     map.addLayer(hillshading);
@@ -540,15 +540,6 @@ function baseLayers() {
             minScale: 250000
         });
     map.addLayer(PistesTiles);
-// Layer 6
-    var PistesTiles2 = new OpenLayers.Layer.XYZ("Pistes Tiles2",
-    "http://tiles.pistes-nordiques.org/tiles-pistes2/",{
-            getURL: get_osm_url, 
-            isBaseLayer: false, numZoomLevels: 19,
-            visibility: true, opacity: 0.95,
-            minScale: 250000
-        });
-    map.addLayer(PistesTiles2);
 }
 
 function permalink2Args() {
