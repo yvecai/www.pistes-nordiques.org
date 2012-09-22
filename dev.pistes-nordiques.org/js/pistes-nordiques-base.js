@@ -540,7 +540,15 @@ function baseLayers() {
             minScale: 250000
         });
     map.addLayer(PistesTiles);
-
+// Layer 6
+    var PistesTiles2 = new OpenLayers.Layer.XYZ("Pistes Tiles2",
+    "http://tiles.pistes-nordiques.org/tiles-pistes2/",{
+            getURL: get_osm_url, 
+            isBaseLayer: false, numZoomLevels: 19,
+            visibility: true, opacity: 0.95,
+            minScale: 250000
+        });
+    map.addLayer(PistesTiles2);
 }
 
 function permalink2Args() {
