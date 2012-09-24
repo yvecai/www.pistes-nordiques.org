@@ -510,6 +510,15 @@ function baseLayers() {
                     {   
                     getURL: get_tms_url,
 					minScale: 3000000,opacity: 0.5,
+                    isBaseLayer: false, visibility: false
+                    });
+    map.addLayer(hillshading);
+ // Layer 3
+    var hillshading = new OpenLayers.Layer.TMS( "HillshadingII",
+                    "http://tiles2.pistes-nordiques.org/hillshading/",
+                    {   
+                    getURL: get_tms_url,
+					minScale: 3000000,opacity: 0.5,
                     isBaseLayer: false, visibility: true
                     });
     map.addLayer(hillshading);
