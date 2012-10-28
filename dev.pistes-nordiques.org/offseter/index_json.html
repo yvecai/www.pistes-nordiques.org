@@ -88,7 +88,7 @@ html, body {
 				var att = features[f].attributes;
 				var osmid=features[f].osm_id;
 			    var XMLHttp = new XMLHttpRequest();
-			    XMLHttp.open("POST", "../cgi/offset/handle");
+			    XMLHttp.open("POST", "../cgi/offset/offset/handle");
 			    XMLHttp.onreadystatechange= function () {
 			        if (XMLHttp.readyState == 4) {
 			            // cut when cgi is not able to work
