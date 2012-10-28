@@ -106,6 +106,35 @@ html, body {
 	        })
 	});
 	
+    function list_relations(features) {
+        var relationList=[];
+        for (f in features) {
+            var rel = {}
+            if (features[f].onScreen() ) {
+                if (features[f].attributes['route'])  {
+                    if (features[f].attributes['name'])
+                    {rel['name']=features[f].attributes['name'];}
+                    else {rel['name']=' ';}
+                    
+                    if (features[f].attributes['color'])
+                    {rel['color']=features[f].attributes['color'];}
+                    else if (features[f].attributes['colour'])
+                    {rel['color']=features[f].attributes['colour'];}
+                    else {rel['color']="#777777";}
+                    if (features[f].osm_id)
+                    {rel['id']=features[f].osm_id;}
+                }
+            }
+            if (rel['name']) {relationList.push(rel);};
+        }
+        html = '';
+        for (var t=0;t<relationList.length;t++) {
+			html += '<p style="color:'+relationList[t]['color']+
+			'">'+relationList[t]['id'] + '-' +relationList[t]['name']+'</p>';
+        }
+        $("form").innerHTML=html;
+    }
+    
 	function init() {
 	map_init();
 	}
@@ -126,10 +155,12 @@ html, body {
 		map.addLayer(mapnik);
 		
 	    pistesLayer = new OpenLayers.Layer.Vector("Pistes Vector", {
-	        strategies: [new OpenLayers.Strategy.BBOX()],
+	        //strategies: [new OpenLayers.Strategy.BBOX()],
+	        strategies: [new OpenLayers.Strategy.Fixed()],
 	        styleMap: pisteStyles,
 	        protocol: new OpenLayers.Protocol.HTTP({
-	                url:"../cgi/osmosis/osmosis_handle.py/",
+	                //url:"../cgi/osmosis/osmosis_handle.py/",
+	                url:"la_vattay.osm",
 	                sync: true,
 	                format: new OpenLayers.Format.OSM({
 	                externalProjection:new OpenLayers.Projection("EPSG:4326"),
@@ -145,7 +176,11 @@ html, body {
 	    });
 	    map.addLayer(pistesLayer);
 		
-		
+		 pistesLayer.events.register("loadend", null, 
+			function() {
+				list_relations(pistesLayer.features);
+			 })
+			 
 		map.setCenter(position, zoom );
 	}
 	</script>
