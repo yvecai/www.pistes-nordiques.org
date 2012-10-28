@@ -6,7 +6,8 @@ from shapely.geometry import MultiLineString
 
 def handle(req):
 	from mod_python import apache, util
-	shape= req.readline()
+	data= req.readline()
+	shape = loads(data)
 	
 	if (shape.type == 'MultiLineString'):
 		o_lines = []
