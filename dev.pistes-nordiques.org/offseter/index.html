@@ -68,11 +68,6 @@ html, body {
 	        if (feature.attributes['route']) {return 12;}
 	        else {return 11;}
 	    },
-	    /*getGraphic: function(feature) {
-	        if (feature.attributes['piste:start'] == 'yes') {
-	            return '../pistes-nordiques-backend/pics/Nordic_sign.png';}
-	        else {return '';}
-	    },*/
 	    getWidth: function(feature) {
 	        if ( feature.attributes['userpoint'] == 'true' ) {return 1}
 	        else {
@@ -117,7 +112,7 @@ html, body {
 				var att = features[f].attributes;
 				var osmid=features[f].osm_id;
 			    var XMLHttp = new XMLHttpRequest();
-			    XMLHttp.open("POST", "offset/handle");
+			    XMLHttp.open("POST", "../cgi/offset/handle");
 			    XMLHttp.onreadystatechange= function () {
 			        if (XMLHttp.readyState == 4) {
 			            // cut when cgi is not able to work
@@ -186,12 +181,12 @@ html, body {
 		map.addLayer(mapnik);
 		
 	    pistesLayer = new OpenLayers.Layer.Vector("Pistes Vector", {
-	        //strategies: [new OpenLayers.Strategy.BBOX()],
-	        strategies: [new OpenLayers.Strategy.Fixed()],
+	        strategies: [new OpenLayers.Strategy.BBOX()],
+	        //strategies: [new OpenLayers.Strategy.Fixed()],
 	        styleMap: pisteStyles,
 	        protocol: new OpenLayers.Protocol.HTTP({
-	                //url:"../cgi/osmosis/osmosis_handle.py/",
-	                url:"la_vattay.osm",
+	                url:"../cgi/osmosis/osmosis_handle.py/",
+	                //url:"la_vattay.osm",
 	                sync: true,
 	                format: new OpenLayers.Format.OSM({
 	                externalProjection:new OpenLayers.Projection("EPSG:4326"),
