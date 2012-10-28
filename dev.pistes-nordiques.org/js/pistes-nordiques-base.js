@@ -509,7 +509,7 @@ function baseLayers() {
                     "http://tiles2.pistes-nordiques.org/hillshade/",
                     {   
                     getURL: get_tms_url,
-					minScale: 3000000,opacity: 0.5,
+					minScale: 3000000,opacity: 0.9,
                     isBaseLayer: false, visibility: false
                     });
     map.addLayer(hillshading);
