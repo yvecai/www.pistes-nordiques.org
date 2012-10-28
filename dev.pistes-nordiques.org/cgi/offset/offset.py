@@ -14,7 +14,7 @@ def handle(req):
 		for line in shape.geoms :
 			o_line = line.parallel_offset(0.1, 'left', resolution=1, join_style=1, mitre_limit=1.0)
 			o_lines.append(o_line)
-		o_object = MultiLineString(o_lines).wkt
+		o_object = MultiLineString(o_lines)
 		
 	else :
 		o_object = shape.parallel_offset(0.1, 'left', resolution=1, join_style=1, mitre_limit=1.0)
