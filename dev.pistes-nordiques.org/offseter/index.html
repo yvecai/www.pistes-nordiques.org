@@ -77,7 +77,7 @@ html, body {
 	        if ( feature.attributes['userpoint'] == 'true' ) {return 1}
 	        else {
 	            if (feature.attributes['route']) {return 2;}
-	            else {return 3;}
+	            else {return 0.5;}
 	        }
 	    },
 	    getFillOpacity: function(feature) {
@@ -106,6 +106,35 @@ html, body {
 	        })
 	});
 	
+	
+	function offset(id, of, side) {
+		features = pistesLayer.features;
+		for (f in features) {
+			if (features[f].osm_id == id) {
+				var feat = features[f];
+				var wktParser = new OpenLayers.Format.WKT();
+				var wkt = wktParser.write(feat)
+				var att = features[f].attributes;
+				var osmid=features[f].osm_id;
+			    var XMLHttp = new XMLHttpRequest();
+			    XMLHttp.open("POST", "offset/handle");
+			    XMLHttp.onreadystatechange= function () {
+			        if (XMLHttp.readyState == 4) {
+			            // cut when cgi is not able to work
+			            var o_wkt = XMLHttp.responseText;
+			            var o_f= wktParser.read(o_wkt);
+			            o_f.attributes=att;
+			            o_f.osm_id=osmid;
+			            pistesLayer.addFeatures([o_f]);
+			            pistesLayer.removeFeatures([feat]);
+			        }
+			    }
+			    XMLHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			    XMLHttp.send(wkt+'\n'+of+';'+side);
+			}
+		}
+	}
+	
     function list_relations(features) {
         var relationList=[];
         for (f in features) {
@@ -130,7 +159,9 @@ html, body {
         html = '';
         for (var t=0;t<relationList.length;t++) {
 			html += '<p style="color:'+relationList[t]['color']+
-			'">'+relationList[t]['id'] + '-' +relationList[t]['name']+'</p>';
+			'"><a href="#" onClick="offset('+relationList[t]['id']+',15,\'left\');">++</a>&nbsp;'+
+			'<a href="#" onClick="offset('+relationList[t]['id']+',15,\'right\');">--</a>&nbsp;'+
+			relationList[t]['id'] +'-'+relationList[t]['name']+'</p>';
         }
         $("form").innerHTML=html;
     }
@@ -150,7 +181,7 @@ html, body {
 		map = new OpenLayers.Map("basicMap", options);
 		var mapnik         = new OpenLayers.Layer.OSM();
 		var position       = new OpenLayers.LonLat(6.1,46.4).transform( fromProjection, toProjection);
-		var zoom           = 13; 
+		var zoom           = 14; 
 		
 		map.addLayer(mapnik);
 		
