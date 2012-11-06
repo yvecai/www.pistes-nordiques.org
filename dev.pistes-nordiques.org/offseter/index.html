@@ -42,180 +42,16 @@ html, body {
 }
 	</style>
 	<script src="../js/OpenLayers-2.12-mod.js" type="text/javascript"></script> 
-	<script type="text/javascript">
-
-	var pistesLayer;
-	var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
-	var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
-	
-	var styleContext = {
-	    getColor: function(feature) {
-	        if ( feature.attributes['userpoint'] == 'true' ) {return '#000000'}
-	        else {
-	            if ( feature.attributes['colour'] ) {
-	                return feature.attributes['colour'];
-	            } else if ( feature.attributes['color'] ) {
-	                return feature.attributes['color'];
-	            } else {
-	                return '#009480';
-	            };
-	        };
-	   },
-	    getOpacity: function(feature) {
-	        return 0.9;
-	    },
-	    getZ: function(feature) {
-	        if (feature.attributes['route']) {return 12;}
-	        else {return 11;}
-	    },
-	    getWidth: function(feature) {
-	        if ( feature.attributes['userpoint'] == 'true' ) {return 1}
-	        else {
-	            if (feature.attributes['route']) {return 2;}
-	            else {return 0.5;}
-	        }
-	    },
-	    getFillOpacity: function(feature) {
-	        if ( feature.attributes['userpoint'] == 'true' ) {return 0.5}
-	        else {return 0} 
-	    }
-	};
-	var styleTemplate = {
-	    pointRadius: 6, //for routing points
-	    strokeColor: "${getColor}", // using context.getColor(feature)
-	    strokeOpacity: "${getOpacity}",//0.6,
-	    strokeWidth: "${getWidth}",
-	    graphicZIndex: "${getZ}",
-	    fillColor: '#ffffff',
-	    fillOpacity: "${getFillOpacity}"
-	};
-	var pisteStyle = new OpenLayers.Style(styleTemplate, {context: styleContext});
-	var pisteStyles = new OpenLayers.StyleMap({
-	        'default': pisteStyle,
-	        'select': pisteStyle,
-	        'highlight': new OpenLayers.Style({
-	            pointRadius: 10, //for routing points
-	            strokeWidth: 5,
-	            graphicZIndex: 15,
-	            strokeOpacity: 0.9
-	        })
-	});
-	
-	
-	function offset(id, of, side) {
-		features = pistesLayer.features;
-		for (f in features) {
-			if (features[f].osm_id == id) {
-				var feat = features[f];
-				var wktParser = new OpenLayers.Format.WKT();
-				var wkt = wktParser.write(feat)
-				var att = features[f].attributes;
-				var osmid=features[f].osm_id;
-			    var XMLHttp = new XMLHttpRequest();
-			    XMLHttp.open("POST", "../cgi/offset/offset/handle");
-			    XMLHttp.onreadystatechange= function () {
-			        if (XMLHttp.readyState == 4) {
-			            // cut when cgi is not able to work
-			            var o_wkt = XMLHttp.responseText;
-			            var o_f= wktParser.read(o_wkt);
-			            o_f.attributes=att;
-			            o_f.osm_id=osmid;
-			            pistesLayer.addFeatures([o_f]);
-			            pistesLayer.removeFeatures([feat]);
-			        }
-			    }
-			    XMLHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-			    XMLHttp.send(wkt+'\n'+of+';'+side);
-			}
-		}
-	}
-	
-    function list_relations(features) {
-        var relationList=[];
-        for (f in features) {
-            var rel = {}
-            if (features[f].onScreen() ) {
-                if (features[f].attributes['route'])  {
-                    if (features[f].attributes['name'])
-                    {rel['name']=features[f].attributes['name'];}
-                    else {rel['name']=' ';}
-                    
-                    if (features[f].attributes['color'])
-                    {rel['color']=features[f].attributes['color'];}
-                    else if (features[f].attributes['colour'])
-                    {rel['color']=features[f].attributes['colour'];}
-                    else {rel['color']="#777777";}
-                    if (features[f].osm_id)
-                    {rel['id']=features[f].osm_id;}
-                }
-            }
-            if (rel['name']) {relationList.push(rel);};
-        }
-        html = '';
-        for (var t=0;t<relationList.length;t++) {
-			html += '<p style="color:'+relationList[t]['color']+
-			'"><a href="#" onClick="offset('+relationList[t]['id']+',15,\'left\');">++</a>&nbsp;'+
-			'<a href="#" onClick="offset('+relationList[t]['id']+',15,\'right\');">--</a>&nbsp;'+
-			relationList[t]['id'] +'-'+relationList[t]['name']+'</p>';
-        }
-        $("form").innerHTML=html;
-    }
-    
-	function init() {
-	map_init();
-	}
-	
-	function map_init() {
-		var options = {
-		  controls: [
-			new OpenLayers.Control.Navigation(),
-			new OpenLayers.Control.PanZoomBar(),
-			new OpenLayers.Control.Attribution()
-		  ]
-		};
-		map = new OpenLayers.Map("basicMap", options);
-		var mapnik         = new OpenLayers.Layer.OSM();
-		var position       = new OpenLayers.LonLat(6.1,46.4).transform( fromProjection, toProjection);
-		var zoom           = 14; 
-		
-		map.addLayer(mapnik);
-		
-	    pistesLayer = new OpenLayers.Layer.Vector("Pistes Vector", {
-	        strategies: [new OpenLayers.Strategy.BBOX()],
-	        //strategies: [new OpenLayers.Strategy.Fixed()],
-	        styleMap: pisteStyles,
-	        protocol: new OpenLayers.Protocol.HTTP({
-	                url:"../cgi/osmosis/osmosis_handle.py/",
-	                //url:"la_vattay.osm",
-	                sync: true,
-	                format: new OpenLayers.Format.OSM({
-	                externalProjection:new OpenLayers.Projection("EPSG:4326"),
-	                relationsParsers:{
-	                    route: OpenLayers.Format.OSM.routeParser
-	                    }
-	                    })
-	        }),
-	        projection: new OpenLayers.Projection("EPSG:4326"),
-	        minScale: 20000000000, //12
-	        visibility: true,
-	        rendererOptions: {yOrdering: true, zIndexing: true} //necessary for graphicZIndex to work
-	    });
-	    map.addLayer(pistesLayer);
-		
-		 pistesLayer.events.register("loadend", null, 
-			function() {
-				list_relations(pistesLayer.features);
-			 })
-			 
-		map.setCenter(position, zoom );
-	}
-	</script>
+	<script src="offset.js" type="text/javascript"></script>
   </head>
 <body onload="init();">
 	<div id="container">
 	<div id="basicMap"></div>
 	<div id="menu">
 		<div id="form">
+		<form>
+		<input type="submit" value="Export" onclick="showList();">
+		</form>
 		</div>
 		<div id="content">
 		</div>
@@ -223,3 +59,4 @@ html, body {
 </div>
 </body>
 </html>
+
