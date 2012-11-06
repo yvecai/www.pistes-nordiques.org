@@ -159,7 +159,7 @@ function show_edit() {
         html = '<p>&nbsp;'+_('edit_the_map_using')+'</p>'
          +'<p>&nbsp;'+_('edit_the_map_explain')+'</p>'
          +'<hr class="hrmenu">'
-         +'<p><a href="iframes/how-to-'+locale+'.html" target="blank">'+_('how_to')+'</a></p>'
+         +'<p><a href="iframes/how-to-'+iframelocale+'.html" target="blank">'+_('how_to')+'</a></p>'
          +'<hr class="hrmenu">'
          +'<p style="text-align:center;">'
          +'<a id="permalink.potlatch" href="" target="blank"><img src="pics/potlatch.png" ></a>'

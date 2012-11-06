@@ -1,4 +1,4 @@
-﻿    locs = [ "en","fr","de", "hu", "se","no"];
+﻿    locs = [ "en","fr","de", "hu", "se","no","es"];
     iloc= 0;
  //localization
  

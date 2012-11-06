@@ -1,6 +1,0 @@
-2012-04-11 
-Downhill = 19656 km
-Crosscountry = 20649 km
-Skitour = 706 km
-Snowshoeing = 171 km
-Aerialway = 12371 km
