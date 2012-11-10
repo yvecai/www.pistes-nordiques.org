@@ -1,5 +1,7 @@
-﻿    locs = [ "en","fr","de", "hu", "se","no","es"];
-    iloc= 0;
+﻿    var locs = [ "en","fr","de", "hu", "se","no","es"];
+    var iloc= 0;
+    var locale;
+    var iframelocale;
  //localization
  
     // Get the locale first: from cookie if set
@@ -10,8 +12,8 @@
     else {locale = get_locale().split('-')[0];} //return only 'en' from 'en-us'
     
     // only a few iframe content pages are translated:
-    if (locale != 'en' && locale !='fr') { iframelocale = "en"}
-    else {iframelocale = locale}
+    if (locale != 'en' && locale !='fr') { iframelocale = 'en';}
+    else { iframelocale = locale;}
     
     // Load the localized strings
     var oRequest = new XMLHttpRequest();
@@ -58,11 +60,11 @@
     function getCookie(c_name){
         if (document.cookie.length>0)
           {
-          c_start=document.cookie.indexOf(c_name + "=");
+          var c_start=document.cookie.indexOf(c_name + "=");
           if (c_start!=-1)
             {
             c_start=c_start + c_name.length+1;
-            c_end=document.cookie.indexOf(";",c_start);
+            var c_end=document.cookie.indexOf(";",c_start);
             if (c_end==-1) c_end=document.cookie.length;
             return unescape(document.cookie.substring(c_start,c_end));
             }

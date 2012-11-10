@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // MODE
 var mode="raster";
 var m="raster";
+var EXT_MENU=true;
 var zoomBar;
 function switch2vector() {
     if (mode == "raster") {
@@ -129,7 +130,15 @@ function showMenu() {
     EXT_MENU=true;
     resize_sideBar();
     return true;
-    
+}
+function closeMenu() {
+    var em = document.getElementById('extendedmenu');
+    var sl = document.getElementById('slide');
+    em.style.display ='none';
+    sl.innerHTML='<a onclick="toggleMenu();" ></br>&#176;</br>&#176;</br>&#176;</a>';
+    EXT_MENU=false;
+    resize_sideBar();
+    return true;
 }
 function close_sideBar() {
     document.getElementById('sideBar').style.display='none';
@@ -329,6 +338,7 @@ function page_init(){
 
 function loadend(){
     if (EXT_MENU) {showMenu();}
+    else {closeMenu();}
     
 }
 //======================================================================
@@ -376,7 +386,6 @@ function loadend(){
 var lat=46.82084;
 var lon=6.39942;
 var zoom=2;//2
-var EXT_MENU=false;
 var map;
 
 var highlightCtrl, selectCtrl;
@@ -393,8 +402,12 @@ if (location.search != "") {
         if (x[i].split("=")[0] == 'zoom') {zoom=x[i].split("=")[1];}
         if (x[i].split("=")[0] == 'lon') {lon=x[i].split("=")[1];}
         if (x[i].split("=")[0] == 'lat') {lat=x[i].split("=")[1];}
-        if (x[i].split("=")[0] == 'e') {EXT_MENU=x[i].split("=")[1];}
         if (x[i].split("=")[0] == 'm') {m=x[i].split("=")[1];} // not used
+        if (x[i].split("=")[0] == 'e') {
+			ext=x[i].split("=")[1];
+			if (ext == 'false'){EXT_MENU=false;}
+			else {EXT_MENU=true;}
+		}
     }
     //Then hopefully map_init() will do the job when the map is loaded
 }
@@ -616,6 +629,7 @@ function map_init(){
     // map.setCenter moved after the strategy.bbox, otherwise it won't load the wfs layer at first load
     setmode(m);
     map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
+    loadend();
 }
 
 
