@@ -109,12 +109,10 @@ function toggleMenu() {
     // At loadtime, m.style.display=""
     if (em.style.display == "none" || em.style.display == "") {
         em.style.display ='inline';
-        sl.innerHTML='<a onclick="toggleMenu();" ></br>&#176;</br>&#176;</br>&#176;</a>';
         EXT_MENU=true;
         }
     else if (em.style.display == "inline") {
         em.style.display = 'none';
-        sl.innerHTML='<a onclick="toggleMenu();" ></br>&#8226;</br>&#8226;</br>&#8226;</a>';
         EXT_MENU=false;
         }
     map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
@@ -126,7 +124,6 @@ function showMenu() {
     var em = document.getElementById('extendedmenu');
     var sl = document.getElementById('slide');
     em.style.display ='inline';
-    sl.innerHTML='<a onclick="toggleMenu();" ></br>&#176;</br>&#176;</br>&#176;</a>';
     EXT_MENU=true;
     resize_sideBar();
     return true;
@@ -135,7 +132,6 @@ function closeMenu() {
     var em = document.getElementById('extendedmenu');
     var sl = document.getElementById('slide');
     em.style.display ='none';
-    sl.innerHTML='<a onclick="toggleMenu();" ></br>&#176;</br>&#176;</br>&#176;</a>';
     EXT_MENU=false;
     resize_sideBar();
     return true;
@@ -404,7 +400,7 @@ if (location.search != "") {
         if (x[i].split("=")[0] == 'lat') {lat=x[i].split("=")[1];}
         if (x[i].split("=")[0] == 'm') {m=x[i].split("=")[1];} // not used
         if (x[i].split("=")[0] == 'e') {
-			ext=x[i].split("=")[1];
+			var ext=x[i].split("=")[1];
 			if (ext == 'false'){EXT_MENU=false;}
 			else {EXT_MENU=true;}
 		}

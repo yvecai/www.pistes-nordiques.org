@@ -150,7 +150,9 @@ label {
     vertical-align: center;
     background-color:#EEE; /*fallback*/
     background-color: rgba(245,245,245,0.7);
+    z-index: 990;
 }
+/*
 #slide{
     float:right;
     width: 12px;
@@ -162,8 +164,33 @@ label {
     color: #151515;
     text-align: center;
     vertical-align: middle;
+    background-color:#EEE; 
+    background-color: rgba(245,245,245,0.7);
+}
+*/
+#slide{
+    position: relative;
+    top: 8px;
+    float:right;
+/*
+    width: 50px;
+*/
+    overflow: none;
+    height: 12px;
+    margin-top: -15px;
+    -moz-border-radius:6px;
+    border-radius:6px;
+    border: 1px solid #AAAAAA;
+    font-size: 0.75em;
+/*
+    font-weight: bold;
+*/
+    color: #888888;
+    text-align: right;
+    vertical-align: middle;
     background-color:#EEE; /*fallback*/
     background-color: rgba(245,245,245,0.7);
+    z-index: 1000;
 }
 .float-right{
     float:right;
@@ -202,9 +229,6 @@ display: none;
     border: 1px solid #aaaaaa;
     font-size: 0.75em;
     color: #444444;
-/*
-    text-align: left;
-*/
     background-color:#EEE; /*fallback*/
     background-color: rgba(245,245,245,0.7);
 }
