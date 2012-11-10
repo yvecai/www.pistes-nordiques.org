@@ -539,7 +539,7 @@ function baseLayers() {
             visibility: true, opacity: 0.8,
             maxScale: 250000
         });
-    map.addLayer(PistesTilesLowZoom);
+    //map.addLayer(PistesTilesLowZoom);
 // Layer 6
     var PistesTiles = new OpenLayers.Layer.XYZ("Pistes Tiles",
     "http://tiles.pistes-nordiques.org/tiles-pistes/",{
@@ -548,7 +548,17 @@ function baseLayers() {
             visibility: true, opacity: 0.95,
             minScale: 250000
         });
-    map.addLayer(PistesTiles);
+    //map.addLayer(PistesTiles);
+
+    var PistesTiles2 = new OpenLayers.Layer.XYZ("Pistes Tiles2",
+    "cgi/render/render.py/handle?",{
+            getURL: get_osm_url,
+            isBaseLayer: false, numZoomLevels: 19,
+            visibility: true, opacity: 0.95
+            //minScale: 250000
+        });
+    map.addLayer(PistesTiles2);
+
 }
 
 function permalink2Args() {
