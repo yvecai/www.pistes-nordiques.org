@@ -241,7 +241,6 @@ function checkKey(e) {
         var sl = document.getElementById('slide');
         if (em.style.display == "inline") {
         em.style.display = 'none';
-        sl.innerHTML='<a onclick="toggleMenu();" ></br>&#8226;</br>&#8226;</br>&#8226;</a>';
         }
         clearRoute();
         //clear routing
