@@ -190,7 +190,7 @@ function show_profile() {
     document.getElementById('sideBar').style.display='inline';
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('TOPO');
     if (mode=="raster") {
-        document.getElementById('sideBarContent').innerHTML=_('interactive_map_only');
+        document.getElementById('sideBarContent').innerHTML=_('vector_help');
     }else if (map.getZoom() <= 13) {
         document.getElementById('sideBarContent').innerHTML=_('zoom_in');
     }
