@@ -5,20 +5,29 @@ var relationOffsets=[];
 var relationList=[];
 var OFFSET_DIR=1;
 var map;
+var permalink;
 var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
 var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
 
 function showList(){
 	text="";
 	for (r in relationOffsets) {
-	text+=r+";"+relationOffsets[r]+"\n";
+		if (relationOffsets[r] != 0){
+			text+=r+";"+relationOffsets[r]+"\n";
+		}
 	}
+	var linkto = document.getElementById('permalink').href;
+	var parent = window;
+
+	
 	var newtab = window.open("text/plain");
 	newtab.document.write("\n<pre>");
 	newtab.document.write("\n#"+Date()+"\n");
 	newtab.document.write(text);
 	newtab.document.write("</pre>"+"\n");
 	
+	parent.location.href = linkto;
+
 }
 function offset(id, of, side) {
 	updateOffset(id,side);
@@ -70,8 +79,8 @@ function updateRelationList(){
 	for (var t=0;t<relationList.length;t++) {
 		html += '<p style="color:'+relationList[t]['color']+
 		'">'+relationOffsets[relationList[t]['id']] +
-		'&nbsp;&nbsp;<a href="#" onClick="offset('+relationList[t]['id']+',15,\'left\');">--</a>&nbsp;'+
-		'<a href="#" onClick="offset('+relationList[t]['id']+',15,\'right\');">++</a>&nbsp;'+
+		'&nbsp;&nbsp;<a onClick="offset('+relationList[t]['id']+',15,\'left\');">--</a>&nbsp;'+
+		'<a onClick="offset('+relationList[t]['id']+',15,\'right\');">++</a>&nbsp;'+
 		relationList[t]['id'] +'-'+relationList[t]['name']+'</p>';
 	}
 	$("content").innerHTML=html;
@@ -140,7 +149,13 @@ function map_init() {
 	map.events.register("zoomend", null, 
 						function() {
 						requestRelations();
-						})
-	map.addControl(new OpenLayers.Control.Permalink());
+						});
+	map.events.register("moveend", null, 
+						function() {
+						requestRelations();
+						tilesLayer.redraw();
+						});
+	permalink = new OpenLayers.Control.Permalink('permalink')
+	map.addControl(permalink);
 }
 

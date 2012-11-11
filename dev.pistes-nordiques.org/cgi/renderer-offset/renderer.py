@@ -95,34 +95,34 @@ def handle(req):
 	i=0
 	
 	
-	
-	relations = rels.strip('|').split('|')
-	for rel in relations:
-		
-		osm_id=rel.split(':')[0]
-		of=int(rel.split(':')[1])
-		col=rel.split(':')[2]
-		if (col == 'None'):
-			col='pink'
-		
-		if (RepresentsInt(osm_id) and RepresentsInt(of)):
-			s = (Style())
-			r=Rule()
-			try: l = (LineSymbolizer(Color(col),3))
-			except: 
-				try: l = (LineSymbolizer(Color('#'+col),3))
-				except : l = (LineSymbolizer(Color('black'),3))
-			l.offset = of*offset
-			r.symbols.append(l)
-			s.rules.append(r)
-			m.append_style('My Style'+str(i),s)
-			lyr= Layer('shape'+str(i), proj)
-			db_params['table']='(Select way from planet_osm_line where osm_id = %s) as mysubquery' % (osm_id)
-			lyr.datasource = PostGIS(**db_params)
-			lyr.styles.append('My Style'+str(i))
-			m.layers.append(lyr)
-			i+=1
-	 
+	try :
+		relations = rels.strip('|').split('|')
+		for rel in relations:
+			
+			osm_id=rel.split(':')[0]
+			of=int(rel.split(':')[1])
+			col=rel.split(':')[2]
+			if (col == 'None'):
+				col='pink'
+			
+			if (RepresentsInt(osm_id) and RepresentsInt(of)):
+				s = (Style())
+				r=Rule()
+				try: l = (LineSymbolizer(Color(col),3))
+				except: 
+					try: l = (LineSymbolizer(Color('#'+col),3))
+					except : l = (LineSymbolizer(Color('black'),3))
+				l.offset = of*offset
+				r.symbols.append(l)
+				s.rules.append(r)
+				m.append_style('My Style'+str(i),s)
+				lyr= Layer('shape'+str(i), proj)
+				db_params['table']='(Select way from planet_osm_line where osm_id = %s) as mysubquery' % (osm_id)
+				lyr.datasource = PostGIS(**db_params)
+				lyr.styles.append('My Style'+str(i))
+				m.layers.append(lyr)
+				i+=1
+	except: pass # maybe there's nothing in the viewport
 	
 	# compute the bbox corresponding to the requested tile
 	ll = num2bbox(x, y, z)
