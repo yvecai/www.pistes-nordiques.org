@@ -25,9 +25,25 @@
 		 XC ski session with a simple click on the trails.</p>
 		</div>
 <!-- The map-->
-		<div id="map"></div>
+		<div id="map">
+            <!-- inside of map div to allow z-indexing under panzoombar -->
+            <div id="helper-centering">
+                <div id="helper" style="display: none;">
+                    <div id="closeBox">
+                        <a onclick="close_helper();"
+                        onmouseover="document.images['closePic3'].src='pics/close-simple-hover.png'"
+                        onmouseout="document.images['closePic3'].src='pics/close-simple.png'">
+                         <img name="closePic3" src="pics/close-simple.png"></a>
+                    </div>
+                    <img style="margin-left: 3px;"src="pics/interactive-help.png"/>
+                    <div id="zoomin-helper"><script>document.write(_('zoom_in'))</script></div>
+                </div>
+            </div>       
+        
+        </div>
 <!-- Zoom level in PanZoomBar-->
 		<div id="zoom"></div>
+
 		<div id="featureinfos" style="display:none">
 			<div id="featureinfosHeader" class="sideBarHeader">
 				<script>document.write('&nbsp;'+_('PISTE'))</script>

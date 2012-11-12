@@ -38,6 +38,7 @@ function switch2vector() {
         
         mode="vector";
         map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
+		show_helper();
     }
 }
 function switch2raster() {
@@ -64,6 +65,7 @@ function switch2raster() {
         
         mode="raster";
         map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
+		close_helper();
     }
 }
 function setmode(m){
@@ -139,6 +141,17 @@ function closeMenu() {
 function close_sideBar() {
     document.getElementById('sideBar').style.display='none';
 }
+function close_helper(){
+	document.getElementById('helper').style.display='none';
+}
+function show_helper(){
+	document.getElementById('helper').style.display='block';
+	if (map.getZoom()<13){
+		document.getElementById('zoomin-helper').style.display = 'inline';
+	} else {
+		document.getElementById('zoomin-helper').style.display = 'none';
+	}
+}
 function show_about() {
     document.getElementById('sideBar').style.display='inline';
     url = 'iframes/about.'+iframelocale+'.html';
@@ -191,6 +204,8 @@ function show_profile() {
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('TOPO');
     if (mode=="raster") {
         document.getElementById('sideBarContent').innerHTML=_('vector_help');
+    }else if (map.getZoom() > 13) {
+        document.getElementById('sideBarContent').innerHTML='<img style="margin-left: 3px;"src="pics/interactive-help.png"/>';
     }else if (map.getZoom() <= 13) {
         document.getElementById('sideBarContent').innerHTML=_('zoom_in');
     }
@@ -425,7 +440,7 @@ function zoomSlider(options) {
             this._addButton("zoomin", "zoom-plus-mini.png", centered.add(0, 5), sz);
             centered = this._addZoomBar(centered.add(0, sz.h + 5));
             this._addButton("zoomout", "zoom-minus-mini.png", centered, sz);
-            return this.div;
+			return this.div;
         }
     });
     return this.control;
@@ -434,7 +449,13 @@ function zoomSlider(options) {
 function updateZoom() {
     $('zoom').innerHTML= map.getZoom();
 }
-
+function onZoomEnd(){
+	if (map.getZoom()<13){
+		document.getElementById('zoomin-helper').style.display = 'inline';
+	} else {
+		document.getElementById('zoomin-helper').style.display = 'none';
+	}
+}
 function get_osm_url(bounds) {
     var res = this.map.getResolution();
     var x = Math.round((bounds.left - this.maxExtent.left) / (res * this.tileSize.w));
@@ -604,6 +625,7 @@ function map_init(){
 // Switch base layer
     map.events.on({ "zoomend": function (e) {
         updateZoom();
+		onZoomEnd();
         if (map.getZoom() > 6) {
             map.layers[1].setVisibility(true);
             map.layers[1].redraw();

@@ -10,23 +10,18 @@ var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from
 var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
 
 function showList(){
+	// don't forget 'return false;' in onclick to avoid parent refresh
 	text="";
 	for (r in relationOffsets) {
 		if (relationOffsets[r] != 0){
 			text+=r+";"+relationOffsets[r]+"\n";
 		}
 	}
-	var linkto = document.getElementById('permalink').href;
-	var parent = window;
-
-	
 	var newtab = window.open("text/plain");
 	newtab.document.write("\n<pre>");
 	newtab.document.write("\n#"+Date()+"\n");
 	newtab.document.write(text);
 	newtab.document.write("</pre>"+"\n");
-	
-	parent.location.href = linkto;
 
 }
 function offset(id, of, side) {
@@ -36,7 +31,7 @@ function offset(id, of, side) {
 
 function requestRelations() {
 	var XMLHttp = new XMLHttpRequest();
-	XMLHttp.open("GET", "../cgi/pgsql-mapnik-handle/pgsql-mapnik-handle/handle?bbox="+map.getExtent().toBBOX(), false);
+	XMLHttp.open("GET", "http://dev.pistes-nordiques.org/cgi/pgsql-mapnik-handle/pgsql-mapnik-handle/handle?bbox="+map.getExtent().toBBOX(), false);
 	XMLHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	XMLHttp.send();
 	if (XMLHttp.status === 200) {
@@ -130,11 +125,20 @@ function map_init() {
 	map = new OpenLayers.Map("basicMap", options);
 	
 	
-	var mapnik         = new OpenLayers.Layer.OSM();
+//	var mapnik         = new OpenLayers.Layer.OSM();
+//	map.addLayer(mapnik);
+	
+	
+	
+	var arrayMapQuest = ["http://otile1.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.jpg",
+						 "http://otile2.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.jpg",
+						 "http://otile3.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.jpg",
+						 "http://otile4.mqcdn.com/tiles/1.0.0/osm/${z}/${x}/${y}.jpg"];
+	var mapquest = new OpenLayers.Layer.OSM("MapQuest",arrayMapQuest);
+	map.addLayer(mapquest);
+	
 	var position       = new OpenLayers.LonLat(6.1,46.4).transform( fromProjection, toProjection);
 	var zoom           = 14; 
-	
-	map.addLayer(mapnik);
 	map.setCenter(position, zoom );
 	
 	requestRelations();
@@ -144,7 +148,8 @@ function map_init() {
 			getURL: get_osm_url, 
 			isBaseLayer: false
 	});
-	map.addLayer(tilesLayer);
+	map.addLayer(tilesLayer);	
+
 	
 	map.events.register("zoomend", null, 
 						function() {
