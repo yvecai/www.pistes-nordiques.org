@@ -43,7 +43,7 @@ def handle(req):
                 #colour=str(r[2])
                 osm_id=str(r[3])
 		string+=route_name+':'+color+':'+osm_id+'|'
-	req.headers_out.add("Access-Control-Allow-Origin: *")
+	req.headers_out.add("Access-Control-Allow-Origin","*")
 	req.content_type = 'text/plain'
         req.write(string)
 	return apache.OK
