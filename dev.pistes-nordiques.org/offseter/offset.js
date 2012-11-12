@@ -1,4 +1,7 @@
-
+var lon=6.1;
+var lat=46.4;
+var zoom= 14; 
+var offsetArgs='';
 var pistesLayer;
 var tilesLayer;
 var relationOffsets=[];
@@ -6,8 +9,22 @@ var relationList=[];
 var OFFSET_DIR=1;
 var map;
 var permalink;
+var permalinkReset;
 var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
 var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+
+function permalink0Args() {
+	// create additionnal parameters in permalink
+    var args = 
+	OpenLayers.Control.Permalink.prototype.createParams.apply(this, arguments);
+	var relList="";
+	for (var t in relationList) {
+		relList+=relationList[t]['id']+":"+relationOffsets[relationList[t]['id']]+":"+relationList[t]['color']+"|";
+	}
+	relList=relList.replace(/#/g,'');
+	args['offsets']=relList;
+    return args;
+}
 
 function showList(){
 	// don't forget 'return false;' in onclick to avoid parent refresh
@@ -17,11 +34,12 @@ function showList(){
 			text+=r+";"+relationOffsets[r]+"\n";
 		}
 	}
-	var newtab = window.open("text/plain");
+	var newtab = window.open('text/plain');
 	newtab.document.write("\n<pre>");
 	newtab.document.write("\n#"+Date()+"\n");
 	newtab.document.write(text);
 	newtab.document.write("</pre>"+"\n");
+	newtab.document.write("<a href=\""+$("permalink").href+"\"> preview </a>");
 
 }
 function offset(id, of, side) {
@@ -53,6 +71,7 @@ for ( var t=0;t < relationList.length; t++ ) {
 	}
 	}
   }
+	permalink.updateLink();
   updateRelationList();
 }
 
@@ -68,6 +87,15 @@ function list_relations(rels) {
 		relationList.push(rel);
 	}
 	updateRelationList();
+}
+function buildRelationListFromArgs(offsetArgs) {
+	relationOffsets.length = 0;
+	var list=offsetArgs.split('|');
+	for (var i=0; i < list.length-1; i++){
+		var id = parseInt(list[i].split(':')[0]);
+		relationOffsets[id] = parseInt(list[i].split(':')[1]);
+	}
+	
 }
 function updateRelationList(){
 	html = '';
@@ -101,9 +129,26 @@ function get_osm_url(bounds) {
     }
 }
 
+// Redirect permalink
+if (location.search != "") {
+    //?zoom=13&lat=46.82272&lon=6.87183&layers=B0TT
+    var x = location.search.substr(1).split("&")
+    for (var i=0; i<x.length; i++)
+    {
+        if (x[i].split("=")[0] == 'zoom') {zoom=x[i].split("=")[1];}
+        if (x[i].split("=")[0] == 'lon') {lon=x[i].split("=")[1];}
+        if (x[i].split("=")[0] == 'lat') {lat=x[i].split("=")[1];}
+        if (x[i].split("=")[0] == 'offsets') {offsetArgs=unescape(x[i].split("=")[1]);}
+    }
+	if (offsetArgs.length !=0){buildRelationListFromArgs(offsetArgs);}
+    //Then hopefully map_init() will do the job when the map is loaded
+}
+
 function init() {
 map_init();
 }
+
+
 
 function map_init() {
 	
@@ -137,8 +182,7 @@ function map_init() {
 	var mapquest = new OpenLayers.Layer.OSM("MapQuest",arrayMapQuest);
 	map.addLayer(mapquest);
 	
-	var position       = new OpenLayers.LonLat(6.1,46.4).transform( fromProjection, toProjection);
-	var zoom           = 14; 
+	var position = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection);
 	map.setCenter(position, zoom );
 	
 	requestRelations();
@@ -160,7 +204,8 @@ function map_init() {
 						requestRelations();
 						tilesLayer.redraw();
 						});
-	permalink = new OpenLayers.Control.Permalink('permalink')
+	permalink = new OpenLayers.Control.Permalink('permalink',window.href,{'createParams': permalink0Args})
+	permalinkReset = new OpenLayers.Control.Permalink('permalink-reset')
 	map.addControl(permalink);
 }
 
