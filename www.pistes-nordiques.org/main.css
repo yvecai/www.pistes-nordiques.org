@@ -30,6 +30,21 @@ a:hover {
         font-weight: 600;
         margin: 0px
     }
+a.amenu:link, a.amenu:visited {
+		font-weight: 600;
+		color: #444444;
+		font-size: 1em;
+        text-decoration: none;
+        margin: 0px
+    }
+    
+a.amenu:hover {
+        color: #FF7800;
+		font-size: 1em;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 0px
+    }
 li{
 list-style-position:outside;
 list-style-type:disc;
@@ -64,12 +79,6 @@ label {
 
 #map {
         position: fixed;    width: 100%; height:100%;
-/*
-        left:0px;
-        right:0px;
-        bottom: 0px;
-        top:0px;
-*/
         border: 0px;
         padding: 0px;
      }
@@ -87,7 +96,7 @@ label {
         border: 1px solid #CCCCCC;
         background-color: #F5F5F5;
         z-index: 10;
-        opacity:1;
+        opacity:1
 }
 .attributions{
             position: relative;
@@ -103,6 +112,10 @@ label {
     border: 1px solid #AAAAAA;
     -moz-border-radius:6px;
     border-radius:6px;
+    z-index: 1004
+}
+.olButton {
+    z-index: 1004
 }
 #zoom{
     position: absolute;
@@ -124,9 +137,6 @@ label {
 #right-container{
     position: absolute;
     bottom:16px;
-/*
-    height:98%;
-*/
     right: 16px;
     width: 50px;
 }
@@ -150,20 +160,25 @@ label {
     vertical-align: center;
     background-color:#EEE; /*fallback*/
     background-color: rgba(245,245,245,0.7);
+    z-index: 990;
 }
 #slide{
+    position: relative;
+    top: 8px;
     float:right;
-    width: 12px;
-    height: 50px;
+    overflow: none;
+    height: 12px;
+    margin-top: -15px;
     -moz-border-radius:6px;
     border-radius:6px;
     border: 1px solid #AAAAAA;
     font-size: 0.75em;
-    color: #151515;
-    text-align: center;
+    color: #888888;
+    text-align: right;
     vertical-align: middle;
     background-color:#EEE; /*fallback*/
     background-color: rgba(245,245,245,0.7);
+    z-index: 1000;
 }
 .float-right{
     float:right;
@@ -177,9 +192,6 @@ label {
         margin-bottom: 0px
 }
 #status {
-/*
-        display:block;
-*/
         font-size: 0.8em;
         margin: 5px;
         padding: 2px;
@@ -202,9 +214,6 @@ display: none;
     border: 1px solid #aaaaaa;
     font-size: 0.75em;
     color: #444444;
-/*
-    text-align: left;
-*/
     background-color:#EEE; /*fallback*/
     background-color: rgba(245,245,245,0.7);
 }
@@ -267,6 +276,7 @@ display: none;
                 line-height: 14px
 }
         #closeBox{
+            position: relative;
                 top:0px;
                 text-align: center;
                 font-weight: 600;
@@ -276,7 +286,8 @@ display: none;
                 padding:0px;
                 background-color:#EEE; /*fallback*/
                 background-color:rgba(245,245,245,0.2);
-                float:right
+                float:right;
+                z-index: 1000;
         }
         #sideBarTitle{
                 float: left;
@@ -296,6 +307,31 @@ display: none;
     background-color:#EEE; /*fallback*/
     background-color: rgba(245,245,245,0.3);
 }
+#helper-centering{
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    z-index: 1000;
+}
+#helper{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    /*text-align: center;*/
+    padding-top: 3px;
+    width: 220px;
+    /*height: 26px;*/
+    -moz-border-radius:6px;
+    border-radius:6px;
+    border: 1px solid #aaaaaa;
+    background-color:#EEE; /*fallback*/
+    background-color: rgba(245,245,245,0.7);}
+#zoomin-helper{
+    position: relative;
+    margin: 5px;
+    font-size: 0.75em;
+    color: #444444;
+}
 #featureinfos{
     position: absolute;
     top: 5px;
@@ -306,7 +342,7 @@ display: none;
     border-radius:6px;
     border: 1px solid #aaaaaa;
     background-color:#EEE; /*fallback*/
-    background-color: rgba(245,245,245,0.7);
+    background-color: rgba(245,245,245,0.7)
 }
 #featureinfosContent{
         background-color:#EEE; /*fallback*/

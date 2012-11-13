@@ -17,7 +17,7 @@ import sys, os
 
 allowedHosts = ['192.168.1.3:8080',
                 'dev-yves.dyndns.org', 'www.pistes-nordiques.org',
-                'open.mapquestapi.com']
+                'beta.pistes-nordiques.org','dev.pistes-nordiques.org','open.mapquestapi.com']
 
 method = os.environ["REQUEST_METHOD"]
 
