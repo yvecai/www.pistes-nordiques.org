@@ -17,6 +17,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+var server="http://beta.pistes-nordiques.org/";
+
 var timer_is_on=0;
 var routingPoints=new Array();
 var routingGeom=new Array();
@@ -171,7 +173,7 @@ function requestRoute() {
         };
         
         var XMLHttp = new XMLHttpRequest();
-        XMLHttp.open("GET", '../cgi/routing/routing.py/' + q);
+        XMLHttp.open("GET", server+'cgi/routing/routing.py/' + q);
         XMLHttp.onreadystatechange= function () {
             if (XMLHttp.readyState == 4) {              
                 var responseXML = XMLHttp.responseXML;
@@ -199,7 +201,7 @@ function trace_route(wktroute) {
     // request the elevation profile
     document.getElementById('topo_profile').innerHTML='Loading ...';
     var XMLHttp = new XMLHttpRequest();
-    XMLHttp.open("POST", "../cgi/profile/getProfilePic.py/handle");
+    XMLHttp.open("POST", server+"cgi/profile/getProfilePic.py/handle");
     XMLHttp.onreadystatechange= function () {
         if (XMLHttp.readyState == 4) {
             // cut when cgi is not able to work
@@ -645,7 +647,8 @@ var pisteStyles = new OpenLayers.StyleMap({
             pointRadius: 10, //for routing points
             strokeWidth: 5,
             graphicZIndex: 15,
-            strokeOpacity: 0.9
+            strokeOpacity: 0.9,
+			cursor: 'pointer'
         })
 });
 
@@ -700,7 +703,7 @@ var pisteOverlayStyles = new OpenLayers.StyleMap({
         'highlight': pisteOverlayStyle
 });
 // a dummy proxy script is located in the directory to allow use of wfs
-OpenLayers.ProxyHost = "cgi/proxy.cgi?url=";
+OpenLayers.ProxyHost = server+"cgi/proxy.cgi?url=";
 
    // layer 7
     var pistesLayerLowZoom = new OpenLayers.Layer.Vector("Pistes Vector LZ", {
@@ -727,7 +730,7 @@ OpenLayers.ProxyHost = "cgi/proxy.cgi?url=";
         strategies: [new OpenLayers.Strategy.BBOX()],
         styleMap: pisteStyles,
         protocol: new OpenLayers.Protocol.HTTP({
-                url:"../cgi/osmosis-lowres/osmosis_handle.py/",
+                url:server+"cgi/osmosis-lowres/osmosis_handle.py/",
                 sync: true,
                 format: new OpenLayers.Format.OSM({
                 externalProjection:new OpenLayers.Projection("EPSG:4326"),
@@ -751,7 +754,7 @@ OpenLayers.ProxyHost = "cgi/proxy.cgi?url=";
         strategies: [new OpenLayers.Strategy.BBOX()],
         styleMap: pisteStyles,
         protocol: new OpenLayers.Protocol.HTTP({
-                url:"../cgi/osmosis/osmosis_handle.py/",
+                url:server+"cgi/osmosis/osmosis_handle.py/",
                 sync: true,
                 format: new OpenLayers.Format.OSM({
                 externalProjection:new OpenLayers.Projection("EPSG:4326"),
