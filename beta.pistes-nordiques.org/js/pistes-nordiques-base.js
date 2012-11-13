@@ -22,7 +22,7 @@ var server="http://beta.pistes-nordiques.org/";
 
 var mode="raster";
 var m="raster";
-var EXT_MENU=true;
+var EXT_MENU=false;
 var zoomBar;
 function switch2vector() {
     if (mode == "raster") {
@@ -418,7 +418,8 @@ if (location.search != "") {
         if (x[i].split("=")[0] == 'e') {
 			var ext=x[i].split("=")[1];
 			if (ext == 'false'){EXT_MENU=false;}
-			else {EXT_MENU=true;}
+			else if (ext == 'true'){EXT_MENU=true;}
+			else {EXT_MENU=false;}
 		}
     }
     //Then hopefully map_init() will do the job when the map is loaded
