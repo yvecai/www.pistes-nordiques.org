@@ -30,6 +30,21 @@ a:hover {
         font-weight: 600;
         margin: 0px
     }
+a.amenu:link, a.amenu:visited {
+		font-weight: 600;
+		color: #444444;
+		font-size: 1em;
+        text-decoration: none;
+        margin: 0px
+    }
+    
+a.amenu:hover {
+        color: #FF7800;
+		font-size: 1em;
+        text-decoration: none;
+        font-weight: 600;
+        margin: 0px
+    }
 li{
 list-style-position:outside;
 list-style-type:disc;

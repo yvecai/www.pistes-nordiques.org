@@ -18,6 +18,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 // MODE
+var server="http://beta.pistes-nordiques.org/";
+
 var mode="raster";
 var m="raster";
 var EXT_MENU=true;
@@ -100,9 +102,9 @@ function get_page(url){
     var oRequest = new XMLHttpRequest();
     oRequest.open("GET",url,false);
     oRequest.setRequestHeader("User-Agent",navigator.userAgent);
-    oRequest.send()
+    oRequest.send();
     response = oRequest.responseText;
-    response = response.replace("../","")
+    response = response.replace("../","");
     return response;
 }
 function toggleMenu() {
@@ -154,7 +156,7 @@ function show_helper(){
 }
 function show_about() {
     document.getElementById('sideBar').style.display='inline';
-    url = 'iframes/about.'+iframelocale+'.html';
+    url = server+'iframes/about.'+iframelocale+'.html';
     content = get_page(url).replace('**update**',get_update()).replace('**length**',get_length()).replace('**modis-update**',get_modisupdate());
     document.getElementById('sideBarContent').innerHTML = content;
     document.getElementById('sideBarContent').style.display='inline';
@@ -162,7 +164,7 @@ function show_about() {
 }
 function show_help() {
     document.getElementById('sideBar').style.display='inline';
-    url = 'iframes/quickhelp.'+iframelocale+'.html';
+    url = server+'iframes/quickhelp.'+iframelocale+'.html';
     content = get_page(url);
     document.getElementById('sideBarContent').innerHTML = content;
     document.getElementById('sideBarContent').style.display='inline';
@@ -270,7 +272,7 @@ function checkKey(e) {
 
 function get_length(){
     var oRequest = new XMLHttpRequest();
-    oRequest.open("GET",'data/ways_length.txt',false);
+    oRequest.open("GET",server+'data/ways_length.txt',false);
     oRequest.setRequestHeader("User-Agent",navigator.userAgent);
     oRequest.send()
     return oRequest.responseText;
@@ -278,7 +280,7 @@ function get_length(){
 
 function get_update(){
     var oRequest = new XMLHttpRequest();
-    oRequest.open("GET",'data/update.txt',false);
+    oRequest.open("GET",server+'data/update.txt',false);
     oRequest.setRequestHeader("User-Agent",navigator.userAgent);
     oRequest.send();
     var date=oRequest.responseText.split('T')[0];
@@ -290,7 +292,7 @@ function get_update(){
 
 function get_modisupdate(){
     var oRequest = new XMLHttpRequest();
-    oRequest.open("GET",'data/modis-update.txt',false);
+    oRequest.open("GET",server+'data/modis-update.txt',false);
     oRequest.setRequestHeader("User-Agent",navigator.userAgent);
     oRequest.send();
     var period=oRequest.responseText.split(' ')[5];
@@ -369,7 +371,7 @@ function loadend(){
         string=string.replace(" ","+");
         var oRequest = new XMLHttpRequest();
         //oRequest.open("GET",'http://open.mapquestapi.com/nominatim/v1/search?format=xml&q='+string,false);
-        oRequest.open("GET",'cgi/nominatim.cgi/search?format=xml&place='+string,false);
+        oRequest.open("GET",server+'cgi/nominatim.cgi/search?format=xml&place='+string,false);
         oRequest.setRequestHeader("User-Agent",navigator.userAgent);
         oRequest.send();
         setTimeout('',500);
