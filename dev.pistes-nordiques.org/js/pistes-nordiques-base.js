@@ -551,7 +551,9 @@ function baseLayers() {
     //map.addLayer(PistesTiles);
 
     var PistesTiles2 = new OpenLayers.Layer.XYZ("Pistes Tiles2",
-    "cgi/render/render.py/handle?",{
+    //"cgi/render/render.py/handle?",
+	"http://tiles.pistes-nordiques.org/tiles-pistes2/",
+			{
             getURL: get_osm_url,
             isBaseLayer: false, numZoomLevels: 19,
             visibility: true, opacity: 0.95
