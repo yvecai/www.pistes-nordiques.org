@@ -1,6 +1,6 @@
 var lon=6.1;
 var lat=46.4;
-var zoom= 14; 
+var zoom= 8; 
 var offsetArgs='';
 var pistesLayer;
 var tilesLayer;
@@ -8,12 +8,12 @@ var relationOffsets=[];
 var relationList=[];
 var OFFSET_DIR=1;
 var map;
-var permalink;
+var permalinkOffset;
 var permalinkReset;
 var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
 var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
 
-function permalink0Args() {
+function permalinkOffsetArgs() {
 	// create additionnal parameters in permalink
     var args = 
 	OpenLayers.Control.Permalink.prototype.createParams.apply(this, arguments);
@@ -23,6 +23,13 @@ function permalink0Args() {
 	}
 	relList=relList.replace(/#/g,'');
 	args['offsets']=relList;
+    return args;
+}
+function permalinkResetArgs() {
+	// delete additionnal parameters in permalink
+    var args = 
+	OpenLayers.Control.Permalink.prototype.createParams.apply(this, arguments);
+	args['offsets']='';
     return args;
 }
 
@@ -39,12 +46,13 @@ function showList(){
 	newtab.document.write("\n#"+Date()+"\n");
 	newtab.document.write(text);
 	newtab.document.write("</pre>"+"\n");
-	newtab.document.write("<a href=\""+$("permalink").href+"\"> preview </a>");
+	newtab.document.write("<a href=\""+$("permalinkOffset").href+"\"> preview </a>");
 
 }
 function offset(id, of, side) {
 	updateOffset(id,side);
 	tilesLayer.redraw();
+	return true;
 }
 
 function requestRelations() {
@@ -71,8 +79,9 @@ for ( var t=0;t < relationList.length; t++ ) {
 	}
 	}
   }
-	permalink.updateLink();
+	permalinkOffset.updateLink();
   updateRelationList();
+	return true;
 }
 
 function list_relations(rels) {
@@ -87,6 +96,7 @@ function list_relations(rels) {
 		relationList.push(rel);
 	}
 	updateRelationList();
+	return true;
 }
 function buildRelationListFromArgs(offsetArgs) {
 	relationOffsets.length = 0;
@@ -107,8 +117,9 @@ function updateRelationList(){
 		relationList[t]['id'] +'-'+relationList[t]['name']+'</p>';
 	}
 	$("content").innerHTML=html;
+	return true;
 }
-function get_osm_url(bounds) {
+function get_extended_osm_url(bounds) {
 	
 	var relList="";
 	for (var t in relationList) {
@@ -128,6 +139,21 @@ function get_osm_url(bounds) {
         return this.url +relList+'/'+ z + "/" + x + "/" + y + ".png";
     }
 }
+function get_osm_url(bounds) {
+    var res = this.map.getResolution();
+    var x = Math.round((bounds.left - this.maxExtent.left) / (res * this.tileSize.w));
+    var y = Math.round((this.maxExtent.top - bounds.top) / (res * this.tileSize.h));
+    var z = this.map.getZoom();
+    var limit = Math.pow(2, z);
+	
+    if (y < 0 || y >= limit) {
+        return OpenLayers.Util.getImagesLocation() + "404.png";
+    } else {
+        x = ((x % limit) + limit) % limit;
+        return this.url + z + "/" + x + "/" + y + ".png";
+    }
+}
+
 
 // Redirect permalink
 if (location.search != "") {
@@ -147,8 +173,6 @@ if (location.search != "") {
 function init() {
 map_init();
 }
-
-
 
 function map_init() {
 	
@@ -186,11 +210,21 @@ function map_init() {
 	map.setCenter(position, zoom );
 	
 	requestRelations();
-	 
+    var PistesTilesLowZoom = new OpenLayers.Layer.XYZ(
+		  "Pistes Tiles LZ",
+		  "http://tiles.pistes-nordiques.org/tiles-pistes/",{
+		  getURL: get_osm_url, 
+		  isBaseLayer: false, numZoomLevels: 19,
+		  visibility: true, opacity: 0.8,
+		  maxScale: 1000000
+		  });
+    map.addLayer(PistesTilesLowZoom);
+	
 	tilesLayer = new OpenLayers.Layer.XYZ("mapnik",
 	"http://dev.pistes-nordiques.org/cgi/renderer-offset/renderer.py/handle?",{
-			getURL: get_osm_url, 
-			isBaseLayer: false
+			getURL: get_extended_osm_url, 
+			isBaseLayer: false,
+			minScale: 1000000
 	});
 	map.addLayer(tilesLayer);	
 
@@ -204,8 +238,12 @@ function map_init() {
 						requestRelations();
 						tilesLayer.redraw();
 						});
-	permalink = new OpenLayers.Control.Permalink('permalink',window.href,{'createParams': permalink0Args})
-	permalinkReset = new OpenLayers.Control.Permalink('permalink-reset')
-	map.addControl(permalink);
+	
+	permalinkReset = new OpenLayers.Control.Permalink('permalinkReset',window.href,{'createParams': permalinkResetArgs})
+	map.addControl(permalinkReset);
+	
+	permalinkOffset = new OpenLayers.Control.Permalink('permalinkOffset',window.href,{'createParams': permalinkOffsetArgs})
+	map.addControl(permalinkOffset);
+	
 }
 

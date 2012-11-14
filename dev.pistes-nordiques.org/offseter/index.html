@@ -48,8 +48,15 @@ html, body {
 	<div id="container">
 	<div id="basicMap"></div>
 	<div id="menu">
-		<a id="permalink-reset" href="">Permalink (reset)</a>
-        <a id="permalink" href="">Permalink (with offsets)</a>
+		<a id="permalinkReset" href="">Permalink (reset)</a>
+        <a id="permalinkOffset" href="">Permalink (with offsets)</a>
+		<p style="font-size:0.7 em;font-weight:200;">Adjust the pistes lateral offset from the list below. 
+		When you are satisfied with the result, press 'export'.</br>
+		The resulting file can be sent to webmaster_at_pistes-nordiques.org or committed to 
+		<a target="blank" href="https://github.com/yvecai/www.pistes-nordiques.org/tree/master/mapnik-styles/offset-style/lists">
+		github</a>.
+		Simply fork, add your file, and send me a pull request.</br>
+		Your work will be taken into account in the map rendering.</p>
 		<div id="form">
 		<form>
 		<input type="submit" value="Export" onclick="showList();return false;">
