@@ -1,0 +1,5104 @@
+
+<Style name="marks">
+        <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#FF0000' or [colour]='#FF0000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#FF0000' or [colour]='#FF0000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#FF0000' or [colour]='#FF0000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FF0000' or [colour]='#FF0000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FF0000' or [colour]='#FF0000'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb0000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#ffff00' or [colour]='#ffff00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#ffff00' or [colour]='#ffff00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#ffff00' or [colour]='#ffff00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#ffff00' or [colour]='#ffff00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#ffff00' or [colour]='#ffff00'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#ebd900' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#FF7F00' or [colour]='#FF7F00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb6c00' opacity="1" 
+            stroke='#eb6c00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#FF7F00' or [colour]='#FF7F00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb6c00' opacity="1" 
+            stroke='#eb6c00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#FF7F00' or [colour]='#FF7F00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb6c00' opacity="1" 
+            stroke='#eb6c00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FF7F00' or [colour]='#FF7F00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb6c00' opacity="1" 
+            stroke='#eb6c00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FF7F00' or [colour]='#FF7F00'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb6c00' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='307D7E' or [colour]='307D7E'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2c6a7a' opacity="1" 
+            stroke='#2c6a7a' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='307D7E' or [colour]='307D7E'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2c6a7a' opacity="1" 
+            stroke='#2c6a7a' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='307D7E' or [colour]='307D7E'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2c6a7a' opacity="1" 
+            stroke='#2c6a7a' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='307D7E' or [colour]='307D7E'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2c6a7a' opacity="1" 
+            stroke='#2c6a7a' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='307D7E' or [colour]='307D7E'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#2c6a7a' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='brown' or [colour]='brown'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#982328' opacity="1" 
+            stroke='#982328' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='brown' or [colour]='brown'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#982328' opacity="1" 
+            stroke='#982328' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='brown' or [colour]='brown'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#982328' opacity="1" 
+            stroke='#982328' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='brown' or [colour]='brown'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#982328' opacity="1" 
+            stroke='#982328' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='brown' or [colour]='brown'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#982328' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='green' or [colour]='green'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006d00' opacity="1" 
+            stroke='#006d00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='green' or [colour]='green'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006d00' opacity="1" 
+            stroke='#006d00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='green' or [colour]='green'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006d00' opacity="1" 
+            stroke='#006d00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='green' or [colour]='green'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006d00' opacity="1" 
+            stroke='#006d00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='green' or [colour]='green'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#006d00' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#46b20e' or [colour]='#46b20e'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#40970d' opacity="1" 
+            stroke='#40970d' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#46b20e' or [colour]='#46b20e'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#40970d' opacity="1" 
+            stroke='#40970d' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#46b20e' or [colour]='#46b20e'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#40970d' opacity="1" 
+            stroke='#40970d' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#46b20e' or [colour]='#46b20e'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#40970d' opacity="1" 
+            stroke='#40970d' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#46b20e' or [colour]='#46b20e'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#40970d' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#9400d3' or [colour]='#9400d3'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#8800cd' opacity="1" 
+            stroke='#8800cd' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#9400d3' or [colour]='#9400d3'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#8800cd' opacity="1" 
+            stroke='#8800cd' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#9400d3' or [colour]='#9400d3'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#8800cd' opacity="1" 
+            stroke='#8800cd' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#9400d3' or [colour]='#9400d3'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#8800cd' opacity="1" 
+            stroke='#8800cd' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#9400d3' or [colour]='#9400d3'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#8800cd' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='Magenta' or [colour]='Magenta'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb00f7' opacity="1" 
+            stroke='#eb00f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='Magenta' or [colour]='Magenta'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb00f7' opacity="1" 
+            stroke='#eb00f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='Magenta' or [colour]='Magenta'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb00f7' opacity="1" 
+            stroke='#eb00f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='Magenta' or [colour]='Magenta'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb00f7' opacity="1" 
+            stroke='#eb00f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='Magenta' or [colour]='Magenta'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb00f7' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='yellow' or [colour]='yellow'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='yellow' or [colour]='yellow'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='yellow' or [colour]='yellow'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='yellow' or [colour]='yellow'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='yellow' or [colour]='yellow'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#ebd900' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#A00000' or [colour]='#A00000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#940000' opacity="1" 
+            stroke='#940000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#A00000' or [colour]='#A00000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#940000' opacity="1" 
+            stroke='#940000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#A00000' or [colour]='#A00000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#940000' opacity="1" 
+            stroke='#940000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#A00000' or [colour]='#A00000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#940000' opacity="1" 
+            stroke='#940000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#A00000' or [colour]='#A00000'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#940000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='FF0000' or [colour]='FF0000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='FF0000' or [colour]='FF0000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='FF0000' or [colour]='FF0000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='FF0000' or [colour]='FF0000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='FF0000' or [colour]='FF0000'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb0000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#7f1010' or [colour]='#7f1010'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#750d0f' opacity="1" 
+            stroke='#750d0f' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#7f1010' or [colour]='#7f1010'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#750d0f' opacity="1" 
+            stroke='#750d0f' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#7f1010' or [colour]='#7f1010'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#750d0f' opacity="1" 
+            stroke='#750d0f' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#7f1010' or [colour]='#7f1010'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#750d0f' opacity="1" 
+            stroke='#750d0f' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#7f1010' or [colour]='#7f1010'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#750d0f' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#55FF00' or [colour]='#55FF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4ed900' opacity="1" 
+            stroke='#4ed900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#55FF00' or [colour]='#55FF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4ed900' opacity="1" 
+            stroke='#4ed900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#55FF00' or [colour]='#55FF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4ed900' opacity="1" 
+            stroke='#4ed900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#55FF00' or [colour]='#55FF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4ed900' opacity="1" 
+            stroke='#4ed900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#55FF00' or [colour]='#55FF00'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#4ed900' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='violet' or [colour]='violet'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#dc6ee7' opacity="1" 
+            stroke='#dc6ee7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='violet' or [colour]='violet'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#dc6ee7' opacity="1" 
+            stroke='#dc6ee7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='violet' or [colour]='violet'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#dc6ee7' opacity="1" 
+            stroke='#dc6ee7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='violet' or [colour]='violet'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#dc6ee7' opacity="1" 
+            stroke='#dc6ee7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='violet' or [colour]='violet'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#dc6ee7' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#00fbff' or [colour]='#00fbff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d5f7' opacity="1" 
+            stroke='#00d5f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#00fbff' or [colour]='#00fbff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d5f7' opacity="1" 
+            stroke='#00d5f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#00fbff' or [colour]='#00fbff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d5f7' opacity="1" 
+            stroke='#00d5f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#00fbff' or [colour]='#00fbff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d5f7' opacity="1" 
+            stroke='#00d5f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#00fbff' or [colour]='#00fbff'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#00d5f7' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='# D300FF' or [colour]='# D300FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#c300f7' opacity="1" 
+            stroke='#c300f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='# D300FF' or [colour]='# D300FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#c300f7' opacity="1" 
+            stroke='#c300f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='# D300FF' or [colour]='# D300FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#c300f7' opacity="1" 
+            stroke='#c300f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='# D300FF' or [colour]='# D300FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#c300f7' opacity="1" 
+            stroke='#c300f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='# D300FF' or [colour]='# D300FF'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#c300f7' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#0000ff' or [colour]='#0000ff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#0000ff' or [colour]='#0000ff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#0000ff' or [colour]='#0000ff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#0000ff' or [colour]='#0000ff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#0000ff' or [colour]='#0000ff'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#0000f7' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#AA5555' or [colour]='#AA5555'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#9d4852' opacity="1" 
+            stroke='#9d4852' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#AA5555' or [colour]='#AA5555'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#9d4852' opacity="1" 
+            stroke='#9d4852' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#AA5555' or [colour]='#AA5555'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#9d4852' opacity="1" 
+            stroke='#9d4852' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#AA5555' or [colour]='#AA5555'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#9d4852' opacity="1" 
+            stroke='#9d4852' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#AA5555' or [colour]='#AA5555'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#9d4852' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#FFFF99' or [colour]='#FFFF99'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b88f' opacity="1" 
+            stroke='#d9b88f' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#FFFF99' or [colour]='#FFFF99'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b88f' opacity="1" 
+            stroke='#d9b88f' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#FFFF99' or [colour]='#FFFF99'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b88f' opacity="1" 
+            stroke='#d9b88f' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FFFF99' or [colour]='#FFFF99'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b88f' opacity="1" 
+            stroke='#d9b88f' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FFFF99' or [colour]='#FFFF99'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#d9b88f' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#0000a0' or [colour]='#0000a0'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00009b' opacity="1" 
+            stroke='#00009b' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#0000a0' or [colour]='#0000a0'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00009b' opacity="1" 
+            stroke='#00009b' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#0000a0' or [colour]='#0000a0'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00009b' opacity="1" 
+            stroke='#00009b' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#0000a0' or [colour]='#0000a0'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00009b' opacity="1" 
+            stroke='#00009b' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#0000a0' or [colour]='#0000a0'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#00009b' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='blue' or [colour]='blue'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='blue' or [colour]='blue'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='blue' or [colour]='blue'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='blue' or [colour]='blue'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='blue' or [colour]='blue'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#0000f7' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#107f10' or [colour]='#107f10'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0e6c0f' opacity="1" 
+            stroke='#0e6c0f' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#107f10' or [colour]='#107f10'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0e6c0f' opacity="1" 
+            stroke='#0e6c0f' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#107f10' or [colour]='#107f10'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0e6c0f' opacity="1" 
+            stroke='#0e6c0f' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#107f10' or [colour]='#107f10'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0e6c0f' opacity="1" 
+            stroke='#0e6c0f' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#107f10' or [colour]='#107f10'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#0e6c0f' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#008000' or [colour]='#008000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006d00' opacity="1" 
+            stroke='#006d00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#008000' or [colour]='#008000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006d00' opacity="1" 
+            stroke='#006d00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#008000' or [colour]='#008000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006d00' opacity="1" 
+            stroke='#006d00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#008000' or [colour]='#008000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006d00' opacity="1" 
+            stroke='#006d00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#008000' or [colour]='#008000'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#006d00' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#8b00ff' or [colour]='#8b00ff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#8000f7' opacity="1" 
+            stroke='#8000f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#8b00ff' or [colour]='#8b00ff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#8000f7' opacity="1" 
+            stroke='#8000f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#8b00ff' or [colour]='#8b00ff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#8000f7' opacity="1" 
+            stroke='#8000f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#8b00ff' or [colour]='#8b00ff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#8000f7' opacity="1" 
+            stroke='#8000f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#8b00ff' or [colour]='#8b00ff'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#8000f7' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#00a000' or [colour]='#00a000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#008800' opacity="1" 
+            stroke='#008800' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#00a000' or [colour]='#00a000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#008800' opacity="1" 
+            stroke='#008800' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#00a000' or [colour]='#00a000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#008800' opacity="1" 
+            stroke='#008800' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#00a000' or [colour]='#00a000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#008800' opacity="1" 
+            stroke='#008800' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#00a000' or [colour]='#00a000'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#008800' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='purple' or [colour]='purple'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#76007c' opacity="1" 
+            stroke='#76007c' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='purple' or [colour]='purple'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#76007c' opacity="1" 
+            stroke='#76007c' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='purple' or [colour]='purple'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#76007c' opacity="1" 
+            stroke='#76007c' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='purple' or [colour]='purple'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#76007c' opacity="1" 
+            stroke='#76007c' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='purple' or [colour]='purple'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#76007c' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#0000FF' or [colour]='#0000FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#0000FF' or [colour]='#0000FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#0000FF' or [colour]='#0000FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#0000FF' or [colour]='#0000FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#0000FF' or [colour]='#0000FF'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#0000f7' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='00FF00' or [colour]='00FF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d900' opacity="1" 
+            stroke='#00d900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='00FF00' or [colour]='00FF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d900' opacity="1" 
+            stroke='#00d900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='00FF00' or [colour]='00FF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d900' opacity="1" 
+            stroke='#00d900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='00FF00' or [colour]='00FF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d900' opacity="1" 
+            stroke='#00d900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='00FF00' or [colour]='00FF00'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#00d900' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#DF0101' or [colour]='#DF0101'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ce0000' opacity="1" 
+            stroke='#ce0000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#DF0101' or [colour]='#DF0101'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ce0000' opacity="1" 
+            stroke='#ce0000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#DF0101' or [colour]='#DF0101'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ce0000' opacity="1" 
+            stroke='#ce0000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#DF0101' or [colour]='#DF0101'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ce0000' opacity="1" 
+            stroke='#ce0000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#DF0101' or [colour]='#DF0101'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#ce0000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#007FFF' or [colour]='#007FFF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006cf7' opacity="1" 
+            stroke='#006cf7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#007FFF' or [colour]='#007FFF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006cf7' opacity="1" 
+            stroke='#006cf7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#007FFF' or [colour]='#007FFF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006cf7' opacity="1" 
+            stroke='#006cf7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#007FFF' or [colour]='#007FFF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006cf7' opacity="1" 
+            stroke='#006cf7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#007FFF' or [colour]='#007FFF'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#006cf7' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#1F6F29' or [colour]='#1F6F29'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#1c5e27' opacity="1" 
+            stroke='#1c5e27' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#1F6F29' or [colour]='#1F6F29'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#1c5e27' opacity="1" 
+            stroke='#1c5e27' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#1F6F29' or [colour]='#1F6F29'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#1c5e27' opacity="1" 
+            stroke='#1c5e27' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#1F6F29' or [colour]='#1F6F29'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#1c5e27' opacity="1" 
+            stroke='#1c5e27' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#1F6F29' or [colour]='#1F6F29'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#1c5e27' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#007f00' or [colour]='#007f00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006c00' opacity="1" 
+            stroke='#006c00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#007f00' or [colour]='#007f00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006c00' opacity="1" 
+            stroke='#006c00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#007f00' or [colour]='#007f00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006c00' opacity="1" 
+            stroke='#006c00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#007f00' or [colour]='#007f00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006c00' opacity="1" 
+            stroke='#006c00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#007f00' or [colour]='#007f00'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#006c00' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='black' or [colour]='black'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='black' or [colour]='black'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='black' or [colour]='black'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='black' or [colour]='black'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='black' or [colour]='black'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#000000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#333333' or [colour]='#333333'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2f2b31' opacity="1" 
+            stroke='#2f2b31' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#333333' or [colour]='#333333'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2f2b31' opacity="1" 
+            stroke='#2f2b31' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#333333' or [colour]='#333333'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2f2b31' opacity="1" 
+            stroke='#2f2b31' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#333333' or [colour]='#333333'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2f2b31' opacity="1" 
+            stroke='#2f2b31' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#333333' or [colour]='#333333'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#2f2b31' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#FF5500' or [colour]='#FF5500'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb4800' opacity="1" 
+            stroke='#eb4800' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#FF5500' or [colour]='#FF5500'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb4800' opacity="1" 
+            stroke='#eb4800' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#FF5500' or [colour]='#FF5500'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb4800' opacity="1" 
+            stroke='#eb4800' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FF5500' or [colour]='#FF5500'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb4800' opacity="1" 
+            stroke='#eb4800' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FF5500' or [colour]='#FF5500'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb4800' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='orange' or [colour]='orange'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8c00' opacity="1" 
+            stroke='#eb8c00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='orange' or [colour]='orange'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8c00' opacity="1" 
+            stroke='#eb8c00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='orange' or [colour]='orange'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8c00' opacity="1" 
+            stroke='#eb8c00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='orange' or [colour]='orange'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8c00' opacity="1" 
+            stroke='#eb8c00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='orange' or [colour]='orange'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb8c00' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#01DFD7' or [colour]='#01DFD7'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00bed1' opacity="1" 
+            stroke='#00bed1' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#01DFD7' or [colour]='#01DFD7'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00bed1' opacity="1" 
+            stroke='#00bed1' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#01DFD7' or [colour]='#01DFD7'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00bed1' opacity="1" 
+            stroke='#00bed1' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#01DFD7' or [colour]='#01DFD7'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00bed1' opacity="1" 
+            stroke='#00bed1' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#01DFD7' or [colour]='#01DFD7'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#00bed1' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='white' or [colour]='white'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b8f0' opacity="1" 
+            stroke='#d9b8f0' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='white' or [colour]='white'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b8f0' opacity="1" 
+            stroke='#d9b8f0' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='white' or [colour]='white'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b8f0' opacity="1" 
+            stroke='#d9b8f0' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='white' or [colour]='white'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b8f0' opacity="1" 
+            stroke='#d9b8f0' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='white' or [colour]='white'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#d9b8f0' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#00FF00' or [colour]='#00FF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d900' opacity="1" 
+            stroke='#00d900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#00FF00' or [colour]='#00FF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d900' opacity="1" 
+            stroke='#00d900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#00FF00' or [colour]='#00FF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d900' opacity="1" 
+            stroke='#00d900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#00FF00' or [colour]='#00FF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d900' opacity="1" 
+            stroke='#00d900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#00FF00' or [colour]='#00FF00'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#00d900' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='red' or [colour]='red'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='red' or [colour]='red'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='red' or [colour]='red'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='red' or [colour]='red'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='red' or [colour]='red'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb0000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#FF9999' or [colour]='#FF9999'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8294' opacity="1" 
+            stroke='#eb8294' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#FF9999' or [colour]='#FF9999'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8294' opacity="1" 
+            stroke='#eb8294' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#FF9999' or [colour]='#FF9999'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8294' opacity="1" 
+            stroke='#eb8294' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FF9999' or [colour]='#FF9999'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8294' opacity="1" 
+            stroke='#eb8294' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FF9999' or [colour]='#FF9999'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb8294' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#fffc00' or [colour]='#fffc00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd600' opacity="1" 
+            stroke='#ebd600' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#fffc00' or [colour]='#fffc00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd600' opacity="1" 
+            stroke='#ebd600' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#fffc00' or [colour]='#fffc00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd600' opacity="1" 
+            stroke='#ebd600' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#fffc00' or [colour]='#fffc00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd600' opacity="1" 
+            stroke='#ebd600' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#fffc00' or [colour]='#fffc00'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#ebd600' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#0404B4' or [colour]='#0404B4'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0303af' opacity="1" 
+            stroke='#0303af' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#0404B4' or [colour]='#0404B4'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0303af' opacity="1" 
+            stroke='#0303af' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#0404B4' or [colour]='#0404B4'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0303af' opacity="1" 
+            stroke='#0303af' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#0404B4' or [colour]='#0404B4'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0303af' opacity="1" 
+            stroke='#0303af' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#0404B4' or [colour]='#0404B4'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#0303af' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#7f7f10' or [colour]='#7f7f10'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#756c0f' opacity="1" 
+            stroke='#756c0f' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#7f7f10' or [colour]='#7f7f10'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#756c0f' opacity="1" 
+            stroke='#756c0f' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#7f7f10' or [colour]='#7f7f10'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#756c0f' opacity="1" 
+            stroke='#756c0f' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#7f7f10' or [colour]='#7f7f10'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#756c0f' opacity="1" 
+            stroke='#756c0f' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#7f7f10' or [colour]='#7f7f10'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#756c0f' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='white/yellow' or [colour]='white/yellow'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='white/yellow' or [colour]='white/yellow'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='white/yellow' or [colour]='white/yellow'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='white/yellow' or [colour]='white/yellow'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='white/yellow' or [colour]='white/yellow'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#000000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#FFFF00' or [colour]='#FFFF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#FFFF00' or [colour]='#FFFF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#FFFF00' or [colour]='#FFFF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FFFF00' or [colour]='#FFFF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FFFF00' or [colour]='#FFFF00'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#ebd900' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='deepskyblue' or [colour]='deepskyblue'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#bcace0' opacity="1" 
+            stroke='#bcace0' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='deepskyblue' or [colour]='deepskyblue'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#bcace0' opacity="1" 
+            stroke='#bcace0' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='deepskyblue' or [colour]='deepskyblue'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#bcace0' opacity="1" 
+            stroke='#bcace0' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='deepskyblue' or [colour]='deepskyblue'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#bcace0' opacity="1" 
+            stroke='#bcace0' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='deepskyblue' or [colour]='deepskyblue'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#bcace0' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#7f2020' or [colour]='#7f2020'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#751b1f' opacity="1" 
+            stroke='#751b1f' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#7f2020' or [colour]='#7f2020'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#751b1f' opacity="1" 
+            stroke='#751b1f' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#7f2020' or [colour]='#7f2020'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#751b1f' opacity="1" 
+            stroke='#751b1f' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#7f2020' or [colour]='#7f2020'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#751b1f' opacity="1" 
+            stroke='#751b1f' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#7f2020' or [colour]='#7f2020'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#751b1f' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#000000' or [colour]='#000000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#000000' or [colour]='#000000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#000000' or [colour]='#000000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#000000' or [colour]='#000000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#000000' or [colour]='#000000'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#000000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#031d68' or [colour]='#031d68'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#021865' opacity="1" 
+            stroke='#021865' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#031d68' or [colour]='#031d68'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#021865' opacity="1" 
+            stroke='#021865' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#031d68' or [colour]='#031d68'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#021865' opacity="1" 
+            stroke='#021865' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#031d68' or [colour]='#031d68'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#021865' opacity="1" 
+            stroke='#021865' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#031d68' or [colour]='#031d68'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#021865' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#FF5555' or [colour]='#FF5555'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb4852' opacity="1" 
+            stroke='#eb4852' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#FF5555' or [colour]='#FF5555'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb4852' opacity="1" 
+            stroke='#eb4852' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#FF5555' or [colour]='#FF5555'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb4852' opacity="1" 
+            stroke='#eb4852' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FF5555' or [colour]='#FF5555'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb4852' opacity="1" 
+            stroke='#eb4852' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FF5555' or [colour]='#FF5555'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb4852' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='0000FF' or [colour]='0000FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='0000FF' or [colour]='0000FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='0000FF' or [colour]='0000FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='0000FF' or [colour]='0000FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0000f7' opacity="1" 
+            stroke='#0000f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='0000FF' or [colour]='0000FF'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#0000f7' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#000080' or [colour]='#000080'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00007c' opacity="1" 
+            stroke='#00007c' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#000080' or [colour]='#000080'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00007c' opacity="1" 
+            stroke='#00007c' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#000080' or [colour]='#000080'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00007c' opacity="1" 
+            stroke='#00007c' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#000080' or [colour]='#000080'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00007c' opacity="1" 
+            stroke='#00007c' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#000080' or [colour]='#000080'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#00007c' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='FFB200' or [colour]='FFB200'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb9700' opacity="1" 
+            stroke='#eb9700' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='FFB200' or [colour]='FFB200'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb9700' opacity="1" 
+            stroke='#eb9700' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='FFB200' or [colour]='FFB200'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb9700' opacity="1" 
+            stroke='#eb9700' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='FFB200' or [colour]='FFB200'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb9700' opacity="1" 
+            stroke='#eb9700' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='FFB200' or [colour]='FFB200'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb9700' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#55FF55' or [colour]='#55FF55'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4ed952' opacity="1" 
+            stroke='#4ed952' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#55FF55' or [colour]='#55FF55'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4ed952' opacity="1" 
+            stroke='#4ed952' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#55FF55' or [colour]='#55FF55'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4ed952' opacity="1" 
+            stroke='#4ed952' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#55FF55' or [colour]='#55FF55'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4ed952' opacity="1" 
+            stroke='#4ed952' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#55FF55' or [colour]='#55FF55'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#4ed952' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='cyan' or [colour]='cyan'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d9f7' opacity="1" 
+            stroke='#00d9f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='cyan' or [colour]='cyan'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d9f7' opacity="1" 
+            stroke='#00d9f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='cyan' or [colour]='cyan'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d9f7' opacity="1" 
+            stroke='#00d9f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='cyan' or [colour]='cyan'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d9f7' opacity="1" 
+            stroke='#00d9f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='cyan' or [colour]='cyan'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#00d9f7' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='blau' or [colour]='blau'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='blau' or [colour]='blau'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='blau' or [colour]='blau'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='blau' or [colour]='blau'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='blau' or [colour]='blau'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#000000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#ffffff' or [colour]='#ffffff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b8f0' opacity="1" 
+            stroke='#d9b8f0' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#ffffff' or [colour]='#ffffff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b8f0' opacity="1" 
+            stroke='#d9b8f0' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#ffffff' or [colour]='#ffffff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b8f0' opacity="1" 
+            stroke='#d9b8f0' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#ffffff' or [colour]='#ffffff'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b8f0' opacity="1" 
+            stroke='#d9b8f0' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#ffffff' or [colour]='#ffffff'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#d9b8f0' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='rot' or [colour]='rot'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='rot' or [colour]='rot'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='rot' or [colour]='rot'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='rot' or [colour]='rot'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='rot' or [colour]='rot'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#000000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='2f4f4f' or [colour]='2f4f4f'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2b434c' opacity="1" 
+            stroke='#2b434c' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='2f4f4f' or [colour]='2f4f4f'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2b434c' opacity="1" 
+            stroke='#2b434c' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='2f4f4f' or [colour]='2f4f4f'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2b434c' opacity="1" 
+            stroke='#2b434c' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='2f4f4f' or [colour]='2f4f4f'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2b434c' opacity="1" 
+            stroke='#2b434c' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='2f4f4f' or [colour]='2f4f4f'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#2b434c' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#50FF50' or [colour]='#50FF50'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4ad94d' opacity="1" 
+            stroke='#4ad94d' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#50FF50' or [colour]='#50FF50'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4ad94d' opacity="1" 
+            stroke='#4ad94d' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#50FF50' or [colour]='#50FF50'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4ad94d' opacity="1" 
+            stroke='#4ad94d' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#50FF50' or [colour]='#50FF50'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4ad94d' opacity="1" 
+            stroke='#4ad94d' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#50FF50' or [colour]='#50FF50'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#4ad94d' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#FFA500' or [colour]='#FFA500'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8c00' opacity="1" 
+            stroke='#eb8c00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#FFA500' or [colour]='#FFA500'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8c00' opacity="1" 
+            stroke='#eb8c00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#FFA500' or [colour]='#FFA500'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8c00' opacity="1" 
+            stroke='#eb8c00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FFA500' or [colour]='#FFA500'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8c00' opacity="1" 
+            stroke='#eb8c00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FFA500' or [colour]='#FFA500'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb8c00' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='pink' or [colour]='pink'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eba3c5' opacity="1" 
+            stroke='#eba3c5' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='pink' or [colour]='pink'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eba3c5' opacity="1" 
+            stroke='#eba3c5' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='pink' or [colour]='pink'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eba3c5' opacity="1" 
+            stroke='#eba3c5' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='pink' or [colour]='pink'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eba3c5' opacity="1" 
+            stroke='#eba3c5' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='pink' or [colour]='pink'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eba3c5' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#810000' or [colour]='#810000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#770000' opacity="1" 
+            stroke='#770000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#810000' or [colour]='#810000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#770000' opacity="1" 
+            stroke='#770000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#810000' or [colour]='#810000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#770000' opacity="1" 
+            stroke='#770000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#810000' or [colour]='#810000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#770000' opacity="1" 
+            stroke='#770000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#810000' or [colour]='#810000'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#770000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='000000' or [colour]='000000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='000000' or [colour]='000000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='000000' or [colour]='000000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='000000' or [colour]='000000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='000000' or [colour]='000000'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#000000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#5555FF' or [colour]='#5555FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4e48f7' opacity="1" 
+            stroke='#4e48f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#5555FF' or [colour]='#5555FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4e48f7' opacity="1" 
+            stroke='#4e48f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#5555FF' or [colour]='#5555FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4e48f7' opacity="1" 
+            stroke='#4e48f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#5555FF' or [colour]='#5555FF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#4e48f7' opacity="1" 
+            stroke='#4e48f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#5555FF' or [colour]='#5555FF'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#4e48f7' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#F00099' or [colour]='#F00099'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#de0094' opacity="1" 
+            stroke='#de0094' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#F00099' or [colour]='#F00099'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#de0094' opacity="1" 
+            stroke='#de0094' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#F00099' or [colour]='#F00099'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#de0094' opacity="1" 
+            stroke='#de0094' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#F00099' or [colour]='#F00099'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#de0094' opacity="1" 
+            stroke='#de0094' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#F00099' or [colour]='#F00099'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#de0094' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#b000b0' or [colour]='#b000b0'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#a200ab' opacity="1" 
+            stroke='#a200ab' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#b000b0' or [colour]='#b000b0'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#a200ab' opacity="1" 
+            stroke='#a200ab' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#b000b0' or [colour]='#b000b0'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#a200ab' opacity="1" 
+            stroke='#a200ab' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#b000b0' or [colour]='#b000b0'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#a200ab' opacity="1" 
+            stroke='#a200ab' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#b000b0' or [colour]='#b000b0'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#a200ab' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#7f207f' or [colour]='#7f207f'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#751b7b' opacity="1" 
+            stroke='#751b7b' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#7f207f' or [colour]='#7f207f'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#751b7b' opacity="1" 
+            stroke='#751b7b' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#7f207f' or [colour]='#7f207f'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#751b7b' opacity="1" 
+            stroke='#751b7b' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#7f207f' or [colour]='#7f207f'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#751b7b' opacity="1" 
+            stroke='#751b7b' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#7f207f' or [colour]='#7f207f'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#751b7b' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='FFFF00' or [colour]='FFFF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='FFFF00' or [colour]='FFFF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='FFFF00' or [colour]='FFFF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='FFFF00' or [colour]='FFFF00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#ebd900' opacity="1" 
+            stroke='#ebd900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='FFFF00' or [colour]='FFFF00'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#ebd900' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#a00000' or [colour]='#a00000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#940000' opacity="1" 
+            stroke='#940000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#a00000' or [colour]='#a00000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#940000' opacity="1" 
+            stroke='#940000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#a00000' or [colour]='#a00000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#940000' opacity="1" 
+            stroke='#940000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#a00000' or [colour]='#a00000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#940000' opacity="1" 
+            stroke='#940000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#a00000' or [colour]='#a00000'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#940000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#FFAAAA' or [colour]='#FFAAAA'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb90a5' opacity="1" 
+            stroke='#eb90a5' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#FFAAAA' or [colour]='#FFAAAA'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb90a5' opacity="1" 
+            stroke='#eb90a5' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#FFAAAA' or [colour]='#FFAAAA'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb90a5' opacity="1" 
+            stroke='#eb90a5' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FFAAAA' or [colour]='#FFAAAA'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb90a5' opacity="1" 
+            stroke='#eb90a5' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FFAAAA' or [colour]='#FFAAAA'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb90a5' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#10107f' or [colour]='#10107f'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0e0d7b' opacity="1" 
+            stroke='#0e0d7b' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#10107f' or [colour]='#10107f'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0e0d7b' opacity="1" 
+            stroke='#0e0d7b' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#10107f' or [colour]='#10107f'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0e0d7b' opacity="1" 
+            stroke='#0e0d7b' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#10107f' or [colour]='#10107f'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#0e0d7b' opacity="1" 
+            stroke='#0e0d7b' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#10107f' or [colour]='#10107f'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#0e0d7b' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#888888' or [colour]='#888888'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#7d7384' opacity="1" 
+            stroke='#7d7384' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#888888' or [colour]='#888888'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#7d7384' opacity="1" 
+            stroke='#7d7384' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#888888' or [colour]='#888888'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#7d7384' opacity="1" 
+            stroke='#7d7384' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#888888' or [colour]='#888888'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#7d7384' opacity="1" 
+            stroke='#7d7384' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#888888' or [colour]='#888888'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#7d7384' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='schwarz' or [colour]='schwarz'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='schwarz' or [colour]='schwarz'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='schwarz' or [colour]='schwarz'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='schwarz' or [colour]='schwarz'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#000000' opacity="1" 
+            stroke='#000000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='schwarz' or [colour]='schwarz'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#000000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#FFFF55' or [colour]='#FFFF55'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b84f' opacity="1" 
+            stroke='#d9b84f' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#FFFF55' or [colour]='#FFFF55'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b84f' opacity="1" 
+            stroke='#d9b84f' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#FFFF55' or [colour]='#FFFF55'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b84f' opacity="1" 
+            stroke='#d9b84f' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FFFF55' or [colour]='#FFFF55'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#d9b84f' opacity="1" 
+            stroke='#d9b84f' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#FFFF55' or [colour]='#FFFF55'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#d9b84f' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='limegreen' or [colour]='limegreen'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2eae30' opacity="1" 
+            stroke='#2eae30' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='limegreen' or [colour]='limegreen'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2eae30' opacity="1" 
+            stroke='#2eae30' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='limegreen' or [colour]='limegreen'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2eae30' opacity="1" 
+            stroke='#2eae30' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='limegreen' or [colour]='limegreen'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#2eae30' opacity="1" 
+            stroke='#2eae30' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='limegreen' or [colour]='limegreen'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#2eae30' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='000080' or [colour]='000080'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00007c' opacity="1" 
+            stroke='#00007c' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='000080' or [colour]='000080'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00007c' opacity="1" 
+            stroke='#00007c' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='000080' or [colour]='000080'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00007c' opacity="1" 
+            stroke='#00007c' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='000080' or [colour]='000080'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00007c' opacity="1" 
+            stroke='#00007c' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='000080' or [colour]='000080'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#00007c' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#ff0000' or [colour]='#ff0000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#ff0000' or [colour]='#ff0000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#ff0000' or [colour]='#ff0000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#ff0000' or [colour]='#ff0000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb0000' opacity="1" 
+            stroke='#eb0000' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#ff0000' or [colour]='#ff0000'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb0000' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#ffa500' or [colour]='#ffa500'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8c00' opacity="1" 
+            stroke='#eb8c00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#ffa500' or [colour]='#ffa500'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8c00' opacity="1" 
+            stroke='#eb8c00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#ffa500' or [colour]='#ffa500'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8c00' opacity="1" 
+            stroke='#eb8c00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#ffa500' or [colour]='#ffa500'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#eb8c00' opacity="1" 
+            stroke='#eb8c00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#ffa500' or [colour]='#ffa500'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#eb8c00' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#00FFFF' or [colour]='#00FFFF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d9f7' opacity="1" 
+            stroke='#00d9f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#00FFFF' or [colour]='#00FFFF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d9f7' opacity="1" 
+            stroke='#00d9f7' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#00FFFF' or [colour]='#00FFFF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d9f7' opacity="1" 
+            stroke='#00d9f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#00FFFF' or [colour]='#00FFFF'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d9f7' opacity="1" 
+            stroke='#00d9f7' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#00FFFF' or [colour]='#00FFFF'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#00d9f7' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#00ff00' or [colour]='#00ff00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d900' opacity="1" 
+            stroke='#00d900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#00ff00' or [colour]='#00ff00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d900' opacity="1" 
+            stroke='#00d900' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#00ff00' or [colour]='#00ff00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d900' opacity="1" 
+            stroke='#00d900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#00ff00' or [colour]='#00ff00'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00d900' opacity="1" 
+            stroke='#00d900' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#00ff00' or [colour]='#00ff00'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#00d900' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='008000' or [colour]='008000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006d00' opacity="1" 
+            stroke='#006d00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='008000' or [colour]='008000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006d00' opacity="1" 
+            stroke='#006d00' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='008000' or [colour]='008000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006d00' opacity="1" 
+            stroke='#006d00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='008000' or [colour]='008000'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#006d00' opacity="1" 
+            stroke='#006d00' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='008000' or [colour]='008000'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#006d00' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+                <Rule>
+            &maxscale_zoom9;
+            &minscale_zoom11;
+            <Filter>[color]='#0000A0' or [colour]='#0000A0'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00009b' opacity="1" 
+            stroke='#00009b' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            allow-overlap="true"
+            width="4" height="3"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom12;
+            &minscale_zoom12;
+            <Filter>[color]='#0000A0' or [colour]='#0000A0'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00009b' opacity="1" 
+            stroke='#00009b' stroke-width="1" stroke-opacity="1"
+            placement="point"
+            spacing="50" max-error="1"
+            width="7" height="5"/>
+        </Rule>
+        <Rule>
+            &maxscale_zoom13;
+            &minscale_zoom14;
+            <Filter>[color]='#0000A0' or [colour]='#0000A0'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00009b' opacity="1" 
+            stroke='#00009b' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="150" max-error="0.6"
+            transform="translate(0 6)"
+            width="7" height="5"/>
+        </Rule> 
+        <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#0000A0' or [colour]='#0000A0'</Filter>
+            <MarkersSymbolizer 
+            file="tic-tac.svg"
+            fill='#00009b' opacity="1" 
+            stroke='#00009b' stroke-width="1" stroke-opacity="1"
+            placement="line"
+            spacing="300" max-error="0.6"
+            transform="translate(0 8)"
+            width="10" height="6"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom15;
+            &minscale_zoom18;
+            <Filter>[color]='#0000A0' or [colour]='#0000A0'</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Book" 
+            size="10" fill='#00009b' halo-fill= "white" halo-radius="1" 
+            placement="line" allow-overlap="false" spacing="400" 
+            avoid-edges="true"
+            wrap-width="10" dy="10">[route_name]</TextSymbolizer>
+        </Rule>
+        
+</Style>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="30"
+   height="30"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="question-mark.svg">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="7.45"
+     inkscape:cx="-11.577017"
+     inkscape:cy="15.501001"
+     inkscape:document-units="px"
+     inkscape:current-layer="flowRoot2816"
+     showgrid="false"
+     inkscape:window-width="1072"
+     inkscape:window-height="724"
+     inkscape:window-x="122"
+     inkscape:window-y="61"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1022.3622)">
+    <g
+       transform="matrix(1.6151371,0,0,1.6151371,3.8671166,1010.7442)"
+       style="font-size:24px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:TeXGyreTermes;-inkscape-font-specification:TeXGyreTermes"
+       id="flowRoot2816">
+      <path
+         sodipodi:type="arc"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.38859057;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="path2814"
+         sodipodi:cx="18.322147"
+         sodipodi:cy="-0.80536914"
+         sodipodi:rx="16.442953"
+         sodipodi:ry="16.442953"
+         d="m 34.7651,-0.80536914 a 16.442953,16.442953 0 1 1 -32.8859057,0 16.442953,16.442953 0 1 1 32.8859057,0 z"
+         transform="matrix(0.51204775,0,0,0.51204775,-2.4889733,16.892722)" />
+      <path
+         d="m 9.8192911,13.320055 c 0,-0.687936 -0.2353473,-1.339666 -0.6517289,-1.756048 -0.6336248,-0.633625 -1.7017376,-1.050008 -2.67933,-1.050008 -1.6655279,0 -2.9327802,1.122424 -2.9327802,2.62502 0,0.724142 0.3077614,1.122422 0.8689719,1.122422 0.4344855,0 0.7422468,-0.307762 0.7422468,-0.742247 0,-0.25345 -0.1086218,-0.470694 -0.3801752,-0.778454 -0.2172427,-0.25345 -0.3077609,-0.416382 -0.3077609,-0.561211 0,-0.579314 0.8327657,-1.122422 1.7198403,-1.122422 1.0862138,0 1.9551867,0.95949 1.9551867,2.17243 0,0.832764 -0.235347,1.828462 -0.6698325,2.824158 L 6.9770289,17.212324 C 6.6330612,18.099399 6.452025,18.986476 6.4339214,19.783033 l 0.3077609,0 C 6.9408215,18.570094 7.2485833,17.845949 7.9184151,16.995082 8.751179,15.981282 8.75118,15.98128 9.00463,15.601106 9.5839438,14.714031 9.8192911,14.062301 9.8192911,13.320055 m -2.2267405,8.635408 c 0,-0.543108 -0.45259,-0.995697 -0.9775934,-0.995697 -0.5431069,0 -0.9594898,0.434487 -0.9594898,1.0138 0,0.525003 0.3982793,0.923283 0.9413863,0.923283 0.5793139,0 0.9956969,-0.39828 0.9956969,-0.941386"
+         style="font-family:TeXGyreTermes;-inkscape-font-specification:TeXGyreTermes"
+         id="path2846" />
+    </g>
+  </g>
+</svg>

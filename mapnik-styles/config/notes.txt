@@ -1,0 +1,32 @@
+
+
+osm2pgsql -c -m -d pistes-mapnik -S config/pistes.style ../Planet/data/planet_pistes.osm
+osm2pgsql -c -m -d pistes-mapnik -S /home/website/mapnik2_pistes/config/pistes.style /home/website/mapnik2_pistes/data/jura.osm
+
+createdb -E UTF8 -O mapnik pistes-mapnik
+
+psql -d pistes-mapnik -U mapnik  -f /usr/share/postgresql/9.1/contrib/postgis-2.0/postgis.sql
+psql -d pistes-mapnik -U mapnik -f /usr/share/postgresql/9.1/contrib/postgis-2.0/spatial_ref_sys.sql
+psql -d pistes-mapnik -U mapnik  -f /usr/share/postgresql/9.1/contrib/
+echo "CREATE EXTENSION hstore;"  | psql -d pistes-mapnik
+echo "ALTER TABLE geometry_columns OWNER TO mapnik; ALTER TABLE spatial_ref_sys OWNER TO mapnik;"  | psql -d pistes-mapnik
+
+
+# echo "ALTER TABLE planet_osm_line ADD COLUMN id serial unique;"| psql -d pistes-mapnik
+#echo "ALTER USER mapnik PASSWORD 'mapnik';"  | psql -d gis
+
+Spped up rendering:
+#Add a length column to render small relations above:
+ALTER TABLE planet_osm_line ADD COLUMN length double precision;
+UPDATE planet_osm_line SET length = ST_Length(way);
+#Add a in_rel column to render ways that are not in a relation:
+ALTER TABLE planet_osm_line DROP COLUMN in_rel;
+ALTER TABLE planet_osm_line ADD COLUMN in_rel integer[];
+UPDATE planet_osm_line SET in_rel = planet_osm_line.in_rel ||
+            planet_osm_rels.id
+        FROM
+            planet_osm_rels,
+            planet_osm_line AS b
+        WHERE 
+            b.osm_id = ANY(planet_osm_rels.parts);
+echo "select st_astext(way) from planet_osm_line where id=119;"| psql -d pistes-mapnik
