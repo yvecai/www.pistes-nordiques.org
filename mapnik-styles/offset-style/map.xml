@@ -140,26 +140,45 @@ background-color="transparent" >
 <!-- Ways -->
 	<Style name="nordic">
 		<Rule>
-            &maxscale_zoom9;
+		    &maxscale_zoom9;
             &minscale_zoom11;
  			<LineSymbolizer stroke="#44b2a3" stroke-width="1" stroke-linecap="round" />
         </Rule>
         <Rule>
+		    <Filter>[piste:grooming]='classic' or [piste:grooming]='skating' or [piste:grooming]='classic;skating'  or [piste:grooming]='classic+skating'</Filter>
 			&maxscale_zoom11;
 			&minscale_zoom12;
 			<LineSymbolizer stroke="#44b2a3" stroke-width="2" stroke-linecap="round" />
 		</Rule>
 		<Rule>
+		    <Filter>[piste:grooming]='classic' or [piste:grooming]='skating' or [piste:grooming]='classic;skating'  or [piste:grooming]='classic+skating'</Filter>
 			&maxscale_zoom12;
 			&minscale_zoom14;
-			<ElseFilter/>
 			<LineSymbolizer stroke="#44b2a3" stroke-width="3" stroke-linecap="round" />
 		</Rule>
 		<Rule>
 			&maxscale_zoom14;
 			&minscale_zoom18;
-			<ElseFilter/>
+		    <Filter>[piste:grooming]='classic' or [piste:grooming]='skating' or [piste:grooming]='classic;skating'  or [piste:grooming]='classic+skating'</Filter>
 			<LineSymbolizer stroke="#44b2a3" stroke-width="4" stroke-linecap="round" />
+		</Rule>
+        <Rule>
+		    </ElseFilter>
+			&maxscale_zoom11;
+			&minscale_zoom12;
+			<LineSymbolizer stroke="#44b2a3" stroke-width="1" stroke-linecap="round" stroke-dasharray="3,3" />
+		</Rule>
+		<Rule>
+		    </ElseFilter>
+			&maxscale_zoom12;
+			&minscale_zoom14;
+			<LineSymbolizer stroke="#44b2a3" stroke-width="2" stroke-linecap="round" stroke-dasharray="5,5" />
+		</Rule>
+		<Rule>
+			&maxscale_zoom14;
+			&minscale_zoom18;
+		    </ElseFilter>
+			<LineSymbolizer stroke="#44b2a3" stroke-width="3" stroke-linecap="round" stroke-dasharray="8,8" />
 		</Rule>
 	</Style>
 	
