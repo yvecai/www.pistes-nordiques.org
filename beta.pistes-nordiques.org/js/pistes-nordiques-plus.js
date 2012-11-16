@@ -140,22 +140,7 @@ function refreshOverlay(features) {
                     );
                     markersLayer.addMarker(new OpenLayers.Marker(pos,highDangerIcon));
                 }
-            } else if (! features[i].attributes['piste:difficulty'] 
-					  and ! features[i].attributes['userroute']){
-                vertices=feature.geometry.getVertices();
-                v = parseInt(vertices.length/2);
-                pos = new OpenLayers.LonLat(vertices[v].x,vertices[v].y)
-                if (unknowIcon){
-                    markersLayer.addMarker(new OpenLayers.Marker(pos,unknowIcon.clone()));
-                } else {
-                    var unknowIcon = new OpenLayers.Icon(
-                        'pics/question-mark.svg',
-                        new OpenLayers.Size(12,12),
-                        new OpenLayers.Pixel(-6, -6)
-                    );
-                    markersLayer.addMarker(new OpenLayers.Marker(pos,unknowIcon));
-                }
-            }
+            } 
         }
     } 
     }
@@ -217,7 +202,7 @@ function trace_route(wktroute) {
     var routeT = new OpenLayers.Geometry.fromWKT(wktroute);
     var route900913 = routeT.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
     routingGeom.push(route900913);
-    routingFeatures.push(new OpenLayers.Feature.Vector(routingGeom[routingGeom.length -1], {userroute:true}, routeStyle));
+    routingFeatures.push(new OpenLayers.Feature.Vector(routingGeom[routingGeom.length -1], {userroute:'true'}, routeStyle));
     pistesLayer.addFeatures(routingFeatures);
     
     
