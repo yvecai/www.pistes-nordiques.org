@@ -163,21 +163,21 @@ background-color="transparent" >
 			<LineSymbolizer stroke="#44b2a3" stroke-width="4" stroke-linecap="round" />
 		</Rule>
         <Rule>
-		    </ElseFilter>
+		    <ElseFilter />
 			&maxscale_zoom11;
 			&minscale_zoom12;
 			<LineSymbolizer stroke="#44b2a3" stroke-width="1" stroke-linecap="round" stroke-dasharray="3,3" />
 		</Rule>
 		<Rule>
-		    </ElseFilter>
+		    <ElseFilter />
 			&maxscale_zoom12;
 			&minscale_zoom14;
 			<LineSymbolizer stroke="#44b2a3" stroke-width="2" stroke-linecap="round" stroke-dasharray="5,5" />
 		</Rule>
 		<Rule>
+			<ElseFilter />
 			&maxscale_zoom14;
 			&minscale_zoom18;
-		    </ElseFilter>
 			<LineSymbolizer stroke="#44b2a3" stroke-width="3" stroke-linecap="round" stroke-dasharray="8,8" />
 		</Rule>
 	</Style>
