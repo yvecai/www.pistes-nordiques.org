@@ -1,4 +1,4 @@
-﻿{
+{
 "lang": 'es',
 "map_key": 'LEYENDA',
 "about": 'SOBRE ESTO',
@@ -49,5 +49,5 @@
 "yesterday": 'ayer',
 "weekly": 'semanal',
 "monthly": 'mensual (grande)',
-"vector_help": 'Elige mapa interactivo para más funcionalidades: mostrar información de pistas, trazar perfil de altitud...'
-}
+"vector_help": 'Elige mapa interactivo para más funcionalidades: mostrar información de pistas, trazar perfil de altitud...',
+"offseter_explain":''}

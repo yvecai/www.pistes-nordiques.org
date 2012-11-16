@@ -23,6 +23,9 @@ var server="http://beta.pistes-nordiques.org/";
 var mode="raster";
 var m="raster";
 var EXT_MENU=false;
+var EDIT_SHOWED=false;
+var permalink_potlatch2;
+var permalink_potlatch;
 var zoomBar;
 function switch2vector() {
     if (mode == "raster") {
@@ -142,6 +145,7 @@ function closeMenu() {
 }
 function close_sideBar() {
     document.getElementById('sideBar').style.display='none';
+	EDIT_SHOWED = false;
 }
 function close_helper(){
 	document.getElementById('helper').style.display='none';
@@ -175,31 +179,47 @@ function show_edit() {
     document.getElementById('sideBar').style.display='inline';
     document.getElementById('sideBarContent').style.display='inline';
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('edit').replace('<br/>',' ');
-    if (map.getZoom() > 12) {
-        html = '<p>&nbsp;'+_('edit_the_map_using')+'</p>'
-         +'<p>&nbsp;'+_('edit_the_map_explain')+'</p>'
-         +'<hr class="hrmenu">'
-         +'<p><a href="iframes/how-to-'+iframelocale+'.html" target="blank">'+_('how_to')+'</a></p>'
-         +'<hr class="hrmenu">'
-         +'<p style="text-align:center;">'
-         +'<a id="permalink.potlatch" href="" target="blank"><img src="pics/potlatch.png" ></a>'
-         +'<hr class="hrmenu">'
-         +'</p><p style="text-align:center;">'
-         +'<a id="permalink.potlatch2" href="" target="blank"><img src="pics/potlatch2.png" ></a>'
-         +'</p>'
-         +'<hr class="hrmenu">';
-        document.getElementById('sideBarContent').innerHTML=html;
-        var permalink_potlatch = new OpenLayers.Control.Permalink("permalink.potlatch",
-        "http://www.openstreetmap.org/edit",{'createParams': permalink1Args});
-        map.addControl(permalink_potlatch);
-        var permalink_potlatch2 = new OpenLayers.Control.Permalink("permalink.potlatch2",
-        "http://www.openstreetmap.org/edit",{'createParams': permalink2Args});
-        map.addControl(permalink_potlatch2);
-    }
-    else {
-        document.getElementById('sideBarContent').innerHTML='&nbsp;'+_('zoom_in');
-        
-    }
+    
+	html = '<div style="font-size:1.5em; font-weight:800;" id="edit_zoom_in"></div>'
+	 +'<p>&nbsp;'+_('edit_the_map_using')+'</p>'
+	 +'<p>&nbsp;'+_('edit_the_map_explain')+'</p>'
+	 +'<hr class="hrmenu">'
+	 +'<p><a href="iframes/how-to-'+iframelocale+'.html" target="blank">'+_('how_to')+'</a></p>'
+	 +'<hr class="hrmenu">'
+	 +'<p style="text-align:center;">'
+	 +'<a id="permalink.potlatch" href="" target="blank"><img src="pics/potlatch.png" id="potlatch_pic"></a>'
+	 +'</p><p style="text-align:center;">'
+	 +'<a id="permalink.potlatch2" href="" target="blank"><img src="pics/potlatch2.png" id="potlatch2_pic"></a>'
+	 +'</p>'
+	 +'<hr class="hrmenu">'
+	 +'<p>&nbsp;'+_('offseter_explain')+'</p>'
+	 +'</p><p style="text-align:center;">'
+	 +'<a id="permalink.ofsetter" href="" target="blank"><img src="pics/offseter-fuzzy.png" ></a>'
+	 +'</p>'
+	 +'<hr class="hrmenu">';
+	document.getElementById('sideBarContent').innerHTML=html;
+	EDIT_SHOWED = true;
+	permalink_potlatch = new OpenLayers.Control.Permalink("permalink.potlatch",
+	"http://www.openstreetmap.org/edit",{'createParams': permalink1Args});
+	map.addControl(permalink_potlatch);
+	permalink_potlatch2 = new OpenLayers.Control.Permalink("permalink.potlatch2",
+	"http://www.openstreetmap.org/edit",{'createParams': permalink2Args});
+	map.addControl(permalink_potlatch2);
+	var permalink_ofsetter = new OpenLayers.Control.Permalink("permalink.ofsetter",
+		"offseter");
+	map.addControl(permalink_ofsetter);
+    
+	if (map.getZoom() < 13) {
+        document.getElementById('edit_zoom_in').innerHTML='&nbsp;'+_('zoom_in');
+		document.getElementById('permalink.potlatch').href = "javascript:void(0)";	
+		document.getElementById('permalink.potlatch').target="";
+		document.getElementById('potlatch_pic').src="pics/potlatch-disabled.png";
+		document.getElementById('permalink.potlatch2').href = "javascript:void(0)";
+		document.getElementById('permalink.potlatch2').target="";
+		document.getElementById('potlatch2_pic').src="pics/potlatch2-disabled.png";
+    }else {
+		document.getElementById('edit_zoom_in').innerHTML='';
+	}
 }
 function show_profile() {
     document.getElementById('sideBar').style.display='inline';
@@ -457,6 +477,25 @@ function onZoomEnd(){
 		document.getElementById('zoomin-helper').style.display = 'inline';
 	} else {
 		document.getElementById('zoomin-helper').style.display = 'none';
+	}
+	if (EDIT_SHOWED){
+		if (map.getZoom() < 13) {
+			document.getElementById('edit_zoom_in').innerHTML='&nbsp;'+_('zoom_in');
+			document.getElementById('permalink.potlatch').href = "javascript:void(0)";	
+			document.getElementById('permalink.potlatch').target="";
+			document.getElementById('potlatch_pic').src="pics/potlatch-disabled.png";
+			document.getElementById('permalink.potlatch2').href = "javascript:void(0)";
+			document.getElementById('permalink.potlatch2').target="";
+			document.getElementById('potlatch2_pic').src="pics/potlatch2-disabled.png";
+		}else {
+			document.getElementById('edit_zoom_in').innerHTML='';
+			permalink_potlatch.updateLink();
+			document.getElementById('permalink.potlatch').target="blank";
+			document.getElementById('potlatch_pic').src="pics/potlatch.png";
+			permalink_potlatch2.updateLink();
+			document.getElementById('permalink.potlatch2').target="blank";
+			document.getElementById('potlatch2_pic').src="pics/potlatch2.png";
+		}
 	}
 }
 function get_osm_url(bounds) {

@@ -1,4 +1,4 @@
-﻿{
+{
 "lang": 'nn',
 "map_key": 'TEIKN FORKLARING',
 "about": 'OM TENESTA',
@@ -49,5 +49,6 @@
 "yesterday": 'i går',
 "weekly": 'vekesvis',
 "monthly": 'månadsvis (stor)',
-"vector_help": 'Velj interaktivt kart for meir funksjonalitet: vis informasjon om løypene, sjå høgdeprofil ...'
+"vector_help": 'Velj interaktivt kart for meir funksjonalitet: vis informasjon om løypene, sjå høgdeprofil ...',
+"offseter_explain":''
 }
