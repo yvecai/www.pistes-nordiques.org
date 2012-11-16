@@ -594,7 +594,7 @@ function baseLayers() {
     map.addLayer(layerContours);
 // Layer 5
     var PistesTilesLowZoom = new OpenLayers.Layer.XYZ("Pistes Tiles LZ",
-    "http://tiles.pistes-nordiques.org/tiles-pistes/",{
+    "http://tiles.pistes-nordiques.org/tiles-pistes2/",{
             getURL: get_osm_url, 
             isBaseLayer: false, numZoomLevels: 19,
             visibility: true, opacity: 0.8,
