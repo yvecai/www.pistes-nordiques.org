@@ -1,4 +1,4 @@
-﻿{
+{
 "lang": 'se',
 "map_key": '',
 "about": 'OM',
@@ -49,5 +49,6 @@
 "yesterday": '',
 "weekly": '',
 "monthly": '',
-"vector_help": ''
+"vector_help": '',
+"offseter_explain":''
 }
