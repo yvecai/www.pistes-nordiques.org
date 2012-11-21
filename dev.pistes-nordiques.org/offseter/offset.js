@@ -1,3 +1,5 @@
+var server="http://beta.pistes-nordiques.org/";
+
 var lon=6.1;
 var lat=46.4;
 var zoom= 8; 
@@ -57,7 +59,7 @@ function offset(id, of, side) {
 
 function requestRelations() {
 	var XMLHttp = new XMLHttpRequest();
-	XMLHttp.open("GET", "http://dev.pistes-nordiques.org/cgi/pgsql-mapnik-handle/pgsql-mapnik-handle/handle?bbox="+map.getExtent().toBBOX(), false);
+	XMLHttp.open("GET", server+"cgi/pgsql-mapnik-handle/pgsql-mapnik-handle/handle?bbox="+map.getExtent().toBBOX(), false);
 	XMLHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	XMLHttp.send();
 	if (XMLHttp.status === 200) {
@@ -221,7 +223,7 @@ function map_init() {
     map.addLayer(PistesTilesLowZoom);
 	
 	tilesLayer = new OpenLayers.Layer.XYZ("mapnik",
-	"http://dev.pistes-nordiques.org/cgi/renderer-offset/renderer.py/handle?",{
+	server+"cgi/renderer-offset/renderer.py/handle?",{
 			getURL: get_extended_osm_url, 
 			isBaseLayer: false,
 			minScale: 1000000

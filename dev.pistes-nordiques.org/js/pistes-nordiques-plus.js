@@ -17,6 +17,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+var server="http://beta.pistes-nordiques.org/";
+
 var timer_is_on=0;
 var routingPoints=new Array();
 var routingGeom=new Array();
@@ -138,21 +140,7 @@ function refreshOverlay(features) {
                     );
                     markersLayer.addMarker(new OpenLayers.Marker(pos,highDangerIcon));
                 }
-            } else if (! features[i].attributes['piste:difficulty']){
-                vertices=feature.geometry.getVertices();
-                v = parseInt(vertices.length/2);
-                pos = new OpenLayers.LonLat(vertices[v].x,vertices[v].y)
-                if (unknowIcon){
-                    markersLayer.addMarker(new OpenLayers.Marker(pos,unknowIcon.clone()));
-                } else {
-                    var unknowIcon = new OpenLayers.Icon(
-                        'pics/question-mark.svg',
-                        new OpenLayers.Size(12,12),
-                        new OpenLayers.Pixel(-6, -6)
-                    );
-                    markersLayer.addMarker(new OpenLayers.Marker(pos,unknowIcon));
-                }
-            }
+            } 
         }
     } 
     }
@@ -171,7 +159,7 @@ function requestRoute() {
         };
         
         var XMLHttp = new XMLHttpRequest();
-        XMLHttp.open("GET", '../cgi/routing/routing.py/' + q);
+        XMLHttp.open("GET", server+'cgi/routing/routing.py/' + q);
         XMLHttp.onreadystatechange= function () {
             if (XMLHttp.readyState == 4) {              
                 var responseXML = XMLHttp.responseXML;
@@ -199,7 +187,7 @@ function trace_route(wktroute) {
     // request the elevation profile
     document.getElementById('topo_profile').innerHTML='Loading ...';
     var XMLHttp = new XMLHttpRequest();
-    XMLHttp.open("POST", "../cgi/profile/getProfilePic.py/handle");
+    XMLHttp.open("POST", server+"cgi/profile/getProfilePic.py/handle");
     XMLHttp.onreadystatechange= function () {
         if (XMLHttp.readyState == 4) {
             // cut when cgi is not able to work
@@ -214,7 +202,7 @@ function trace_route(wktroute) {
     var routeT = new OpenLayers.Geometry.fromWKT(wktroute);
     var route900913 = routeT.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
     routingGeom.push(route900913);
-    routingFeatures.push(new OpenLayers.Feature.Vector(routingGeom[routingGeom.length -1], {userroute:true}, routeStyle));
+    routingFeatures.push(new OpenLayers.Feature.Vector(routingGeom[routingGeom.length -1], {userroute:'true'}, routeStyle));
     pistesLayer.addFeatures(routingFeatures);
     
     
@@ -645,7 +633,8 @@ var pisteStyles = new OpenLayers.StyleMap({
             pointRadius: 10, //for routing points
             strokeWidth: 5,
             graphicZIndex: 15,
-            strokeOpacity: 0.9
+            strokeOpacity: 0.9,
+			cursor: 'pointer'
         })
 });
 
@@ -700,92 +689,94 @@ var pisteOverlayStyles = new OpenLayers.StyleMap({
         'highlight': pisteOverlayStyle
 });
 // a dummy proxy script is located in the directory to allow use of wfs
-OpenLayers.ProxyHost = "cgi/proxy.cgi?url=";
+OpenLayers.ProxyHost = server+"cgi/proxy.cgi?url=";
 
-   // layer 7
-    var pistesLayerLowZoom = new OpenLayers.Layer.Vector("Pistes Vector LZ", {
-        strategies: [
-        new OpenLayers.Strategy.Fixed(),
-        new OpenLayers.Strategy.Cluster()
-        ],
-        protocol: new OpenLayers.Protocol.HTTP({
-                url:"data/nordic_1npw.osm",
-                format: new OpenLayers.Format.OSM()
-        }),
-        projection: new OpenLayers.Projection("EPSG:4326"),
-        maxScale: 100000000000, //8
-        visibility: true,
-        styleMap: new OpenLayers.StyleMap({
-            "default": pointStyle,
-            "highlight": new OpenLayers.Style({fillColor: "#4477EE",strokeColor: "#4477EE"})
-        })
-    });
-    map.addLayer(pistesLayerLowZoom)
-    // Declaration of 'pisteslayerlowres'-----------------------------
-    // layer 8
-    var pistesLayerLowres = new OpenLayers.Layer.Vector("Pistes Vector LR", {
-        strategies: [new OpenLayers.Strategy.BBOX()],
-        styleMap: pisteStyles,
-        protocol: new OpenLayers.Protocol.HTTP({
-                url:"../cgi/osmosis-lowres/osmosis_handle.py/",
-                sync: true,
-                format: new OpenLayers.Format.OSM({
-                externalProjection:new OpenLayers.Projection("EPSG:4326"),
-                relationsParsers:{
-                    route: OpenLayers.Format.OSM.routeParser
-                    }
-                    })
-        }),
-        minScale: 100000000000, // 8
-        maxScale: 20000000000, // 12
-        visibility: true,
-        projection: new OpenLayers.Projection("EPSG:4326"),
-        rendererOptions: {yOrdering: true, zIndexing: true} //necessary for graphicZIndex to work
-    });
-    map.addLayer(pistesLayerLowres);
-    pistesLayerLowres.redraw();
-    // Declaration of 'pisteslayer'-----------------------------
-    // layer 9
-    
-    var pistesLayer = new OpenLayers.Layer.Vector("Pistes Vector", {
-        strategies: [new OpenLayers.Strategy.BBOX()],
-        styleMap: pisteStyles,
-        protocol: new OpenLayers.Protocol.HTTP({
-                url:"../cgi/osmosis/osmosis_handle.py/",
-                sync: true,
-                format: new OpenLayers.Format.OSM({
-                externalProjection:new OpenLayers.Projection("EPSG:4326"),
-                relationsParsers:{
-                    route: OpenLayers.Format.OSM.routeParser
-                    }
-                    })
-        }),
-        projection: new OpenLayers.Projection("EPSG:4326"),
-        minScale: 20000000000, //12
-        visibility: true,
-        rendererOptions: {yOrdering: true, zIndexing: true} //necessary for graphicZIndex to work
-    });
-    map.addLayer(pistesLayer);
-    pistesLayer.redraw();
-    // layer 10
-    var pistesLayerOverlay = new OpenLayers.Layer.Vector("Pistes Vector Overlay", {
-        styleMap: pisteOverlayStyles,
-        projection: new OpenLayers.Projection("EPSG:4326"),
-        minScale: 20000000000, //12
-        visibility: true,
-        rendererOptions: {yOrdering: true, zIndexing: true} //necessary for graphicZIndex to work
-    });
-    map.addLayer(pistesLayerOverlay);
-    // layer 11
-    var markersLayer = new OpenLayers.Layer.Markers( "Markers",{
-        projection: new OpenLayers.Projection("EPSG:4326"),
-        minScale: 20000000000, //12
-        isBaseLayer: false,
-        visibility: true,
-        minScale: 20000000000, //12
-        rendererOptions: { zIndexing: true }
-    });
-    map.addLayer(markersLayer);
+// layer 7
+var pistesLayerLowZoom = new OpenLayers.Layer.Vector("Pistes Vector LZ", {
+	strategies: [
+	new OpenLayers.Strategy.Fixed(),
+	new OpenLayers.Strategy.Cluster()
+	],
+	protocol: new OpenLayers.Protocol.HTTP({
+			//url:"nordic_1npw.osm",
+			//format: new OpenLayers.Format.OSM()
+			url:"1npw.tsv",
+			format: new OpenLayers.Format.Text()
+	}),
+	projection: new OpenLayers.Projection("EPSG:4326"),
+	maxScale: 100000000000, //8
+	visibility: true,
+	styleMap: new OpenLayers.StyleMap({
+		"default": pointStyle,
+		"highlight": new OpenLayers.Style({fillColor: "#4477EE",strokeColor: "#4477EE"})
+	})
+});
+map.addLayer(pistesLayerLowZoom)
+// Declaration of 'pisteslayerlowres'-----------------------------
+// layer 8
+var pistesLayerLowres = new OpenLayers.Layer.Vector("Pistes Vector LR", {
+	strategies: [new OpenLayers.Strategy.BBOX()],
+	styleMap: pisteStyles,
+	protocol: new OpenLayers.Protocol.HTTP({
+			url:server+"cgi/osmosis-lowres/osmosis_handle.py/",
+			sync: true,
+			format: new OpenLayers.Format.OSM({
+			externalProjection:new OpenLayers.Projection("EPSG:4326"),
+			relationsParsers:{
+				route: OpenLayers.Format.OSM.routeParser
+				}
+				})
+	}),
+	minScale: 100000000000, // 8
+	maxScale: 20000000000, // 12
+	visibility: true,
+	projection: new OpenLayers.Projection("EPSG:4326"),
+	rendererOptions: {yOrdering: true, zIndexing: true} //necessary for graphicZIndex to work
+});
+map.addLayer(pistesLayerLowres);
+pistesLayerLowres.redraw();
+// Declaration of 'pisteslayer'-----------------------------
+// layer 9
+
+var pistesLayer = new OpenLayers.Layer.Vector("Pistes Vector", {
+	strategies: [new OpenLayers.Strategy.BBOX()],
+	styleMap: pisteStyles,
+	protocol: new OpenLayers.Protocol.HTTP({
+			url:server+"cgi/osmosis/osmosis_handle.py/",
+			sync: true,
+			format: new OpenLayers.Format.OSM({
+			externalProjection:new OpenLayers.Projection("EPSG:4326"),
+			relationsParsers:{
+				route: OpenLayers.Format.OSM.routeParser
+				}
+				})
+	}),
+	projection: new OpenLayers.Projection("EPSG:4326"),
+	minScale: 20000000000, //12
+	visibility: true,
+	rendererOptions: {yOrdering: true, zIndexing: true} //necessary for graphicZIndex to work
+});
+map.addLayer(pistesLayer);
+pistesLayer.redraw();
+// layer 10
+var pistesLayerOverlay = new OpenLayers.Layer.Vector("Pistes Vector Overlay", {
+	styleMap: pisteOverlayStyles,
+	projection: new OpenLayers.Projection("EPSG:4326"),
+	minScale: 20000000000, //12
+	visibility: true,
+	rendererOptions: {yOrdering: true, zIndexing: true} //necessary for graphicZIndex to work
+});
+map.addLayer(pistesLayerOverlay);
+// layer 11
+var markersLayer = new OpenLayers.Layer.Markers( "Markers",{
+	projection: new OpenLayers.Projection("EPSG:4326"),
+	minScale: 20000000000, //12
+	isBaseLayer: false,
+	visibility: true,
+	minScale: 20000000000, //12
+	rendererOptions: { zIndexing: true }
+});
+map.addLayer(markersLayer);
     markersLayer.setZIndex( 1001 ); 
     
 // Add higlight and select controls to vector features -----
@@ -830,27 +821,27 @@ map.addControl(selectCtrl);
 highlightCtrl.activate();
 selectCtrl.activate();
 
-        // Add higlight and select controls to vector features -----
-        var highlightCtrl2 = new OpenLayers.Control.SelectFeature(pistesLayerLowZoom, {
-            hover: true,
-            highlightOnly: true,
-            renderIntent: 'highlight'
-        });
-        var selectCtrl2 = new OpenLayers.Control.SelectFeature(pistesLayerLowZoom,
-            {clickout: true,
-            mutiple: false
-            });
-        map.addControl(highlightCtrl2);
-        map.addControl(selectCtrl2);
-        highlightCtrl2.activate();
-        selectCtrl2.activate();
-        
-        pistesLayerLowZoom.events.on({
-            'featureselected': function(e) {
-                zoom_to_point(this.selectedFeatures);
-    
-            }
-        });
+// Add higlight and select controls to vector features -----
+var highlightCtrl2 = new OpenLayers.Control.SelectFeature(pistesLayerLowZoom, {
+	hover: true,
+	highlightOnly: true,
+	renderIntent: 'highlight'
+});
+var selectCtrl2 = new OpenLayers.Control.SelectFeature(pistesLayerLowZoom,
+	{clickout: true,
+	mutiple: false
+	});
+map.addControl(highlightCtrl2);
+map.addControl(selectCtrl2);
+highlightCtrl2.activate();
+selectCtrl2.activate();
+
+pistesLayerLowZoom.events.on({
+	'featureselected': function(e) {
+		zoom_to_point(this.selectedFeatures);
+
+	}
+});
 
 // EVENTS --------------------------------------------------
 var st= $("status");

@@ -18,8 +18,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 // MODE
+var server="http://beta.pistes-nordiques.org/";
+
 var mode="raster";
 var m="raster";
+var EXT_MENU=false;
+var EDIT_SHOWED=false;
+var permalink_potlatch2;
+var permalink_potlatch;
 var zoomBar;
 function switch2vector() {
     if (mode == "raster") {
@@ -37,6 +43,7 @@ function switch2vector() {
         
         mode="vector";
         map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
+		show_helper();
     }
 }
 function switch2raster() {
@@ -63,6 +70,7 @@ function switch2raster() {
         
         mode="raster";
         map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
+		close_helper();
     }
 }
 function setmode(m){
@@ -97,9 +105,9 @@ function get_page(url){
     var oRequest = new XMLHttpRequest();
     oRequest.open("GET",url,false);
     oRequest.setRequestHeader("User-Agent",navigator.userAgent);
-    oRequest.send()
+    oRequest.send();
     response = oRequest.responseText;
-    response = response.replace("../","")
+    response = response.replace("../","");
     return response;
 }
 function toggleMenu() {
@@ -108,12 +116,10 @@ function toggleMenu() {
     // At loadtime, m.style.display=""
     if (em.style.display == "none" || em.style.display == "") {
         em.style.display ='inline';
-        sl.innerHTML='<a onclick="toggleMenu();" ></br>&#176;</br>&#176;</br>&#176;</a>';
         EXT_MENU=true;
         }
     else if (em.style.display == "inline") {
         em.style.display = 'none';
-        sl.innerHTML='<a onclick="toggleMenu();" ></br>&#8226;</br>&#8226;</br>&#8226;</a>';
         EXT_MENU=false;
         }
     map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
@@ -125,18 +131,36 @@ function showMenu() {
     var em = document.getElementById('extendedmenu');
     var sl = document.getElementById('slide');
     em.style.display ='inline';
-    sl.innerHTML='<a onclick="toggleMenu();" ></br>&#176;</br>&#176;</br>&#176;</a>';
     EXT_MENU=true;
     resize_sideBar();
     return true;
-    
+}
+function closeMenu() {
+    var em = document.getElementById('extendedmenu');
+    var sl = document.getElementById('slide');
+    em.style.display ='none';
+    EXT_MENU=false;
+    resize_sideBar();
+    return true;
 }
 function close_sideBar() {
     document.getElementById('sideBar').style.display='none';
+	EDIT_SHOWED = false;
+}
+function close_helper(){
+	document.getElementById('helper').style.display='none';
+}
+function show_helper(){
+	document.getElementById('helper').style.display='block';
+	if (map.getZoom()<13){
+		document.getElementById('zoomin-helper').style.display = 'inline';
+	} else {
+		document.getElementById('zoomin-helper').style.display = 'none';
+	}
 }
 function show_about() {
     document.getElementById('sideBar').style.display='inline';
-    url = 'iframes/about.'+iframelocale+'.html';
+    url = server+'iframes/about.'+iframelocale+'.html';
     content = get_page(url).replace('**update**',get_update()).replace('**length**',get_length()).replace('**modis-update**',get_modisupdate());
     document.getElementById('sideBarContent').innerHTML = content;
     document.getElementById('sideBarContent').style.display='inline';
@@ -144,7 +168,7 @@ function show_about() {
 }
 function show_help() {
     document.getElementById('sideBar').style.display='inline';
-    url = 'iframes/quickhelp.'+iframelocale+'.html';
+    url = server+'iframes/quickhelp.'+iframelocale+'.html';
     content = get_page(url);
     document.getElementById('sideBarContent').innerHTML = content;
     document.getElementById('sideBarContent').style.display='inline';
@@ -155,37 +179,55 @@ function show_edit() {
     document.getElementById('sideBar').style.display='inline';
     document.getElementById('sideBarContent').style.display='inline';
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('edit').replace('<br/>',' ');
-    if (map.getZoom() > 12) {
-        html = '<p>&nbsp;'+_('edit_the_map_using')+'</p>'
-         +'<p>&nbsp;'+_('edit_the_map_explain')+'</p>'
-         +'<hr class="hrmenu">'
-         +'<p><a href="iframes/how-to-'+locale+'.html" target="blank">'+_('how_to')+'</a></p>'
-         +'<hr class="hrmenu">'
-         +'<p style="text-align:center;">'
-         +'<a id="permalink.potlatch" href="" target="blank"><img src="pics/potlatch.png" ></a>'
-         +'<hr class="hrmenu">'
-         +'</p><p style="text-align:center;">'
-         +'<a id="permalink.potlatch2" href="" target="blank"><img src="pics/potlatch2.png" ></a>'
-         +'</p>'
-         +'<hr class="hrmenu">';
-        document.getElementById('sideBarContent').innerHTML=html;
-        var permalink_potlatch = new OpenLayers.Control.Permalink("permalink.potlatch",
-        "http://www.openstreetmap.org/edit",{'createParams': permalink1Args});
-        map.addControl(permalink_potlatch);
-        var permalink_potlatch2 = new OpenLayers.Control.Permalink("permalink.potlatch2",
-        "http://www.openstreetmap.org/edit",{'createParams': permalink2Args});
-        map.addControl(permalink_potlatch2);
-    }
-    else {
-        document.getElementById('sideBarContent').innerHTML='&nbsp;'+_('zoom_in');
-        
-    }
+    
+	html = '<div style="font-size:1.5em; font-weight:800;" id="edit_zoom_in"></div>'
+	 +'<p>&nbsp;'+_('edit_the_map_using')+'</p>'
+	 +'<p>&nbsp;'+_('edit_the_map_explain')+'</p>'
+	 +'<hr class="hrmenu">'
+	 +'<p><a href="iframes/how-to-'+iframelocale+'.html" target="blank">'+_('how_to')+'</a></p>'
+	 +'<hr class="hrmenu">'
+	 +'<p style="text-align:center;">'
+	 +'<a id="permalink.potlatch" href="" target="blank"><img src="pics/potlatch.png" id="potlatch_pic"></a>'
+	 +'</p><p style="text-align:center;">'
+	 +'<a id="permalink.potlatch2" href="" target="blank"><img src="pics/potlatch2.png" id="potlatch2_pic"></a>'
+	 +'</p>'
+	 +'<hr class="hrmenu">'
+	 +'<p>&nbsp;'+_('offseter_explain')+'</p>'
+	 +'</p><p style="text-align:center;">'
+	 +'<a id="permalink.ofsetter" href="" target="blank"><img src="pics/offseter-fuzzy.png" ></a>'
+	 +'</p>'
+	 +'<hr class="hrmenu">';
+	document.getElementById('sideBarContent').innerHTML=html;
+	EDIT_SHOWED = true;
+	permalink_potlatch = new OpenLayers.Control.Permalink("permalink.potlatch",
+	"http://www.openstreetmap.org/edit",{'createParams': permalink1Args});
+	map.addControl(permalink_potlatch);
+	permalink_potlatch2 = new OpenLayers.Control.Permalink("permalink.potlatch2",
+	"http://www.openstreetmap.org/edit",{'createParams': permalink2Args});
+	map.addControl(permalink_potlatch2);
+	var permalink_ofsetter = new OpenLayers.Control.Permalink("permalink.ofsetter",
+		"offseter");
+	map.addControl(permalink_ofsetter);
+    
+	if (map.getZoom() < 13) {
+        document.getElementById('edit_zoom_in').innerHTML='&nbsp;'+_('zoom_in');
+		document.getElementById('permalink.potlatch').href = "javascript:void(0)";	
+		document.getElementById('permalink.potlatch').target="";
+		document.getElementById('potlatch_pic').src="pics/potlatch-disabled.png";
+		document.getElementById('permalink.potlatch2').href = "javascript:void(0)";
+		document.getElementById('permalink.potlatch2').target="";
+		document.getElementById('potlatch2_pic').src="pics/potlatch2-disabled.png";
+    }else {
+		document.getElementById('edit_zoom_in').innerHTML='';
+	}
 }
 function show_profile() {
     document.getElementById('sideBar').style.display='inline';
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('TOPO');
     if (mode=="raster") {
-        document.getElementById('sideBarContent').innerHTML=_('interactive_map_only');
+        document.getElementById('sideBarContent').innerHTML=_('vector_help');
+    }else if (map.getZoom() > 13) {
+        document.getElementById('sideBarContent').innerHTML='<img style="margin-left: 3px;"src="pics/interactive-help.png"/>';
     }else if (map.getZoom() <= 13) {
         document.getElementById('sideBarContent').innerHTML=_('zoom_in');
     }
@@ -236,7 +278,6 @@ function checkKey(e) {
         var sl = document.getElementById('slide');
         if (em.style.display == "inline") {
         em.style.display = 'none';
-        sl.innerHTML='<a onclick="toggleMenu();" ></br>&#8226;</br>&#8226;</br>&#8226;</a>';
         }
         clearRoute();
         //clear routing
@@ -251,7 +292,7 @@ function checkKey(e) {
 
 function get_length(){
     var oRequest = new XMLHttpRequest();
-    oRequest.open("GET",'data/ways_length.txt',false);
+    oRequest.open("GET",server+'data/ways_length.txt',false);
     oRequest.setRequestHeader("User-Agent",navigator.userAgent);
     oRequest.send()
     return oRequest.responseText;
@@ -259,7 +300,7 @@ function get_length(){
 
 function get_update(){
     var oRequest = new XMLHttpRequest();
-    oRequest.open("GET",'data/update.txt',false);
+    oRequest.open("GET",server+'data/update.txt',false);
     oRequest.setRequestHeader("User-Agent",navigator.userAgent);
     oRequest.send();
     var date=oRequest.responseText.split('T')[0];
@@ -271,7 +312,7 @@ function get_update(){
 
 function get_modisupdate(){
     var oRequest = new XMLHttpRequest();
-    oRequest.open("GET",'data/modis-update.txt',false);
+    oRequest.open("GET",server+'data/modis-update.txt',false);
     oRequest.setRequestHeader("User-Agent",navigator.userAgent);
     oRequest.send();
     var period=oRequest.responseText.split(' ')[5];
@@ -329,6 +370,7 @@ function page_init(){
 
 function loadend(){
     if (EXT_MENU) {showMenu();}
+    else {closeMenu();}
     
 }
 //======================================================================
@@ -349,7 +391,7 @@ function loadend(){
         string=string.replace(" ","+");
         var oRequest = new XMLHttpRequest();
         //oRequest.open("GET",'http://open.mapquestapi.com/nominatim/v1/search?format=xml&q='+string,false);
-        oRequest.open("GET",'cgi/nominatim.cgi/search?format=xml&place='+string,false);
+        oRequest.open("GET",server+'cgi/nominatim.cgi/search?format=xml&place='+string,false);
         oRequest.setRequestHeader("User-Agent",navigator.userAgent);
         oRequest.send();
         setTimeout('',500);
@@ -376,7 +418,6 @@ function loadend(){
 var lat=46.82084;
 var lon=6.39942;
 var zoom=2;//2
-var EXT_MENU=false;
 var map;
 
 var highlightCtrl, selectCtrl;
@@ -393,8 +434,13 @@ if (location.search != "") {
         if (x[i].split("=")[0] == 'zoom') {zoom=x[i].split("=")[1];}
         if (x[i].split("=")[0] == 'lon') {lon=x[i].split("=")[1];}
         if (x[i].split("=")[0] == 'lat') {lat=x[i].split("=")[1];}
-        if (x[i].split("=")[0] == 'e') {EXT_MENU=x[i].split("=")[1];}
         if (x[i].split("=")[0] == 'm') {m=x[i].split("=")[1];} // not used
+        if (x[i].split("=")[0] == 'e') {
+			var ext=x[i].split("=")[1];
+			if (ext == 'false'){EXT_MENU=false;}
+			else if (ext == 'true'){EXT_MENU=true;}
+			else {EXT_MENU=false;}
+		}
     }
     //Then hopefully map_init() will do the job when the map is loaded
 }
@@ -417,7 +463,7 @@ function zoomSlider(options) {
             this._addButton("zoomin", "zoom-plus-mini.png", centered.add(0, 5), sz);
             centered = this._addZoomBar(centered.add(0, sz.h + 5));
             this._addButton("zoomout", "zoom-minus-mini.png", centered, sz);
-            return this.div;
+			return this.div;
         }
     });
     return this.control;
@@ -426,7 +472,32 @@ function zoomSlider(options) {
 function updateZoom() {
     $('zoom').innerHTML= map.getZoom();
 }
-
+function onZoomEnd(){
+	if (map.getZoom()<13){
+		document.getElementById('zoomin-helper').style.display = 'inline';
+	} else {
+		document.getElementById('zoomin-helper').style.display = 'none';
+	}
+	if (EDIT_SHOWED){
+		if (map.getZoom() < 13) {
+			document.getElementById('edit_zoom_in').innerHTML='&nbsp;'+_('zoom_in');
+			document.getElementById('permalink.potlatch').href = "javascript:void(0)";	
+			document.getElementById('permalink.potlatch').target="";
+			document.getElementById('potlatch_pic').src="pics/potlatch-disabled.png";
+			document.getElementById('permalink.potlatch2').href = "javascript:void(0)";
+			document.getElementById('permalink.potlatch2').target="";
+			document.getElementById('potlatch2_pic').src="pics/potlatch2-disabled.png";
+		}else {
+			document.getElementById('edit_zoom_in').innerHTML='';
+			permalink_potlatch.updateLink();
+			document.getElementById('permalink.potlatch').target="blank";
+			document.getElementById('potlatch_pic').src="pics/potlatch.png";
+			permalink_potlatch2.updateLink();
+			document.getElementById('permalink.potlatch2').target="blank";
+			document.getElementById('potlatch2_pic').src="pics/potlatch2.png";
+		}
+	}
+}
 function get_osm_url(bounds) {
     var res = this.map.getResolution();
     var x = Math.round((bounds.left - this.maxExtent.left) / (res * this.tileSize.w));
@@ -504,24 +575,14 @@ function baseLayers() {
             });
     map.addLayer(layerGTOPO30);
 
-// Layer 3
-    var hillshading = new OpenLayers.Layer.TMS( "Hillshade",
-                    "http://tiles2.pistes-nordiques.org/hillshade/",
-                    {   
-                    getURL: get_tms_url,
-					minScale: 3000000,opacity: 0.9,
-                    isBaseLayer: false, visibility: false
-                    });
-    map.addLayer(hillshading);
- // Layer 3
-    var hillshading = new OpenLayers.Layer.TMS( "HillshadingII",
-                    "http://tiles2.pistes-nordiques.org/hillshading/",
-                    {   
-                    getURL: get_tms_url,
-					minScale: 3000000,opacity: 0.5,
-                    isBaseLayer: false, visibility: true
-                    });
-    map.addLayer(hillshading);
+// layer 3
+    var layerSRTM = new OpenLayers.Layer.TMS( "SRTM", "http://tiles2.pistes-nordiques.org/hillshade/",{ 
+                type: 'png', getURL: get_tms_url, alpha: true, 
+                buffer: 0,
+                isBaseLayer: false, 
+                opacity: 0.5,minScale: 3000000, visibility: true
+            });
+    map.addLayer(layerSRTM);
 // layer 4
     var layerContours = new OpenLayers.Layer.XYZ("Contour",
     "http://tiles.pistes-nordiques.org/tiles-contours/",{
@@ -533,33 +594,22 @@ function baseLayers() {
     map.addLayer(layerContours);
 // Layer 5
     var PistesTilesLowZoom = new OpenLayers.Layer.XYZ("Pistes Tiles LZ",
-    "http://tiles.pistes-nordiques.org/tiles-pistes/",{
+    "http://tiles.pistes-nordiques.org/tiles-pistes2/",{
             getURL: get_osm_url, 
             isBaseLayer: false, numZoomLevels: 19,
             visibility: true, opacity: 0.8,
             maxScale: 250000
         });
-    //map.addLayer(PistesTilesLowZoom);
+    map.addLayer(PistesTilesLowZoom);
 // Layer 6
     var PistesTiles = new OpenLayers.Layer.XYZ("Pistes Tiles",
-    "http://tiles.pistes-nordiques.org/tiles-pistes/",{
+    "http://tiles.pistes-nordiques.org/tiles-pistes2/",{
             getURL: get_osm_url, 
             isBaseLayer: false, numZoomLevels: 19,
             visibility: true, opacity: 0.95,
             minScale: 250000
         });
-    //map.addLayer(PistesTiles);
-
-    var PistesTiles2 = new OpenLayers.Layer.XYZ("Pistes Tiles2",
-    //"cgi/render/render.py/handle?",
-	"http://tiles.pistes-nordiques.org/tiles-pistes2/",
-			{
-            getURL: get_osm_url,
-            isBaseLayer: false, numZoomLevels: 19,
-            visibility: true, opacity: 0.95
-            //minScale: 250000
-        });
-    map.addLayer(PistesTiles2);
+    map.addLayer(PistesTiles);
 
 }
 
@@ -617,6 +667,7 @@ function map_init(){
 // Switch base layer
     map.events.on({ "zoomend": function (e) {
         updateZoom();
+		onZoomEnd();
         if (map.getZoom() > 6) {
             map.layers[1].setVisibility(true);
             map.layers[1].redraw();
@@ -637,6 +688,7 @@ function map_init(){
     // map.setCenter moved after the strategy.bbox, otherwise it won't load the wfs layer at first load
     setmode(m);
     map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
+    loadend();
 }
 
 

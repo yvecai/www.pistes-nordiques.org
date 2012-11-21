@@ -1,4 +1,4 @@
-﻿{
+{
 "lang": 'de',
 "map_key": '',
 "about": 'IMPRESSUM',
@@ -49,5 +49,6 @@
 "yesterday": '',
 "weekly": '',
 "monthly": '',
-"vector_help": ''
+"vector_help": '',
+"offseter_explain":''
 }
