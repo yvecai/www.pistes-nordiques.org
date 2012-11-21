@@ -700,7 +700,7 @@ var pistesLayerLowZoom = new OpenLayers.Layer.Vector("Pistes Vector LZ", {
 	protocol: new OpenLayers.Protocol.HTTP({
 			//url:"nordic_1npw.osm",
 			//format: new OpenLayers.Format.OSM()
-			url:"1npw.tsv",
+			url:"data/1npw.tsv",
 			format: new OpenLayers.Format.Text()
 	}),
 	projection: new OpenLayers.Projection("EPSG:4326"),
