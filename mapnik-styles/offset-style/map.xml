@@ -346,7 +346,7 @@ background-color="transparent" >
 			&datasource-settings;
             <Parameter name="geometry_table">planet_osm_line</Parameter>
             <Parameter name="table">
-            (select * from planet_osm_line where "piste:type"='nordic' and osm_id &lt; 0 order by z_order DESC) as routes
+            (select * from planet_osm_line where "piste:type"='nordic' and osm_id &lt; 0 ORDER BY st_LENGTH(way) DESC) as routes
 			</Parameter>
         </Datasource>
     </Layer>
