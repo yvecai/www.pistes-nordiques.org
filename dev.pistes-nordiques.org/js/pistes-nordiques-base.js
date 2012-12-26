@@ -576,7 +576,7 @@ function baseLayers() {
     map.addLayer(layerGTOPO30);
 
 // layer 3
-    var layerSRTM = new OpenLayers.Layer.TMS( "SRTM", "http://tiles2.pistes-nordiques.org/hillshade/",{ 
+    var layerSRTM = new OpenLayers.Layer.TMS( "SRTM", "http://tiles2.pistes-nordiques.org/hillshading/",{ 
                 type: 'png', getURL: get_tms_url, alpha: true, 
                 buffer: 0,
                 isBaseLayer: false, 
