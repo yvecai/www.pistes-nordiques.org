@@ -42,7 +42,7 @@
 "key-unknow": 'Dificultad desconocida',
 "key-unknow_exp": 'La dificultad de esta pista no está etiquetada, por favor corregir.',
 "learn-difficulties": 'Cómo se etiqueta la dificultad de las pistas se muestra aquí',
-"base_map": 'mapa de fondo',
+"base_map": ' mapa de fondo',
 "Interactive map" : 'Mapa interactive',
 "Normal map" : 'Mapa normal (ligero)',
 "last_edits": 'Ultimas adiciones al mapa',
