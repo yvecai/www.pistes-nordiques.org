@@ -1,4 +1,4 @@
-﻿    var locs = [ "en","fr","de", "hu", "se","no","es"];
+﻿    var locs = [ "en","fr","de", "fi", "hu", "se","no","es"];
     var iloc= 0;
     var locale;
     var iframelocale;
