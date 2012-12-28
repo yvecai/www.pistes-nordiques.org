@@ -580,7 +580,7 @@ function baseLayers() {
                 type: 'png', getURL: get_tms_url, alpha: true, 
                 buffer: 0,
                 isBaseLayer: false, 
-                opacity: 0.5,minScale: 3000000, visibility: true
+                opacity: 0.4,minScale: 3000000, visibility: true
             });
     map.addLayer(layerHillshade);
 // layer 4
