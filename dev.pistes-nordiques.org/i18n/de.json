@@ -42,7 +42,7 @@
 "key-unknow": 'Unbekannter Schwierigkeitsgrad',
 "key-unknow_exp": 'Für diese Piste wurde noch kein Schwierigkeitsgrad festgelegt, bitte nacherfassen ! (KARTE BEARBEITEN)',
 "learn-difficulties": 'Die Beschreibung der Schwierigkeitsgrade steht hier (2)',
-"base_map": ' Grund-Karte',
+"base_map": 'Grund-Karte',
 "Interactive map" : 'Interaktive Karte',
 "Normal map" : 'Normale Karte',
 "last_edits": 'Letzte Bearbeitungen dieser Karte',

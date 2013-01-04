@@ -42,7 +42,7 @@
 "key-unknow": 'Unknown difficulty',
 "key-unknow_exp": 'This piste difficulty is not tagged, please fix.',
 "learn-difficulties": 'How pistes difficulty is defined can be found here',
-"base_map": ' background map',
+"base_map": 'background map',
 "Interactive map" : 'Interactive map',
 "Normal map" : 'Normal map (light)',
 "last_edits": 'Latest additions to the map',

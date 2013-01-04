@@ -36,7 +36,7 @@
 "key-normal": 'Helppo osuus',
 "key-normal_exp": 'Tämä osuus on luokiteltu vaikeusasteelle aloittelija tai helppo.',
 "key-intermediate": 'Haastava osuus',
-"key-intermediate_exp": 'Tämä osuus on luokiteltu vaikeusasteelle keskivaikea',
+"key-intermediate_exp": 'Tämä osuus on luokiteltu vaikeusasteelle keskivaikea.',
 "key-hard": 'Vaarallinen osuus',
 "key-hard_exp": 'Tämä osuus on luokiteltu vähintään vaikeusasteelle edistynyt.',
 "key-unknow": 'Luokittelematon osuus',
