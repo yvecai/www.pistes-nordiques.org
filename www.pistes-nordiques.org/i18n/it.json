@@ -26,9 +26,9 @@
 "zoom_in": 'Zoomare per accedere a questa funzione',
 "search_results": 'Cerca risultati',
 "select_points_hint": 'Selezionare almeno due punti nei percorsi',
-"how_to": 'The absolute beginner guide to map a XC trail',
+"how_to": 'Manuale per principianti alla mappatura di un percorso XC',
 "select_next": 'Seleziona il prossimo punto',
-"routing...": 'percorso in calcolo...',
+"routing...": 'Percorso in calcolo...',
 "no_route": 'Fallimento, nessun percorso',
 "loading...": 'Caricamento tracce...',
 "loading_low_zoom": 'Caricamento tracce...',
@@ -36,7 +36,7 @@
 "key-normal": 'Pista Facile',
 "key-normal_exp": 'Questa pista è etichettata con una difficoltà \'novizio\' o \'facile\'.',
 "key-intermediate": 'Sessione difficile',
-"key-intermediate_exp": 'questa sessione è etichettata con una difficoltà \'intermedia\'.',
+"key-intermediate_exp": 'Questa sessione è etichettata con una difficoltà \'intermedia\'.',
 "key-hard": 'Sezione pericolosa',
 "key-hard_exp": 'Questa pista è etichettata con una difficoltà \'avanzata\' o superiore.',
 "key-unknow": 'Difficoltà sconosciuta',
@@ -49,6 +49,6 @@
 "yesterday": 'ieri',
 "weekly": 'settimanalmente',
 "monthly": 'mensilmente (grande)',
-"vector_help": 'Scegli la appa iterattiva per ulteriori funzionalità: Visualizza informazioni sulle piste, tracciare profilo altimetrico, ...',
+"vector_help": 'Scegli la mappa iterattiva per ulteriori funzionalità: Visualizza informazioni sulle piste, tracciare profilo altimetrico, ...',
 "offseter_explain": 'Puoi anche aggiustare la visibilità delle piste colorate su www.pistes-nordiques.org'
 }
