@@ -151,6 +151,9 @@ function close_sideBar() {
 function close_helper(){
 	document.getElementById('helper').style.display='none';
 }
+function close_catcher(){
+	document.getElementById('catcher').style.display='none';
+}
 function show_helper(){
 	document.getElementById('helper').style.display='block';
 	if (map.getZoom()<13){
@@ -274,17 +277,13 @@ function checkKey(e) {
     
     if(keynum == 27) {
         close_sideBar();
-        document.getElementById('catcher').style.display = 'none';
+        close_catcher();
         // close extendedmenu
         var em = document.getElementById('extendedmenu');
-        var sl = document.getElementById('slide');
         if (em.style.display == "inline") {
         em.style.display = 'none';
         }
         clearRoute();
-        //clear routing
-        //clearRoute();
-        //$('routing').style.display='none';
         }
     if(keynum == 13) {
         // fires nominatim search

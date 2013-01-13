@@ -39,6 +39,12 @@
                     <div id="zoomin-helper"><script>document.write(_('zoom_in'))</script></div>
                 </div>
                 <div id="catcher" style="display: block;">
+                    <div id="closeBox">
+                        <a onclick="close_catcher();"
+                        onmouseover="document.images['closePic31'].src='pics/close-simple-hover.png'"
+                        onmouseout="document.images['closePic31'].src='pics/close-simple.png'">
+                         <img name="closePic31" src="pics/close-simple.png"></a>
+                    </div>
 					<a href="http://wiki.openstreetmap.org" target="blank"><img src="pics/osm-pistes-nordiques_logo-80px.png" style="float: left;margin: 5px;"></img></a>
 					<p>
 						<script>document.write(get_length()+' '+_('piste_length'))</script>
