@@ -475,7 +475,6 @@ function updateZoom() {
     $('zoom').innerHTML= map.getZoom();
 }
 function onZoomEnd(){
-	if (CATCHER) { document.getElementById('catcher').style.display = 'none';}
 	if (map.getZoom()<13){
 		document.getElementById('zoomin-helper').style.display = 'inline';
 	} else {
