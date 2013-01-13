@@ -24,6 +24,7 @@ var mode="raster";
 var m="raster";
 var EXT_MENU=false;
 var EDIT_SHOWED=false;
+var CATCHER=true;
 var permalink_potlatch2;
 var permalink_potlatch;
 var zoomBar;
@@ -273,6 +274,7 @@ function checkKey(e) {
     
     if(keynum == 27) {
         close_sideBar();
+        document.getElementById('catcher').style.display = 'none';
         // close extendedmenu
         var em = document.getElementById('extendedmenu');
         var sl = document.getElementById('slide');
@@ -473,6 +475,7 @@ function updateZoom() {
     $('zoom').innerHTML= map.getZoom();
 }
 function onZoomEnd(){
+	if (CATCHER) { document.getElementById('catcher').style.display = 'none';}
 	if (map.getZoom()<13){
 		document.getElementById('zoomin-helper').style.display = 'inline';
 	} else {
