@@ -24,6 +24,7 @@ var mode="raster";
 var m="raster";
 var EXT_MENU=false;
 var EDIT_SHOWED=false;
+var CATCHER=true;
 var permalink_potlatch2;
 var permalink_potlatch;
 var zoomBar;
@@ -150,6 +151,9 @@ function close_sideBar() {
 function close_helper(){
 	document.getElementById('helper').style.display='none';
 }
+function close_catcher(){
+	document.getElementById('catcher').style.display='none';
+}
 function show_helper(){
 	document.getElementById('helper').style.display='block';
 	if (map.getZoom()<13){
@@ -273,16 +277,13 @@ function checkKey(e) {
     
     if(keynum == 27) {
         close_sideBar();
+        close_catcher();
         // close extendedmenu
         var em = document.getElementById('extendedmenu');
-        var sl = document.getElementById('slide');
         if (em.style.display == "inline") {
         em.style.display = 'none';
         }
         clearRoute();
-        //clear routing
-        //clearRoute();
-        //$('routing').style.display='none';
         }
     if(keynum == 13) {
         // fires nominatim search

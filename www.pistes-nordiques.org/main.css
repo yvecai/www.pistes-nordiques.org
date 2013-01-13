@@ -326,6 +326,21 @@ display: none;
     border: 1px solid #aaaaaa;
     background-color:#EEE; /*fallback*/
     background-color: rgba(245,245,245,0.7);}
+#catcher{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 3px;
+    width: 350px;
+    font-size: 1.1em;
+    font-weight: 300;
+    /*height: 26px;*/
+    -moz-border-radius:6px;
+    border-radius:6px;
+    border: 1px solid #aaaaaa;
+    background-color:#EEE; /*fallback*/
+    background-color: rgba(245,245,245,0.7);}
 #zoomin-helper{
     position: relative;
     margin: 5px;

@@ -17,10 +17,10 @@
 	<body onload="map_init(); page_init();">
 		<div id="summary" style="display:none">
 		<H1>www.pistes-nordiques.org</H1>
-		<H2><b>Worldwide crosscountry skiing tracks / 17'000km Pistes de ski de fond du monde entier</b></H2>
-		<p>La carte de Pistes-Nordiques présente plus de 17'000km de piste de ski de fond.
+		<H2><b>Worldwide crosscountry skiing tracks / 22'000km Pistes de ski de fond du monde entier</b></H2>
+		<p>La carte de Pistes-Nordiques présente plus de 22'000km de piste de ski de fond.
 		 Trouvez les traces les plus proches et étudiez les dénivelés de vos randonnées en ski nordique.</p> 
-		<p> The map on Pistes-Nordiques shows more than 17'000km of XC trails.
+		<p> The map on Pistes-Nordiques shows more than 22'000km of XC trails.
 		Find the nearest trail and study the elevation profile of your
 		 XC ski session with a simple click on the trails.</p>
 		</div>
@@ -37,6 +37,24 @@
                     </div>
                     <img style="margin-left: 3px;"src="pics/interactive-help.png"/>
                     <div id="zoomin-helper"><script>document.write(_('zoom_in'))</script></div>
+                </div>
+                <div id="catcher" style="display: block;">
+                    <div id="closeBox">
+                        <a onclick="close_catcher();"
+                        onmouseover="document.images['closePic31'].src='pics/close-simple-hover.png'"
+                        onmouseout="document.images['closePic31'].src='pics/close-simple.png'">
+                         <img name="closePic31" src="pics/close-simple.png"></a>
+                    </div>
+					<a href="http://wiki.openstreetmap.org" target="blank"><img src="pics/osm-pistes-nordiques_logo-80px.png" style="float: left;margin: 5px;"></img></a>
+					<p>
+						<script>document.write(get_length()+' '+_('piste_length'))</script>
+						<script>document.write(_('you'))</script>
+					</p>
+					<p>	
+						<a class="amenu" href="javascript:void(0);" onclick="close_sideBar();show_edit();return false;">
+						<script>document.write(_('edit'))</script>
+						</a>
+					</p>
                 </div>
             </div>       
         
