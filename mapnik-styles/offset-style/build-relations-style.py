@@ -105,7 +105,13 @@ for c in colors:
 	colorList.append(c[1])
 colorList=list(set(colorList))
 
-
+f=open('colors.txt','w')
+for c in colorList:
+	if isColor(c):
+		color=mapnik.Color(c)
+		color=lighten(deluma(color,0.25),0.2)
+		f.write(c+' '+str(color))
+f.close()
 
 f=open('relations-style.xml','w')
 f.write("<!-- "+datetime.datetime.now().isoformat()+" -->\n")
