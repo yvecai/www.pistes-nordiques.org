@@ -110,7 +110,7 @@ for c in colorList:
 	if isColor(c):
 		color=mapnik.Color(c)
 		color=lighten(deluma(color,0.25),0.2)
-		f.write(c+' '+str(color))
+		f.write(c+' '+str(color)+'\n')
 f.close()
 
 f=open('relations-style.xml','w')
