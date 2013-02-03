@@ -28,6 +28,7 @@ var CATCHER=true;
 var permalink_potlatch2;
 var permalink_potlatch;
 var zoomBar;
+var PRINT_TYPE= 'small';
 function switch2vector() {
     if (mode == "raster") {
         loadjscssfile("js/pistes-nordiques-plus.js", "js");
@@ -697,12 +698,19 @@ function map_init(){
 // PRINT
 function print() {
 	// start print request
+	var mq=map.getLayersByName("MapQuest")[0];
+	var osm=map.getLayersByName("OSM")[0];
+	if (mq) {var bg='mq';}
+	else {var bg='osm';}
+	
 	var printLayer= map.getLayersByName("Print layer")[0];
 	var b = printLayer.features[0].geometry.bounds;
+	
+	
 	var b4326 = b.transform(
         new OpenLayers.Projection("EPSG:900913"),
         new OpenLayers.Projection("EPSG:4326"));
-    var args=b4326.left+';'+b4326.right+';'+b4326.top+';'+b4326.bottom;
+    var args=b4326.left+';'+b4326.right+';'+b4326.top+';'+b4326.bottom+';'+bg+';'+PRINT_TYPE;
     
     var XMLHttp = new XMLHttpRequest();
     XMLHttp.open("GET", server+"cgi/print/stitcher.py?"+args);
@@ -719,6 +727,7 @@ function print() {
 }
 function close_printSettings(){
 	document.getElementById('print-settings').style.display='none';
+	document.getElementById('print_result').innerHTML='';
 	var printLayer= map.getLayersByName("Print layer")[0];
 	printLayer.destroyFeatures(printLayer.features);
 	printLayer.destroy;
@@ -736,10 +745,12 @@ function setPrint(type) {
 	var center = map.getCenter();
 	var h;
 	var v;
-	if (type == 'vs') {h=5000;v=7000;}
-	if (type == 'hs') {h=7000;v=5000;}
-	if (type == 'vb') {h=7000;v=10000;}
-	if (type == 'hb') {h=10000;v=7000;}
+	if (type == 'vs') {h=5000;v=7000;PRINT_TYPE= 'small';}
+	if (type == 'hs') {h=7000;v=5000;PRINT_TYPE= 'small';}
+	//zoom 15
+	if (type == 'vb') {h=14000;v=20000;PRINT_TYPE= 'big';}
+	if (type == 'hb') {h=20000;v=14000;PRINT_TYPE= 'big';}
+	// zoom 14
 	var p1 = new OpenLayers.Geometry.Point(center.lon-h/2, center.lat-v/2);
 	var p2 = new OpenLayers.Geometry.Point(center.lon-h/2, center.lat+v/2);
 	var p3 = new OpenLayers.Geometry.Point(center.lon+h/2, center.lat+v/2);
