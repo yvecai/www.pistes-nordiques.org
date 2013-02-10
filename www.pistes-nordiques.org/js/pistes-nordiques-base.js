@@ -28,6 +28,7 @@ var CATCHER=true;
 var permalink_potlatch2;
 var permalink_potlatch;
 var zoomBar;
+var PRINT_TYPE= 'small';
 function switch2vector() {
     if (mode == "raster") {
         loadjscssfile("js/pistes-nordiques-plus.js", "js");
@@ -278,6 +279,7 @@ function checkKey(e) {
     if(keynum == 27) {
         close_sideBar();
         close_catcher();
+        close_printSettings();
         // close extendedmenu
         var em = document.getElementById('extendedmenu');
         if (em.style.display == "inline") {
@@ -692,4 +694,80 @@ function map_init(){
     loadend();
 }
 
-
+//======================================================================
+// PRINT
+function print() {
+	// start print request
+	var mq=map.getLayersByName("MapQuest")[0];
+	var osm=map.getLayersByName("OSM")[0];
+	if (mq) {var bg='mq';}
+	else {var bg='osm';}
+	
+	var printLayer= map.getLayersByName("Print layer")[0];
+	var b = printLayer.features[0].geometry.bounds;
+	
+	
+	var b4326 = b.transform(
+        new OpenLayers.Projection("EPSG:900913"),
+        new OpenLayers.Projection("EPSG:4326"));
+    var args=b4326.left+';'+b4326.right+';'+b4326.top+';'+b4326.bottom+';'+bg+';'+PRINT_TYPE;
+    
+    var XMLHttp = new XMLHttpRequest();
+    XMLHttp.open("GET", server+"cgi/print/stitcher.py?"+args);
+    XMLHttp.onreadystatechange= function () {
+        if (XMLHttp.readyState == 4) {
+            // cut when cgi is not able to work
+            document.getElementById('print_result').innerHTML='<p>&nbsp;&nbsp;<a style="text-align: center;" href="'+XMLHttp.responseText+'" target="blank">'+XMLHttp.responseText+'</a></p>';
+        }
+    }
+    XMLHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+    XMLHttp.send();
+    document.getElementById('print_result').innerHTML='<p><img style="margin-left: 100px;" src="pics/snake_transparent.gif" /></p>';
+}
+function close_printSettings(){
+	document.getElementById('print-settings').style.display='none';
+	document.getElementById('print_result').innerHTML='';
+	var printLayer= map.getLayersByName("Print layer")[0];
+	printLayer.destroyFeatures(printLayer.features);
+	printLayer.destroy;
+	map.removeLayer(printLayer);
+}
+function show_printSettings(){
+	document.getElementById('print-settings').style.display='block';
+	var styleMap = new OpenLayers.StyleMap({
+		'fillColor': '#ffffff',
+		'fillOpacity' : 0.4,
+		'strokeWidth': 5,
+		'strokeColor': '#000000'
+		});
+	var printLayer = new OpenLayers.Layer.Vector("Print layer",{styleMap: styleMap});
+	map.addLayers([printLayer]);
+	var drag=new OpenLayers.Control.DragFeature(printLayer);
+	map.addControls([drag]);
+	drag.activate();
+}
+function setPrint(type) {
+	var center = map.getCenter();
+	var h;
+	var v;
+	if (type == 'vs') {h=5000;v=7000;PRINT_TYPE= 'small';}
+	if (type == 'hs') {h=7000;v=5000;PRINT_TYPE= 'small';}
+	//zoom 15
+	if (type == 'vb') {h=14000;v=20000;PRINT_TYPE= 'big';}
+	if (type == 'hb') {h=20000;v=14000;PRINT_TYPE= 'big';}
+	// zoom 14
+	var p1 = new OpenLayers.Geometry.Point(center.lon-h/2, center.lat-v/2);
+	var p2 = new OpenLayers.Geometry.Point(center.lon-h/2, center.lat+v/2);
+	var p3 = new OpenLayers.Geometry.Point(center.lon+h/2, center.lat+v/2);
+	var p4 = new OpenLayers.Geometry.Point(center.lon+h/2, center.lat-v/2);
+	var p5 = new OpenLayers.Geometry.Point(center.lon-h/2, center.lat-v/2);
+	
+	var pnt= [];
+	pnt.push(p1,p2,p3,p4,p5);
+	var ln = new OpenLayers.Geometry.LinearRing(pnt);
+	var pf = new OpenLayers.Feature.Vector(ln);
+	var printLayer= map.getLayersByName("Print layer")[0];
+	printLayer.destroyFeatures(printLayer.features);
+	printLayer.addFeatures([pf]);
+}

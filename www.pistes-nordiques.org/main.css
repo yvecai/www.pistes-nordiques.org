@@ -320,7 +320,18 @@ display: none;
     /*text-align: center;*/
     padding-top: 3px;
     width: 220px;
-    /*height: 26px;*/
+    -moz-border-radius:6px;
+    border-radius:6px;
+    border: 1px solid #aaaaaa;
+    background-color:#EEE; /*fallback*/
+    background-color: rgba(245,245,245,0.7);}
+#print-settings{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    /*text-align: center;*/
+    padding-top: 3px;
+    width: 220px;
     -moz-border-radius:6px;
     border-radius:6px;
     border: 1px solid #aaaaaa;
