@@ -735,7 +735,13 @@ function close_printSettings(){
 }
 function show_printSettings(){
 	document.getElementById('print-settings').style.display='block';
-	var printLayer = new OpenLayers.Layer.Vector("Print layer");
+	var styleMap = new OpenLayers.StyleMap({
+		'fillColor': '#ffffff',
+		'fillOpacity' : 0.4,
+		'strokeWidth': 5,
+		'strokeColor': '#000000'
+		});
+	var printLayer = new OpenLayers.Layer.Vector("Print layer",{styleMap: styleMap});
 	map.addLayers([printLayer]);
 	var drag=new OpenLayers.Control.DragFeature(printLayer);
 	map.addControls([drag]);
@@ -759,7 +765,6 @@ function setPrint(type) {
 	
 	var pnt= [];
 	pnt.push(p1,p2,p3,p4,p5);
-	
 	var ln = new OpenLayers.Geometry.LinearRing(pnt);
 	var pf = new OpenLayers.Feature.Vector(ln);
 	var printLayer= map.getLayersByName("Print layer")[0];
