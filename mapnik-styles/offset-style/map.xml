@@ -311,28 +311,28 @@ background-color="transparent" >
             &minscale_zoom12;
             <Filter>[piste:type]='nordic' or [piste:type]='downhill;nordic'</Filter>
             <TextSymbolizer face-name="DejaVu Sans Oblique" 
-            size="13" fill='#003074' halo-fill= "white" halo-radius="1" 
+            size="12" fill='#003074' halo-fill= "white" halo-radius="1" 
             placement="point" allow-overlap="false" spacing="10000" 
             avoid-edges="true"
-            wrap-width="15" dy="10">[site_name]</TextSymbolizer>
+            wrap-width="100" dy="10">[site_name]</TextSymbolizer>
             
         </Rule>
        <Rule>
-            &maxscale_zoom8;
+            &maxscale_zoom9;
             &minscale_zoom12;
             <Filter>[piste:type]='nordic'</Filter>
             <PointSymbolizer file="nordic.png" 
              allow-overlap="true" ignore-placement="true"/>
         </Rule>
        <Rule>
-            &maxscale_zoom8;
+            &maxscale_zoom9;
             &minscale_zoom12;
             <Filter>[piste:type]='downhill'</Filter>
             <PointSymbolizer file="alpine.png" 
             allow-overlap="true" ignore-placement="true"/>
         </Rule>
        <Rule>
-            &maxscale_zoom8;
+            &maxscale_zoom9;
             &minscale_zoom12;
             <Filter>[piste:type]='downhill;nordic'</Filter>
             <PointSymbolizer file="alpine-nordic.png" 
