@@ -153,7 +153,9 @@ function close_helper(){
 	document.getElementById('helper').style.display='none';
 }
 function close_catcher(){
-	document.getElementById('catcher').style.display='none';
+	if (document.getElementById('catcher').style.display != 'none') {
+		document.getElementById('catcher').style.display='none';
+	}
 }
 function show_helper(){
 	document.getElementById('helper').style.display='block';
@@ -476,6 +478,8 @@ function updateZoom() {
     $('zoom').innerHTML= map.getZoom();
 }
 function onZoomEnd(){
+	
+	close_catcher();
 	if (map.getZoom()<13){
 		document.getElementById('zoomin-helper').style.display = 'inline';
 	} else {

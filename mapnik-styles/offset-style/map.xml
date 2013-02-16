@@ -312,9 +312,9 @@ background-color="transparent" >
             <Filter>[piste:type]='nordic' or [piste:type]='downhill;nordic'</Filter>
             <TextSymbolizer face-name="DejaVu Sans Oblique" 
             size="12" fill='#003074' halo-fill= "white" halo-radius="1" 
-            placement="point" allow-overlap="false" spacing="10000" 
+            placement="point" allow-overlap="true" spacing="10000" 
             avoid-edges="true"
-            wrap-width="100" dy="10">[site_name]</TextSymbolizer>
+            wrap-width="100" dy="14">[site_name]</TextSymbolizer>
             
         </Rule>
        <Rule>
