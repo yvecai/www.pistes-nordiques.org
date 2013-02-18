@@ -100,10 +100,11 @@ def getImage(base_url, left, right, top, bottom, zoom, numbering, ext):
 #~ ?6.035988965051421;6.09887103494854;46.425069345975224;46.3631130695066
 #~ 
 #~ zoom= 15
-def handle(req):
-	from mod_python import apache, util
-	req.content_type = 'text/plain'
-	left, right, top, bottom, background, print_type = req.args.split(';', 6)
+
+
+def application(environ,start_response):
+	request = environ['QUERY_STRING']
+	left, right, top, bottom, background, print_type = request.split(';', 6)
 	
 	if print_type == 'big' : zoom= 14 # 35 tiles
 	else : zoom= 15 # 63 tiles
@@ -128,8 +129,12 @@ def handle(req):
 	cur.close()
 	conn.close()
 	if result[0][0]==0L:
-		req.write(str(result[0][0])+' pistes found')
-		return apache.OK
+		response_body=str(result[0][0])+' pistes found'
+		status = '200 OK'
+		response_headers = [('Content-Type', 'text/plain'),('Content-Length', str(len(response_body)))]
+		
+		start_response(status, response_headers)
+		return [response_body]
 	
 	#~ if background == 'osm': 
 		#~ url='http://tile.openstreetmap.org/'
@@ -194,5 +199,10 @@ def handle(req):
 	
 	#bg.save(outname,'png', ppi=pistes.info['ppi'])
 	printout.save(outname,'PDF', resolution=200.0, quality=90)
-	req.write('/tmp/'+printout_filename)
-	return apache.OK
+	response_body='/tmp/'+printout_filename
+	status = '200 OK'
+	response_headers = [('Content-Type', 'text/plain'),('Content-Length', str(len(response_body)))]
+	
+	start_response(status, response_headers)
+	return [response_body]
+

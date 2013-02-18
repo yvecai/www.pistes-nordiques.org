@@ -153,9 +153,7 @@ function close_helper(){
 	document.getElementById('helper').style.display='none';
 }
 function close_catcher(){
-	if (document.getElementById('catcher').style.display != 'none') {
-		document.getElementById('catcher').style.display='none';
-	}
+	document.getElementById('catcher').style.display='none';
 }
 function show_helper(){
 	document.getElementById('helper').style.display='block';
@@ -396,7 +394,7 @@ function loadend(){
         string=string.replace(" ","+");
         var oRequest = new XMLHttpRequest();
         //oRequest.open("GET",'http://open.mapquestapi.com/nominatim/v1/search?format=xml&q='+string,false);
-        oRequest.open("GET",server+'cgi/nominatim.cgi/search?format=xml&place='+string,false);
+        oRequest.open("GET",server+'nominatim?format=xml&place='+string,false);
         oRequest.setRequestHeader("User-Agent",navigator.userAgent);
         oRequest.send();
         setTimeout('',500);
@@ -502,7 +500,6 @@ function onZoomEnd(){
 			document.getElementById('potlatch2_pic').src="pics/potlatch2.png";
 		}
 	}
-	close_catcher();
 }
 function get_osm_url(bounds) {
     var res = this.map.getResolution();
@@ -716,7 +713,7 @@ function print() {
     var args=b4326.left+';'+b4326.right+';'+b4326.top+';'+b4326.bottom+';'+bg+';'+PRINT_TYPE;
     
     var XMLHttp = new XMLHttpRequest();
-    XMLHttp.open("GET", server+"cgi/print/stitcher.py?"+args);
+    XMLHttp.open("GET", server+"print?"+args);
     XMLHttp.onreadystatechange= function () {
         if (XMLHttp.readyState == 4) {
             // cut when cgi is not able to work

@@ -155,11 +155,11 @@ function requestRoute() {
     if (routingPoints.length >1) {
         var q = '';
         for (pt in routingPoints) {
-            q = q + routingPoints[pt].lat + ' ' +routingPoints[pt].lon + ',';
+            q = q + routingPoints[pt].lat + ';' +routingPoints[pt].lon + ',';
         };
         
         var XMLHttp = new XMLHttpRequest();
-        XMLHttp.open("GET", server+'cgi/routing/routing.py/' + q);
+        XMLHttp.open("GET", server+'routing?' + q);
         XMLHttp.onreadystatechange= function () {
             if (XMLHttp.readyState == 4) {              
                 var responseXML = XMLHttp.responseXML;
@@ -187,7 +187,7 @@ function trace_route(wktroute) {
     // request the elevation profile
     document.getElementById('topo_profile').innerHTML='Loading ...';
     var XMLHttp = new XMLHttpRequest();
-    XMLHttp.open("POST", server+"cgi/profile/getProfilePic.py/handle");
+    XMLHttp.open("POST", server+"profile?");
     XMLHttp.onreadystatechange= function () {
         if (XMLHttp.readyState == 4) {
             // cut when cgi is not able to work
@@ -716,7 +716,7 @@ var pistesLayerLowres = new OpenLayers.Layer.Vector("Pistes Vector LR", {
 	strategies: [new OpenLayers.Strategy.BBOX()],
 	styleMap: pisteStyles,
 	protocol: new OpenLayers.Protocol.HTTP({
-			url:server+"cgi/osmosis-lowres/osmosis_handle.py/",
+			url:server+"osmosis/",
 			sync: true,
 			format: new OpenLayers.Format.OSM({
 			externalProjection:new OpenLayers.Projection("EPSG:4326"),
@@ -740,7 +740,7 @@ var pistesLayer = new OpenLayers.Layer.Vector("Pistes Vector", {
 	strategies: [new OpenLayers.Strategy.BBOX()],
 	styleMap: pisteStyles,
 	protocol: new OpenLayers.Protocol.HTTP({
-			url:server+"cgi/osmosis/osmosis_handle.py/",
+			url:server+"osmosis/",
 			sync: true,
 			format: new OpenLayers.Format.OSM({
 			externalProjection:new OpenLayers.Projection("EPSG:4326"),
