@@ -153,7 +153,9 @@ function close_helper(){
 	document.getElementById('helper').style.display='none';
 }
 function close_catcher(){
-	document.getElementById('catcher').style.display='none';
+	if (document.getElementById('catcher').style.display != 'none') {
+		document.getElementById('catcher').style.display='none';
+	}
 }
 function show_helper(){
 	document.getElementById('helper').style.display='block';
@@ -500,6 +502,7 @@ function onZoomEnd(){
 			document.getElementById('potlatch2_pic').src="pics/potlatch2.png";
 		}
 	}
+	close_catcher();
 }
 function get_osm_url(bounds) {
     var res = this.map.getResolution();
