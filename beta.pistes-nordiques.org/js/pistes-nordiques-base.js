@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 // MODE
-var server="http://beta.pistes-nordiques.org/";
+var server="http://"+window.location.host;
 
 var mode="raster";
 var m="raster";
@@ -29,6 +29,7 @@ var permalink_potlatch2;
 var permalink_potlatch;
 var zoomBar;
 var PRINT_TYPE= 'small';
+var ONCE=false;
 function switch2vector() {
     if (mode == "raster") {
         loadjscssfile("js/pistes-nordiques-plus.js", "js");
@@ -153,7 +154,9 @@ function close_helper(){
 	document.getElementById('helper').style.display='none';
 }
 function close_catcher(){
-	document.getElementById('catcher').style.display='none';
+	if (document.getElementById('catcher').style.display != 'none') {
+		document.getElementById('catcher').style.display='none';
+	}
 }
 function show_helper(){
 	document.getElementById('helper').style.display='block';
@@ -275,11 +278,11 @@ function checkKey(e) {
         keynum = e.keyCode
         }
     }
-    
     if(keynum == 27) {
         close_sideBar();
         close_catcher();
         close_printSettings();
+        close_helper();
         // close extendedmenu
         var em = document.getElementById('extendedmenu');
         if (em.style.display == "inline") {
@@ -476,6 +479,9 @@ function updateZoom() {
     $('zoom').innerHTML= map.getZoom();
 }
 function onZoomEnd(){
+	
+	if (ONCE) {close_catcher();}
+	ONCE=true;
 	if (map.getZoom()<13){
 		document.getElementById('zoomin-helper').style.display = 'inline';
 	} else {
@@ -729,9 +735,11 @@ function close_printSettings(){
 	document.getElementById('print-settings').style.display='none';
 	document.getElementById('print_result').innerHTML='';
 	var printLayer= map.getLayersByName("Print layer")[0];
-	printLayer.destroyFeatures(printLayer.features);
-	printLayer.destroy;
-	map.removeLayer(printLayer);
+	if (printLayer != null) {
+		printLayer.destroyFeatures(printLayer.features);
+		printLayer.destroy;
+		map.removeLayer(printLayer);
+	}
 }
 function show_printSettings(){
 	document.getElementById('print-settings').style.display='block';
