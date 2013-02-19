@@ -29,6 +29,7 @@ var permalink_potlatch2;
 var permalink_potlatch;
 var zoomBar;
 var PRINT_TYPE= 'small';
+var ONCE=false;
 function switch2vector() {
     if (mode == "raster") {
         loadjscssfile("js/pistes-nordiques-plus.js", "js");
@@ -480,7 +481,8 @@ function updateZoom() {
 }
 function onZoomEnd(){
 	
-	close_catcher();
+	if (ONCE) {close_catcher();}
+	ONCE=true;
 	if (map.getZoom()<13){
 		document.getElementById('zoomin-helper').style.display = 'inline';
 	} else {
