@@ -282,6 +282,7 @@ function checkKey(e) {
         close_sideBar();
         close_catcher();
         close_printSettings();
+        close_helper();
         // close extendedmenu
         var em = document.getElementById('extendedmenu');
         if (em.style.display == "inline") {
@@ -733,9 +734,11 @@ function close_printSettings(){
 	document.getElementById('print-settings').style.display='none';
 	document.getElementById('print_result').innerHTML='';
 	var printLayer= map.getLayersByName("Print layer")[0];
-	printLayer.destroyFeatures(printLayer.features);
-	printLayer.destroy;
-	map.removeLayer(printLayer);
+	if (printLayer != null) {
+		printLayer.destroyFeatures(printLayer.features);
+		printLayer.destroy;
+		map.removeLayer(printLayer);
+	}
 }
 function show_printSettings(){
 	document.getElementById('print-settings').style.display='block';
