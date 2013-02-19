@@ -1,4 +1,4 @@
-var server="http://"+window.location.host;
+var server="http://"+window.location.host+"/";
 
 var lon=6.1;
 var lat=46.4;

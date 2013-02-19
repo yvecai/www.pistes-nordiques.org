@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 // MODE
-var server="http://"+window.location.host;
+var server="http://"+window.location.host+"/";
 
 var mode="raster";
 var m="raster";

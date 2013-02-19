@@ -17,7 +17,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
-var server="http://"+window.location.host;
+var server="http://"+window.location.host+"/";
 
 var timer_is_on=0;
 var routingPoints=new Array();
