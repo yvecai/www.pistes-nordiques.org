@@ -734,7 +734,7 @@ function close_printSettings(){
 	document.getElementById('print-settings').style.display='none';
 	document.getElementById('print_result').innerHTML='';
 	var printLayer= map.getLayersByName("Print layer")[0];
-	if (printLayer != '') {
+	if (printLayer != null) {
 		printLayer.destroyFeatures(printLayer.features);
 		printLayer.destroy;
 		map.removeLayer(printLayer);
