@@ -318,7 +318,7 @@ background-color="transparent" >
             
         </Rule>
        <Rule>
-            &maxscale_zoom10;
+            &maxscale_zoom11;
             &minscale_zoom12;
             <Filter>([piste:type]='nordic' or [piste:type]='downhill;nordic') and not ([entrance] = 'yes')</Filter>
             <TextSymbolizer face-name="DejaVu Sans Oblique" 
@@ -336,7 +336,7 @@ background-color="transparent" >
              allow-overlap="true" ignore-placement="true"/>
         </Rule>
        <Rule>
-            &maxscale_zoom10;
+            &maxscale_zoom11;
             &minscale_zoom12;
             <Filter>[piste:type]='nordic' and not ([entrance] = 'yes')</Filter>
             <PointSymbolizer file="nordic.png" 
@@ -350,7 +350,7 @@ background-color="transparent" >
             allow-overlap="true" ignore-placement="true"/>
         </Rule>
        <Rule>
-            &maxscale_zoom10;
+            &maxscale_zoom11;
             &minscale_zoom12;
             <Filter>[piste:type]='downhill' and not ([entrance] = 'yes')</Filter>
             <PointSymbolizer file="alpine.png" 
@@ -364,7 +364,7 @@ background-color="transparent" >
             allow-overlap="true" ignore-placement="true"/>
         </Rule>
        <Rule>
-            &maxscale_zoom10;
+            &maxscale_zoom11;
             &minscale_zoom12;
             <Filter>[piste:type]='downhill;nordic' and not ([entrance] = 'yes')</Filter>
             <PointSymbolizer file="alpine-nordic.png" 
