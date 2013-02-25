@@ -314,7 +314,7 @@ background-color="transparent" >
             size="10" fill='#003074' halo-fill= "white" halo-radius="1" 
             placement="point" allow-overlap="true" spacing="10000" 
             avoid-edges="true"
-            wrap-width="100" dy="14">[site_name]</TextSymbolizer>
+            wrap-width="60" dy="14">[site_name]</TextSymbolizer>
             
         </Rule>
        <Rule>
@@ -325,7 +325,7 @@ background-color="transparent" >
             size="12" fill='#003074' halo-fill= "white" halo-radius="1" 
             placement="point" allow-overlap="true" spacing="10000" 
             avoid-edges="true"
-            wrap-width="100" dy="14">[site_name]</TextSymbolizer>
+            wrap-width="80" dy="14">[site_name]</TextSymbolizer>
             
         </Rule>
        <Rule>
