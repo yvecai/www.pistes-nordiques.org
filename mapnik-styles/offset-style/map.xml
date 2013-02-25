@@ -308,6 +308,17 @@ background-color="transparent" >
 <Style name="site_text" >
        <Rule>
             &maxscale_zoom9;
+            &minscale_zoom10;
+            <Filter>([piste:type]='nordic' or [piste:type]='downhill;nordic') and not ([entrance] = 'yes')</Filter>
+            <TextSymbolizer face-name="DejaVu Sans Oblique" 
+            size="10" fill='#003074' halo-fill= "white" halo-radius="1" 
+            placement="point" allow-overlap="true" spacing="10000" 
+            avoid-edges="true"
+            wrap-width="100" dy="14">[site_name]</TextSymbolizer>
+            
+        </Rule>
+       <Rule>
+            &maxscale_zoom10;
             &minscale_zoom12;
             <Filter>([piste:type]='nordic' or [piste:type]='downhill;nordic') and not ([entrance] = 'yes')</Filter>
             <TextSymbolizer face-name="DejaVu Sans Oblique" 
@@ -319,6 +330,13 @@ background-color="transparent" >
         </Rule>
        <Rule>
             &maxscale_zoom9;
+            &minscale_zoom10;
+            <Filter>[piste:type]='nordic' and not ([entrance] = 'yes')</Filter>
+            <PointSymbolizer file="nordic-small.png" 
+             allow-overlap="true" ignore-placement="true"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom10;
             &minscale_zoom12;
             <Filter>[piste:type]='nordic' and not ([entrance] = 'yes')</Filter>
             <PointSymbolizer file="nordic.png" 
@@ -326,6 +344,13 @@ background-color="transparent" >
         </Rule>
        <Rule>
             &maxscale_zoom9;
+            &minscale_zoom10;
+            <Filter>[piste:type]='downhill' and not ([entrance] = 'yes')</Filter>
+            <PointSymbolizer file="alpine-small.png" 
+            allow-overlap="true" ignore-placement="true"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom10;
             &minscale_zoom12;
             <Filter>[piste:type]='downhill' and not ([entrance] = 'yes')</Filter>
             <PointSymbolizer file="alpine.png" 
@@ -333,6 +358,13 @@ background-color="transparent" >
         </Rule>
        <Rule>
             &maxscale_zoom9;
+            &minscale_zoom10;
+            <Filter>[piste:type]='downhill;nordic' and not ([entrance] = 'yes')</Filter>
+            <PointSymbolizer file="alpine-nordic-small.png" 
+            allow-overlap="true" ignore-placement="true"/>
+        </Rule>
+       <Rule>
+            &maxscale_zoom10;
             &minscale_zoom12;
             <Filter>[piste:type]='downhill;nordic' and not ([entrance] = 'yes')</Filter>
             <PointSymbolizer file="alpine-nordic.png" 
