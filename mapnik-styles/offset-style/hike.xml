@@ -126,7 +126,7 @@
 		<Filter>([piste:difficulty]='novice' or [piste:difficulty]='easy'
 		or [piste:difficulty]='intermediate' or [piste:difficulty]='advanced'
 		or [piste:difficulty]='expert')</Filter>
-		<LineSymbolizer stroke-width="3" stroke="#FFFFFF" 
+		<LineSymbolizer stroke-width="4" stroke="#FFFFFF" 
 		stroke-dasharray="1,10"/>
 	</Rule>
 	<!--no-difficulty-->
@@ -155,7 +155,7 @@
 		&maxscale_zoom13;
 		&minscale_zoom18;
 		<ElseFilter/>
-		<LineSymbolizer stroke-width="3" stroke="#FFFFFF" 
+		<LineSymbolizer stroke-width="4" stroke="#FFFFFF" 
 		stroke-dasharray="1,10"/>
 	</Rule>
 </Style>
