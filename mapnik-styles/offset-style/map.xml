@@ -252,7 +252,7 @@ background-color="transparent" >
             &minscale_zoom18;
             <Filter>[entrance] = 'yes'</Filter>
             <PointSymbolizer file="snowflake.png" 
-            allow-overlap="true" ignore-placement="true" dy="12"/>
+            allow-overlap="true" ignore-placement="true"/>
         </Rule>
      </Style>
 	
