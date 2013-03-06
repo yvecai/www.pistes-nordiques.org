@@ -18,42 +18,42 @@
 		&maxscale_zoom14;
 		&minscale_zoom18;
 		<Filter>[aerialway]='funicular'</Filter>
-		<MarkerSymbolizer file="funicular.png" spacing="100"/>
+		<MarkersSymbolizer file="funicular.png" spacing="100"/>
 	</Rule>
 	<Rule>
 		&maxscale_zoom14;
 		&minscale_zoom18;
 		<Filter>[aerialway]='cable_car'</Filter>
-		<MarkerSymbolizer file="cable_car.png" spacing="100"/>
+		<MarkersSymbolizer file="cable_car.png" spacing="100"/>
 	</Rule>
 	<Rule>
 		&maxscale_zoom14;
 		&minscale_zoom18;
 		<Filter>[aerialway]='gondola'</Filter>
-		<MarkerSymbolizer file="gondola.png" spacing="100"/>
+		<MarkersSymbolizer file="gondola.png" spacing="100"/>
 	</Rule>
 	<Rule>
 		&maxscale_zoom14;
 		&minscale_zoom18;
 		<Filter>[aerialway]='chair_lift'</Filter>
-		<MarkerSymbolizer file="chair_lift.png" spacing="100"/>
+		<MarkersSymbolizer file="chair_lift.png" spacing="100"/>
 	</Rule>
 	<Rule>
 		&maxscale_zoom14;
 		&minscale_zoom18;
 		<Filter>[aerialway]='mixed_lift'</Filter>
-		<MarkerSymbolizer file="mixed_lift.png" spacing="100"/>
+		<MarkersSymbolizer file="mixed_lift.png" spacing="100"/>
 	</Rule>
 	<Rule>
 		&maxscale_zoom14;
 		&minscale_zoom18;
 		<Filter>[aerialway]='t-bar' or [aerialway]='j-bar' or [aerialway]='platter' or [aerialway]='rope-tow' or [aerialway]='drag_lift'</Filter>
-		<MarkerSymbolizer file="drag_lift.png" spacing="100"/>
+		<MarkersSymbolizer file="drag_lift.png" spacing="100"/>
 	</Rule>
 	<Rule>
 		&maxscale_zoom14;
 		&minscale_zoom18;
 		<Filter>[aerialway]='magic_carpet'</Filter>
-		<MarkerSymbolizer file="magic_carpet.png" spacing="100"/>
+		<MarkersSymbolizer file="magic_carpet.png" spacing="100"/>
 	</Rule>
 </Style>
