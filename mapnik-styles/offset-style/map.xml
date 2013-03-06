@@ -31,6 +31,7 @@ background-color="transparent" >
             allow-overlap="true" spacing="0"/>
         </Rule>
     </Style>
+    &downhill;
 <!-- White casing -->	
 	<Style name="nordic-bg">
 		<Rule>
