@@ -1,5 +1,6 @@
 <!ENTITY datasource-settings SYSTEM "datasource-settings.xml.inc">
 <!ENTITY fontset-settings SYSTEM "fontset-settings.xml.inc">
+<!ENTITY skitour SYSTEM "skitour.xml">
 <!ENTITY aerialways SYSTEM "aerialways.xml">
 <!ENTITY snowshoeing SYSTEM "hike.xml">
 <!ENTITY downhill SYSTEM "downhill.xml">

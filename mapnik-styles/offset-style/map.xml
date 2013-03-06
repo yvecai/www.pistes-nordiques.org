@@ -34,6 +34,7 @@ background-color="transparent" >
     &downhill;
     &snowshoeing;
     &aerialways;
+    &skitour;
 <!-- White casing -->	
 	<Style name="nordic-bg">
 		<Rule>
@@ -282,8 +283,8 @@ background-color="transparent" >
             </Parameter>
         </Datasource>
     </Layer>
-    <Layer name="downhill-bg" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-        <StyleName>downhill-bg</StyleName>
+    <Layer name="downhill" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+        <StyleName>downhill</StyleName>
         <Datasource>
 			&datasource-settings;
             <Parameter name="table">
@@ -298,6 +299,16 @@ background-color="transparent" >
 			&datasource-settings;
             <Parameter name="table">
             (select * from planet_osm_line where "piste:type"='hike'order by z_order) as pistes
+            </Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="skitour" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+        <StyleName>skitour</StyleName>
+        <Datasource>
+			&datasource-settings;
+            <Parameter name="table">
+            (select * from planet_osm_line where "piste:type"='skitour'order by z_order) as pistes
             </Parameter>
         </Datasource>
     </Layer>
