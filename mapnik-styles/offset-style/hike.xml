@@ -129,7 +129,7 @@
 		&minscale_zoom18;
 		<Filter>[piste:difficulty]='novice' </Filter>
 		<LineSymbolizer stroke-width="5" stroke="#23CD23" 
-		stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5,10"/>
+		stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1,10"/>
 	</Rule>
 	<!--easy-->
 	
@@ -145,7 +145,7 @@
 		&minscale_zoom18;
 		<Filter>[piste:difficulty]='easy' </Filter>
 		<LineSymbolizer stroke-width="5" stroke="#1919DE" 
-		stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5,10"/>
+		stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1,10"/>
 	</Rule>
 	<!--intermediate-->
 			
@@ -161,7 +161,7 @@
 		&minscale_zoom18;
 		<Filter>[piste:difficulty]='intermediate' </Filter>
 		<LineSymbolizer stroke-width="5" stroke="#E81F1F" 
-		stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5,10"/>
+		stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1,10"/>
 	</Rule>
 	<!--advanced-->
 			
@@ -177,7 +177,7 @@
 		&minscale_zoom18;
 		<Filter>[piste:difficulty]='advanced' </Filter>
 		<LineSymbolizer stroke-width="5" stroke="#484848" 
-		stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5,10"/>
+		stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1,10"/>
 	</Rule>
 	<!--expert-->
 			
@@ -193,7 +193,7 @@
 		&minscale_zoom18;
 		<Filter>[piste:difficulty]='expert' </Filter>
 		<LineSymbolizer stroke-width="5" stroke="#FFBB2D" 
-		stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="5,10"/>
+		stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1,10"/>
 	</Rule>
 
 	<Rule>
@@ -201,6 +201,6 @@
 		&minscale_zoom18;
 		<Filter>[piste:grooming]='classic' </Filter>
 		<LineSymbolizer stroke-width="4" stroke="#FFFFFF" 
-		stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4,11"/>
+		stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1,10"/>
 	</Rule>
 </Style>
