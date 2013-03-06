@@ -405,7 +405,7 @@ background-color="transparent" >
 			&datasource-settings;
 			<Parameter name="geometry_table">planet_osm_line</Parameter>
             <Parameter name="table">
-            (select ST_Line_Interpolate_Point(way,0.5) as way from planet_osm_line where "aerialway" is not null order by z_order) as pistes
+            (select * from planet_osm_line where "aerialway" is not null order by z_order) as pistes
             </Parameter>
         </Datasource>
     </Layer>	
