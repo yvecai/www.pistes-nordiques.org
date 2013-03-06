@@ -82,7 +82,7 @@
 		<Filter>[piste:difficulty]='novice' </Filter>
 		<LineSymbolizer stroke-width="5" stroke="#64FF64" 
 		stroke-dasharray="1,10"/
-		stroke-linejoin="round" stroke-linecap="round">
+		stroke-linejoin="round" stroke-linecap="round"/>
 	</Rule>
 	<!--easy-->
 	<Rule>
