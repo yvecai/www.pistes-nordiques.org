@@ -9,7 +9,7 @@ version 2012-10-27 - Yves Cainaud
 <Map xmlns:xi="http://www.w3.org/2001/XInclude" 
 srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over" 
 background-color="transparent" >
-    <Style name="nodes">
+    <Style name="nodes-nordic">
         <Rule>
             &maxscale_zoom0;
             &minscale_zoom8;
@@ -20,7 +20,7 @@ background-color="transparent" >
             allow-overlap="true" spacing="0"/>
         </Rule>
     </Style>
-    <Style name="nodes2" comp-op="color-dodge">
+    <Style name="nodes-nordic2" comp-op="color-dodge">
         <Rule>
             &maxscale_zoom0;
             &minscale_zoom8;
@@ -31,6 +31,31 @@ background-color="transparent" >
             allow-overlap="true" spacing="0"/>
         </Rule>
     </Style>
+
+    <Style name="nodes-downhill">
+        <Rule>
+            &maxscale_zoom0;
+            &minscale_zoom8;
+            <MarkersSymbolizer fill="#1E90FF" opacity="0.5" 
+            width="2" height="2" stroke="#1E90FF" 
+            stroke-width="4" stroke-opacity=".2" 
+            placement="point" marker-type="ellipse"
+            allow-overlap="true" spacing="0"/>
+        </Rule>
+    </Style>
+    <Style name="nodes-downhill2" comp-op="color-dodge">
+        <Rule>
+            &maxscale_zoom0;
+            &minscale_zoom8;
+            <MarkersSymbolizer fill="#1E90FF" opacity="1" 
+            width="1" height="1" stroke="#1E90FF" 
+            stroke-width="3" stroke-opacity="0.6" 
+            placement="point" marker-type="ellipse"
+            allow-overlap="true" spacing="0"/>
+        </Rule>
+    </Style>
+
+
     &downhill;
     &snowshoeing;
     &aerialways;
@@ -257,9 +282,9 @@ background-color="transparent" >
         </Rule>
      </Style>
 	
-    <Layer name="nodes" 
+    <Layer name="nodes-nordic" 
 	srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-        <StyleName>nodes</StyleName>
+        <StyleName>nodes-nordic</StyleName>
         <Datasource>
 			&datasource-settings;
             <Parameter name="geometry_table">planet_osm_line</Parameter>
@@ -271,9 +296,9 @@ background-color="transparent" >
     </Layer>
 
 <!-- Overlay layer for color-dodge effect -->
-    <Layer name="nodes2" 
+    <Layer name="nodes-nordic2" 
 	srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-		<StyleName>nodes2</StyleName>
+		<StyleName>nodes-nordic2</StyleName>
         <Datasource>
 			&datasource-settings;
             <Parameter name="geometry_table">planet_osm_line</Parameter>
@@ -283,6 +308,34 @@ background-color="transparent" >
             </Parameter>
         </Datasource>
     </Layer>
+    
+    <Layer name="nodes-downhill" 
+	srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+        <StyleName>nodes-downhill</StyleName>
+        <Datasource>
+			&datasource-settings;
+            <Parameter name="geometry_table">planet_osm_line</Parameter>
+			<!-- Select only the first node of each way, don't forget the 'as way' otherwise mapnik can't select points -->
+            <Parameter name="table">
+            (select ST_StartPoint(way) as way from planet_osm_line where "piste:type"='downhill') as nodes
+            </Parameter>
+        </Datasource>
+    </Layer>
+
+<!-- Overlay layer for color-dodge effect -->
+    <Layer name="nodes-downhill2" 
+	srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+		<StyleName>nodes-downhill2</StyleName>
+        <Datasource>
+			&datasource-settings;
+            <Parameter name="geometry_table">planet_osm_line</Parameter>
+			<!-- Select only the first node of each way, don't forget the 'as way' otherwise mapnik can't select points -->
+            <Parameter name="table">
+            (select ST_StartPoint(way) as way from planet_osm_line where "piste:type"='downhill') as nodes
+            </Parameter>
+        </Datasource>
+    </Layer>
+    
     <Layer name="downhill" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
         <StyleName>downhill</StyleName>
         <Datasource>
