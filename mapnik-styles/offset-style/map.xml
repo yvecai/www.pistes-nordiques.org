@@ -297,7 +297,17 @@ background-color="transparent" >
             </Parameter>
         </Datasource>
     </Layer>
-
+    <Layer name="nodes-downhill"
+    srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+        <StyleName>nodes-downhill</StyleName>
+        <Datasource>
+            &datasource-settings;
+            <Parameter name="geometry_table">planet_osm_line</Parameter>
+            <Parameter name="table">
+            (select ST_StartPoint(way) as way from planet_osm_line where "piste:type"='downhill') as nodes
+            </Parameter>
+        </Datasource>
+    </Layer>
 <!-- Overlay layer for color-dodge effect -->
     <Layer name="nodes-nordic2"
     srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
@@ -313,17 +323,7 @@ background-color="transparent" >
     </Layer>
 
 
-    <Layer name="nodes-downhill"
-    srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-        <StyleName>nodes-downhill</StyleName>
-        <Datasource>
-            &datasource-settings;
-            <Parameter name="geometry_table">planet_osm_line</Parameter>
-            <Parameter name="table">
-            (select ST_StartPoint(way) as way from planet_osm_line where "piste:type"='downhill') as nodes
-            </Parameter>
-        </Datasource>
-    </Layer>
+
     <Layer name="nodes-downhill2"
     srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
         <StyleName>nodes-downhill2</StyleName>
