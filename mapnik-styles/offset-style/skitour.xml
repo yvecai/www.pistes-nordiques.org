@@ -28,7 +28,7 @@
 		&minscale_zoom18;
 		
 		<LineSymbolizer stroke-width="8" stroke="#FF703C" 
-		stroke-dasharray="1-1,15"
+		stroke-dasharray="1,16"
 		stroke-linejoin="round" stroke-linecap="round"/>
 	</Rule>
 
@@ -53,7 +53,7 @@
 		&minscale_zoom18;
 		
 		<LineSymbolizer stroke-width="6" stroke="#FFFFFF" stroke-opacity="0.5" 
-		stroke-dasharray="1,15"
+		stroke-dasharray="1,16"
 		stroke-linejoin="round" stroke-linecap="round" />
 	</Rule>
 </Style>
