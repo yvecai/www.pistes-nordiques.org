@@ -33,6 +33,7 @@ background-color="transparent" >
     </Style>
     &downhill;
     &snowshoeing;
+    &aerialways;
 <!-- White casing -->	
 	<Style name="nordic-bg">
 		<Rule>
@@ -291,20 +292,6 @@ background-color="transparent" >
         </Datasource>
     </Layer>
 
-
-<!--
-    <Layer name="downhill" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-        <StyleName>downhill</StyleName>
-        <Datasource>
-			&datasource-settings;
-            <Parameter name="table">
-            (select * from planet_osm_line where "piste:type"='downhill'order by z_order) as pistes
-            </Parameter>
-        </Datasource>
-    </Layer>
-
--->
-
     <Layer name="snowshoeing" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
         <StyleName>snowshoeing</StyleName>
         <Datasource>
@@ -401,7 +388,26 @@ background-color="transparent" >
             </Parameter>
         </Datasource>
     </Layer>
-	
+
+	<Layer name="aerialways" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+        <StyleName>aerialways</StyleName>
+        <Datasource>
+			&datasource-settings;
+            <Parameter name="table">
+            (select * from planet_osm_line where "aerialway" is not null order by z_order) as pistes
+            </Parameter>
+        </Datasource>
+    </Layer>
+
+	<Layer name="aerialways-icons" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+        <StyleName>aerialways-icons</StyleName>
+        <Datasource>
+			&datasource-settings;
+            <Parameter name="table">
+            (select ST_Line_Interpolate_Point(way,0.5) as way from planet_osm_line where "aerialway" is not null order by z_order) as pistes
+            </Parameter>
+        </Datasource>
+    </Layer>	
     <Layer name="text" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
         <StyleName>text</StyleName>
         <Datasource>
