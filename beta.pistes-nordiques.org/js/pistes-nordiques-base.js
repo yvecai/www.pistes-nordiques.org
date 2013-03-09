@@ -433,7 +433,7 @@ function loadend(){
             types=pist.sites[r].types.split(';');
             htmlResponse += '<li><a onclick="setCenterMap('
             + pist.sites[r].center +','
-            + 14 +');">'
+            + 12 +');">'
             + pist.sites[r].name +'</a>'
             for (t in  types) {
                 htmlResponse +='&nbsp;<img src="'+icon[types[t]]+'"></li>';
@@ -446,7 +446,7 @@ function loadend(){
             htmlResponse += '<li><b style="color:'+color+';font-weight:900;">&#9679 </b>'
             +'<a onclick="setCenterMap('
             + pist.routes[r].center +','
-            + 14 +');">'
+            + 15 +');">'
             + pist.routes[r].name +'</a>'
             +'&nbsp;<img src="'+icon[type]+'"></li>';
         }
@@ -455,7 +455,7 @@ function loadend(){
             type=pist.pistes[r].types;
             htmlResponse += '<li><a onclick="setCenterMap('
             + pist.pistes[r].center +','
-            + 14 +');">'
+            + 15 +');">'
             + pist.pistes[r].name +'</a>'
             +'&nbsp;<img src="'+icon[type]+'"></li>';
         }
@@ -464,7 +464,7 @@ function loadend(){
             type=pist.aerialways[r].types;
             htmlResponse += '<li><a onclick="setCenterMap('
             + pist.aerialways[r].center +','
-            + 14 +');">'
+            + 15 +');">'
             + pist.aerialways[r].name +'</a>'
             +'&nbsp;<img src="'+icon[type]+'"></li>';
         }
