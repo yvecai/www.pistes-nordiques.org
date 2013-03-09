@@ -130,7 +130,7 @@ def query_ways(ways_ids):
 	cur = con.cursor()
 	ways={}
 	for idx in ways_ids:
-		cur.execute("select name, \"piste:type\", ST_AsLatLonText(st_centroid(ST_Transform(way,4326)), 'D.DDDDD'), \"piste:difficulty\", \"piste:grooming\", \"piste:lit\" from planet_osm_line where osm_id = %s and \"piste:type\" is not null;"\
+		cur.execute("select COALESCE(name,'')||' '||COALESCE(\"piste:name\",''), \"piste:type\", ST_AsLatLonText(st_centroid(ST_Transform(way,4326)), 'D.DDDDD'), \"piste:difficulty\", \"piste:grooming\", \"piste:lit\" from planet_osm_line where osm_id = %s and \"piste:type\" is not null;"\
 		%(idx))
 		resp=cur.fetchall()
 		for s in resp:
@@ -140,8 +140,8 @@ def query_ways(ways_ids):
 				ways[idx]['types']=s[1]
 				ways[idx]['center']=s[2].replace(' ',',')
 				ways[idx]['difficulty']=s[3]
-				ways[idx]['grooming']=s[3]
-				ways[idx]['lit']=s[3]
+				ways[idx]['grooming']=s[4]
+				ways[idx]['lit']=s[5]
 	con.close()
 	return ways
 
