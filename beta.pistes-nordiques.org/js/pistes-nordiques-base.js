@@ -30,6 +30,25 @@ var permalink_potlatch;
 var zoomBar;
 var PRINT_TYPE= 'small';
 var ONCE=false;
+icon = {
+"downhill":'pics/alpine.png',
+"cable_car":'pics/cable_car.png',
+"chair_lift":'pics/chair_lift.png',
+"drag_lift":'pics/drag_lift.png',
+"funicular":'pics/funicular.png',
+"gondola":'pics/gondola.png',
+"jump":'pics/jump.png',
+"magic_carpet":'pics/magic_carpet.png',
+"mixed_lift":'pics/mixed_lift.png',
+"nordic":'pics/nordic.png',
+"skitour":'pics/skitour.png',
+"hike":'pics/snowshoe.png',
+"t-bar":'pics/drag_lift.png',
+"j-bar":'pics/drag_lift.png',
+"platter":'pics/drag_lift.png',
+"rope_tow":'pics/drag_lift.png',
+"station":'pics/station.png',
+}
 function switch2vector() {
     if (mode == "raster") {
         loadjscssfile("js/pistes-nordiques-plus.js", "js");
