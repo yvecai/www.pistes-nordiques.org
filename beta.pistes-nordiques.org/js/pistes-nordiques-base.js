@@ -401,13 +401,13 @@ function loadend(){
         oRequest.setRequestHeader("User-Agent",navigator.userAgent);
         oRequest.send();
         setTimeout('',500);
-        var nom = oRequest.responseText;
+        var nom = JSON.parse(oRequest.responseText);
         
         oRequest.open("GET",server+'search?name='+string,false);
         oRequest.setRequestHeader("User-Agent",navigator.userAgent);
         oRequest.send();
-        setTimeout('',500);
-        var pist = oRequest.responseText;
+        setTimeout('',1000);
+        var pist = JSON.parse(oRequest.responseText);
         
         htmlResponse='<p><ul>'
         for (r in pist.sites) {
