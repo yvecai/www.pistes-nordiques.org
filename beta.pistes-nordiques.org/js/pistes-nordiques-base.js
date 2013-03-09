@@ -46,7 +46,7 @@ function switch2vector() {
         
         mode="vector";
         map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
-		show_helper();
+        show_helper();
     }
 }
 function switch2raster() {
@@ -73,7 +73,7 @@ function switch2raster() {
         
         mode="raster";
         map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
-		close_helper();
+        close_helper();
     }
 }
 function setmode(m){
@@ -148,23 +148,23 @@ function closeMenu() {
 }
 function close_sideBar() {
     document.getElementById('sideBar').style.display='none';
-	EDIT_SHOWED = false;
+    EDIT_SHOWED = false;
 }
 function close_helper(){
-	document.getElementById('helper').style.display='none';
+    document.getElementById('helper').style.display='none';
 }
 function close_catcher(){
-	if (document.getElementById('catcher').style.display != 'none') {
-		document.getElementById('catcher').style.display='none';
-	}
+    if (document.getElementById('catcher').style.display != 'none') {
+        document.getElementById('catcher').style.display='none';
+    }
 }
 function show_helper(){
-	document.getElementById('helper').style.display='block';
-	if (map.getZoom()<13){
-		document.getElementById('zoomin-helper').style.display = 'inline';
-	} else {
-		document.getElementById('zoomin-helper').style.display = 'none';
-	}
+    document.getElementById('helper').style.display='block';
+    if (map.getZoom()<13){
+        document.getElementById('zoomin-helper').style.display = 'inline';
+    } else {
+        document.getElementById('zoomin-helper').style.display = 'none';
+    }
 }
 function show_about() {
     document.getElementById('sideBar').style.display='inline';
@@ -188,46 +188,46 @@ function show_edit() {
     document.getElementById('sideBarContent').style.display='inline';
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('edit').replace('<br/>',' ');
     
-	html = '<div style="font-size:1.5em; font-weight:800;" id="edit_zoom_in"></div>'
-	 +'<p>&nbsp;'+_('edit_the_map_using')+'</p>'
-	 +'<p>&nbsp;'+_('edit_the_map_explain')+'</p>'
-	 +'<hr class="hrmenu">'
-	 +'<p><a href="iframes/how-to-'+iframelocale+'.html" target="blank">'+_('how_to')+'</a></p>'
-	 +'<hr class="hrmenu">'
-	 +'<p style="text-align:center;">'
-	 +'<a id="permalink.potlatch" href="" target="blank"><img src="pics/potlatch.png" id="potlatch_pic"></a>'
-	 +'</p><p style="text-align:center;">'
-	 +'<a id="permalink.potlatch2" href="" target="blank"><img src="pics/potlatch2.png" id="potlatch2_pic"></a>'
-	 +'</p>'
-	 +'<hr class="hrmenu">'
-	 +'<p>&nbsp;'+_('offseter_explain')+'</p>'
-	 +'</p><p style="text-align:center;">'
-	 +'<a id="permalink.ofsetter" href="" target="blank"><img src="pics/offseter-fuzzy.png" ></a>'
-	 +'</p>'
-	 +'<hr class="hrmenu">';
-	document.getElementById('sideBarContent').innerHTML=html;
-	EDIT_SHOWED = true;
-	permalink_potlatch = new OpenLayers.Control.Permalink("permalink.potlatch",
-	"http://www.openstreetmap.org/edit",{'createParams': permalink1Args});
-	map.addControl(permalink_potlatch);
-	permalink_potlatch2 = new OpenLayers.Control.Permalink("permalink.potlatch2",
-	"http://www.openstreetmap.org/edit",{'createParams': permalink2Args});
-	map.addControl(permalink_potlatch2);
-	var permalink_ofsetter = new OpenLayers.Control.Permalink("permalink.ofsetter",
-		"offseter");
-	map.addControl(permalink_ofsetter);
+    html = '<div style="font-size:1.5em; font-weight:800;" id="edit_zoom_in"></div>'
+     +'<p>&nbsp;'+_('edit_the_map_using')+'</p>'
+     +'<p>&nbsp;'+_('edit_the_map_explain')+'</p>'
+     +'<hr class="hrmenu">'
+     +'<p><a href="iframes/how-to-'+iframelocale+'.html" target="blank">'+_('how_to')+'</a></p>'
+     +'<hr class="hrmenu">'
+     +'<p style="text-align:center;">'
+     +'<a id="permalink.potlatch" href="" target="blank"><img src="pics/potlatch.png" id="potlatch_pic"></a>'
+     +'</p><p style="text-align:center;">'
+     +'<a id="permalink.potlatch2" href="" target="blank"><img src="pics/potlatch2.png" id="potlatch2_pic"></a>'
+     +'</p>'
+     +'<hr class="hrmenu">'
+     +'<p>&nbsp;'+_('offseter_explain')+'</p>'
+     +'</p><p style="text-align:center;">'
+     +'<a id="permalink.ofsetter" href="" target="blank"><img src="pics/offseter-fuzzy.png" ></a>'
+     +'</p>'
+     +'<hr class="hrmenu">';
+    document.getElementById('sideBarContent').innerHTML=html;
+    EDIT_SHOWED = true;
+    permalink_potlatch = new OpenLayers.Control.Permalink("permalink.potlatch",
+    "http://www.openstreetmap.org/edit",{'createParams': permalink1Args});
+    map.addControl(permalink_potlatch);
+    permalink_potlatch2 = new OpenLayers.Control.Permalink("permalink.potlatch2",
+    "http://www.openstreetmap.org/edit",{'createParams': permalink2Args});
+    map.addControl(permalink_potlatch2);
+    var permalink_ofsetter = new OpenLayers.Control.Permalink("permalink.ofsetter",
+        "offseter");
+    map.addControl(permalink_ofsetter);
     
-	if (map.getZoom() < 13) {
+    if (map.getZoom() < 13) {
         document.getElementById('edit_zoom_in').innerHTML='&nbsp;'+_('zoom_in');
-		document.getElementById('permalink.potlatch').href = "javascript:void(0)";	
-		document.getElementById('permalink.potlatch').target="";
-		document.getElementById('potlatch_pic').src="pics/potlatch-disabled.png";
-		document.getElementById('permalink.potlatch2').href = "javascript:void(0)";
-		document.getElementById('permalink.potlatch2').target="";
-		document.getElementById('potlatch2_pic').src="pics/potlatch2-disabled.png";
+        document.getElementById('permalink.potlatch').href = "javascript:void(0)";  
+        document.getElementById('permalink.potlatch').target="";
+        document.getElementById('potlatch_pic').src="pics/potlatch-disabled.png";
+        document.getElementById('permalink.potlatch2').href = "javascript:void(0)";
+        document.getElementById('permalink.potlatch2').target="";
+        document.getElementById('potlatch2_pic').src="pics/potlatch2-disabled.png";
     }else {
-		document.getElementById('edit_zoom_in').innerHTML='';
-	}
+        document.getElementById('edit_zoom_in').innerHTML='';
+    }
 }
 function show_profile() {
     document.getElementById('sideBar').style.display='inline';
@@ -394,24 +394,71 @@ function loadend(){
         document.getElementById('sideBar').style.display='inline';
         //document.getElementById('search_result').style.display='inline';
         document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('search_results');
-        string=string.replace(" ","+");
+        
         var oRequest = new XMLHttpRequest();
         //oRequest.open("GET",'http://open.mapquestapi.com/nominatim/v1/search?format=xml&q='+string,false);
-        oRequest.open("GET",server+'nominatim?format=xml&place='+string,false);
+        oRequest.open("GET",server+'nominatim?format=json&place='+string,false);
         oRequest.setRequestHeader("User-Agent",navigator.userAgent);
         oRequest.send();
         setTimeout('',500);
-        var responseXML = oRequest.responseXML;
-        var response = responseXML.getElementsByTagName('place');
+        var nom = oRequest.responseText;
         
-        var htmlResponse='<p><ul>';
+        oRequest.open("GET",server+'search?name='+string,false);
+        oRequest.setRequestHeader("User-Agent",navigator.userAgent);
+        oRequest.send();
+        setTimeout('',500);
+        var pist = oRequest.responseText;
         
-        for (var i=0;i<response.length;i++) {
+        htmlResponse='<p><ul>'
+        for (r in pist.sites) {
+            types=pist.sites[r].types.split(';');
             htmlResponse += '<li><a onclick="setCenterMap('
-            + response[i].getAttribute('lon') +','
-            + response[i].getAttribute('lat') +','
+            + pist.sites[r].center +','
             + 14 +');">'
-            + response[i].getAttribute('display_name') +'</a></li><br/>';
+            + pist.sites[r].name +'</a>'
+            for (t in  types) {
+                htmlResponse +='&nbsp;<img src="'+icon[types[t]]+'"></li>';
+            }
+        }
+        htmlResponse += '</p></ul><p><ul>'
+        for (r in pist.routes) {
+            type=pist.routes[r].types;
+            color=pist.routes[r].color;
+            htmlResponse += '<li><b style="color:'+color+';font-weight:900;">&#9679 </b>'
+            +'<a onclick="setCenterMap('
+            + pist.routes[r].center +','
+            + 14 +');">'
+            + pist.routes[r].name +'</a>'
+            +'&nbsp;<img src="'+icon[type]+'"></li>';
+        }
+        htmlResponse += '</ul></p><p><ul>'
+        for (r in pist.pistes) {
+            type=pist.pistes[r].types;
+            htmlResponse += '<li><a onclick="setCenterMap('
+            + pist.pistes[r].center +','
+            + 14 +');">'
+            + pist.pistes[r].name +'</a>'
+            +'&nbsp;<img src="'+icon[type]+'"></li>';
+        }
+        htmlResponse += '</ul></p><p><ul>'
+        for (r in pist.aerialways) {
+            type=pist.aerialways[r].types;
+            htmlResponse += '<li><a onclick="setCenterMap('
+            + pist.aerialways[r].center +','
+            + 14 +');">'
+            + pist.aerialways[r].name +'</a>'
+            +'&nbsp;<img src="'+icon[type]+'"></li>';
+        }
+        htmlResponse += '</ul></p>'
+        
+        htmlResponse += '<hr/>'
+        htmlResponse='<p><ul>'
+        for (var i=0;i<nom.length;i++) {
+            htmlResponse += '<li><a onclick="setCenterMap('
+            + nom[i].lon +','
+            + nom[i].lat +','
+            + 14 +');">'
+            + nom[i].display_name +'</a></li><br/>';
         }
         htmlResponse += '</p></ul> <p>Nominatim Search Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png"></p>';
         
@@ -442,11 +489,11 @@ if (location.search != "") {
         if (x[i].split("=")[0] == 'lat') {lat=x[i].split("=")[1];}
         if (x[i].split("=")[0] == 'm') {m=x[i].split("=")[1];} // not used
         if (x[i].split("=")[0] == 'e') {
-			var ext=x[i].split("=")[1];
-			if (ext == 'false'){EXT_MENU=false;}
-			else if (ext == 'true'){EXT_MENU=true;}
-			else {EXT_MENU=false;}
-		}
+            var ext=x[i].split("=")[1];
+            if (ext == 'false'){EXT_MENU=false;}
+            else if (ext == 'true'){EXT_MENU=true;}
+            else {EXT_MENU=false;}
+        }
     }
     //Then hopefully map_init() will do the job when the map is loaded
 }
@@ -469,7 +516,7 @@ function zoomSlider(options) {
             this._addButton("zoomin", "zoom-plus-mini.png", centered.add(0, 5), sz);
             centered = this._addZoomBar(centered.add(0, sz.h + 5));
             this._addButton("zoomout", "zoom-minus-mini.png", centered, sz);
-			return this.div;
+            return this.div;
         }
     });
     return this.control;
@@ -479,33 +526,33 @@ function updateZoom() {
     $('zoom').innerHTML= map.getZoom();
 }
 function onZoomEnd(){
-	
-	if (ONCE) {close_catcher();}
-	ONCE=true;
-	if (map.getZoom()<13){
-		document.getElementById('zoomin-helper').style.display = 'inline';
-	} else {
-		document.getElementById('zoomin-helper').style.display = 'none';
-	}
-	if (EDIT_SHOWED){
-		if (map.getZoom() < 13) {
-			document.getElementById('edit_zoom_in').innerHTML='&nbsp;'+_('zoom_in');
-			document.getElementById('permalink.potlatch').href = "javascript:void(0)";	
-			document.getElementById('permalink.potlatch').target="";
-			document.getElementById('potlatch_pic').src="pics/potlatch-disabled.png";
-			document.getElementById('permalink.potlatch2').href = "javascript:void(0)";
-			document.getElementById('permalink.potlatch2').target="";
-			document.getElementById('potlatch2_pic').src="pics/potlatch2-disabled.png";
-		}else {
-			document.getElementById('edit_zoom_in').innerHTML='';
-			permalink_potlatch.updateLink();
-			document.getElementById('permalink.potlatch').target="blank";
-			document.getElementById('potlatch_pic').src="pics/potlatch.png";
-			permalink_potlatch2.updateLink();
-			document.getElementById('permalink.potlatch2').target="blank";
-			document.getElementById('potlatch2_pic').src="pics/potlatch2.png";
-		}
-	}
+    
+    if (ONCE) {close_catcher();}
+    ONCE=true;
+    if (map.getZoom()<13){
+        document.getElementById('zoomin-helper').style.display = 'inline';
+    } else {
+        document.getElementById('zoomin-helper').style.display = 'none';
+    }
+    if (EDIT_SHOWED){
+        if (map.getZoom() < 13) {
+            document.getElementById('edit_zoom_in').innerHTML='&nbsp;'+_('zoom_in');
+            document.getElementById('permalink.potlatch').href = "javascript:void(0)";  
+            document.getElementById('permalink.potlatch').target="";
+            document.getElementById('potlatch_pic').src="pics/potlatch-disabled.png";
+            document.getElementById('permalink.potlatch2').href = "javascript:void(0)";
+            document.getElementById('permalink.potlatch2').target="";
+            document.getElementById('potlatch2_pic').src="pics/potlatch2-disabled.png";
+        }else {
+            document.getElementById('edit_zoom_in').innerHTML='';
+            permalink_potlatch.updateLink();
+            document.getElementById('permalink.potlatch').target="blank";
+            document.getElementById('potlatch_pic').src="pics/potlatch.png";
+            permalink_potlatch2.updateLink();
+            document.getElementById('permalink.potlatch2').target="blank";
+            document.getElementById('potlatch2_pic').src="pics/potlatch2.png";
+        }
+    }
 }
 function get_osm_url(bounds) {
     var res = this.map.getResolution();
@@ -676,7 +723,7 @@ function map_init(){
 // Switch base layer
     map.events.on({ "zoomend": function (e) {
         updateZoom();
-		onZoomEnd();
+        onZoomEnd();
         if (map.getZoom() > 6) {
             map.layers[1].setVisibility(true);
             map.layers[1].redraw();
@@ -703,17 +750,17 @@ function map_init(){
 //======================================================================
 // PRINT
 function print() {
-	// start print request
-	var mq=map.getLayersByName("MapQuest")[0];
-	var osm=map.getLayersByName("OSM")[0];
-	if (mq) {var bg='mq';}
-	else {var bg='osm';}
-	
-	var printLayer= map.getLayersByName("Print layer")[0];
-	var b = printLayer.features[0].geometry.bounds;
-	
-	
-	var b4326 = b.transform(
+    // start print request
+    var mq=map.getLayersByName("MapQuest")[0];
+    var osm=map.getLayersByName("OSM")[0];
+    if (mq) {var bg='mq';}
+    else {var bg='osm';}
+    
+    var printLayer= map.getLayersByName("Print layer")[0];
+    var b = printLayer.features[0].geometry.bounds;
+    
+    
+    var b4326 = b.transform(
         new OpenLayers.Projection("EPSG:900913"),
         new OpenLayers.Projection("EPSG:4326"));
     var args=b4326.left+';'+b4326.right+';'+b4326.top+';'+b4326.bottom+';'+bg+';'+PRINT_TYPE;
@@ -732,50 +779,50 @@ function print() {
     document.getElementById('print_result').innerHTML='<p><img style="margin-left: 100px;" src="pics/snake_transparent.gif" /></p>';
 }
 function close_printSettings(){
-	document.getElementById('print-settings').style.display='none';
-	document.getElementById('print_result').innerHTML='';
-	var printLayer= map.getLayersByName("Print layer")[0];
-	if (printLayer != null) {
-		printLayer.destroyFeatures(printLayer.features);
-		printLayer.destroy;
-		map.removeLayer(printLayer);
-	}
+    document.getElementById('print-settings').style.display='none';
+    document.getElementById('print_result').innerHTML='';
+    var printLayer= map.getLayersByName("Print layer")[0];
+    if (printLayer != null) {
+        printLayer.destroyFeatures(printLayer.features);
+        printLayer.destroy;
+        map.removeLayer(printLayer);
+    }
 }
 function show_printSettings(){
-	document.getElementById('print-settings').style.display='block';
-	var styleMap = new OpenLayers.StyleMap({
-		'fillColor': '#ffffff',
-		'fillOpacity' : 0.4,
-		'strokeWidth': 5,
-		'strokeColor': '#000000'
-		});
-	var printLayer = new OpenLayers.Layer.Vector("Print layer",{styleMap: styleMap});
-	map.addLayers([printLayer]);
-	var drag=new OpenLayers.Control.DragFeature(printLayer);
-	map.addControls([drag]);
-	drag.activate();
+    document.getElementById('print-settings').style.display='block';
+    var styleMap = new OpenLayers.StyleMap({
+        'fillColor': '#ffffff',
+        'fillOpacity' : 0.4,
+        'strokeWidth': 5,
+        'strokeColor': '#000000'
+        });
+    var printLayer = new OpenLayers.Layer.Vector("Print layer",{styleMap: styleMap});
+    map.addLayers([printLayer]);
+    var drag=new OpenLayers.Control.DragFeature(printLayer);
+    map.addControls([drag]);
+    drag.activate();
 }
 function setPrint(type) {
-	var center = map.getCenter();
-	var h;
-	var v;
-	if (type == 'vs') {h=5000;v=7000;PRINT_TYPE= 'small';}
-	if (type == 'hs') {h=7000;v=5000;PRINT_TYPE= 'small';}
-	//zoom 15
-	if (type == 'vb') {h=14000;v=20000;PRINT_TYPE= 'big';}
-	if (type == 'hb') {h=20000;v=14000;PRINT_TYPE= 'big';}
-	// zoom 14
-	var p1 = new OpenLayers.Geometry.Point(center.lon-h/2, center.lat-v/2);
-	var p2 = new OpenLayers.Geometry.Point(center.lon-h/2, center.lat+v/2);
-	var p3 = new OpenLayers.Geometry.Point(center.lon+h/2, center.lat+v/2);
-	var p4 = new OpenLayers.Geometry.Point(center.lon+h/2, center.lat-v/2);
-	var p5 = new OpenLayers.Geometry.Point(center.lon-h/2, center.lat-v/2);
-	
-	var pnt= [];
-	pnt.push(p1,p2,p3,p4,p5);
-	var ln = new OpenLayers.Geometry.LinearRing(pnt);
-	var pf = new OpenLayers.Feature.Vector(ln);
-	var printLayer= map.getLayersByName("Print layer")[0];
-	printLayer.destroyFeatures(printLayer.features);
-	printLayer.addFeatures([pf]);
+    var center = map.getCenter();
+    var h;
+    var v;
+    if (type == 'vs') {h=5000;v=7000;PRINT_TYPE= 'small';}
+    if (type == 'hs') {h=7000;v=5000;PRINT_TYPE= 'small';}
+    //zoom 15
+    if (type == 'vb') {h=14000;v=20000;PRINT_TYPE= 'big';}
+    if (type == 'hb') {h=20000;v=14000;PRINT_TYPE= 'big';}
+    // zoom 14
+    var p1 = new OpenLayers.Geometry.Point(center.lon-h/2, center.lat-v/2);
+    var p2 = new OpenLayers.Geometry.Point(center.lon-h/2, center.lat+v/2);
+    var p3 = new OpenLayers.Geometry.Point(center.lon+h/2, center.lat+v/2);
+    var p4 = new OpenLayers.Geometry.Point(center.lon+h/2, center.lat-v/2);
+    var p5 = new OpenLayers.Geometry.Point(center.lon-h/2, center.lat-v/2);
+    
+    var pnt= [];
+    pnt.push(p1,p2,p3,p4,p5);
+    var ln = new OpenLayers.Geometry.LinearRing(pnt);
+    var pf = new OpenLayers.Feature.Vector(ln);
+    var printLayer= map.getLayersByName("Print layer")[0];
+    printLayer.destroyFeatures(printLayer.features);
+    printLayer.addFeatures([pf]);
 }

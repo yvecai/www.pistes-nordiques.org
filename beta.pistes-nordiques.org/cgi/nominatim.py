@@ -17,8 +17,8 @@ def application(environ,start_response):
 	place=request.split('place=')[1]
 	if place.find('&'): place=place.split('&')[0]
 	
-	baseUrl = 'http://open.mapquestapi.com/nominatim/v1/search?format=xml&q='
-	place = str(place).replace(" ","+")
+	baseUrl = 'http://open.mapquestapi.com/nominatim/v1/search?format=json&q='
+	place = str(place).replace(' ','+').replace('%20','+')
 	url= baseUrl+str(place)
 	y = urllib2.urlopen(url)
 	
@@ -26,7 +26,7 @@ def application(environ,start_response):
 	y.close()
 	
 	status = '200 OK'
-	response_headers = [('Content-Type', 'application/xml'),('Content-Length', str(len(response_body)))]
+	response_headers = [('Content-Type', 'application/json'),('Content-Length', str(len(response_body)))]
 	
 	start_response(status, response_headers)
 	return [response_body]

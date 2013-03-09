@@ -111,7 +111,7 @@ def query_routes(routes_ids):
 	cur = con.cursor()
 	routes={}
 	for idx in routes_ids:
-		cur.execute("select route_name, \"piste:type\", ST_AsLatLonText(st_centroid(ST_Transform(way,4326)), 'D.DDDDD'), color from planet_osm_line where osm_id = %s and \"piste:type\" is not null"\
+		cur.execute("select route_name, \"piste:type\", ST_AsLatLonText(st_centroid(ST_Transform(way,4326)), 'D.DDDDD'), color, colour from planet_osm_line where osm_id = %s and \"piste:type\" is not null"\
 		%(idx))
 		resp=cur.fetchall()
 		for s in resp:
@@ -120,7 +120,8 @@ def query_routes(routes_ids):
 				routes[idx]['name']=s[0]
 				routes[idx]['types']=s[1]
 				routes[idx]['center']=s[2].replace(' ',',')
-				routes[idx]['color']=s[3]
+				if not s[3]: routes[idx]['color']=s[4]
+				else:  routes[idx]['color']=s[3]
 	con.close()
 	return routes
 	
@@ -129,7 +130,7 @@ def query_ways(ways_ids):
 	cur = con.cursor()
 	ways={}
 	for idx in ways_ids:
-		cur.execute("select route_name, \"piste:type\", ST_AsLatLonText(st_centroid(ST_Transform(way,4326)), 'D.DDDDD'), \"piste:difficulty\", \"piste:grooming\", \"piste:lit\" from planet_osm_line where osm_id = %s and \"piste:type\" is not null;"\
+		cur.execute("select name, \"piste:type\", ST_AsLatLonText(st_centroid(ST_Transform(way,4326)), 'D.DDDDD'), \"piste:difficulty\", \"piste:grooming\", \"piste:lit\" from planet_osm_line where osm_id = %s and \"piste:type\" is not null;"\
 		%(idx))
 		resp=cur.fetchall()
 		for s in resp:
@@ -149,7 +150,7 @@ def query_aerialways(ways_ids):
 	cur = con.cursor()
 	aerialways={}
 	for idx in ways_ids:
-		cur.execute("select route_name, aerialway, ST_AsLatLonText(st_centroid(ST_Transform(way,4326)), 'D.DDDDD') from planet_osm_line where osm_id = %s and aerialway is not null;"\
+		cur.execute("select name, aerialway, ST_AsLatLonText(st_centroid(ST_Transform(way,4326)), 'D.DDDDD') from planet_osm_line where osm_id = %s and aerialway is not null;"\
 		%(idx))
 		resp=cur.fetchall()
 		for s in resp:
