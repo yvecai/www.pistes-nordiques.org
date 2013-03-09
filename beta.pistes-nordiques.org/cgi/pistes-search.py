@@ -102,7 +102,7 @@ def query_sites(sites_ids):
 				sites[idx]={}
 				sites[idx]['name']=s[0]
 				sites[idx]['types']=s[1]
-				sites[idx]['center']=s[2].replace(' ',',')
+				sites[idx]['center']=s[2].split(' ')[1]+','+s[2].split(' ')[0]
 	con.close()
 	return sites
 	
@@ -119,7 +119,7 @@ def query_routes(routes_ids):
 				routes[idx]={}
 				routes[idx]['name']=s[0]
 				routes[idx]['types']=s[1]
-				routes[idx]['center']=s[2].replace(' ',',')
+				routes[idx]['center']=s[2].split(' ')[1]+','+s[2].split(' ')[0]
 				if not s[3]: routes[idx]['color']=s[4]
 				else:  routes[idx]['color']=s[3]
 	con.close()
@@ -138,7 +138,7 @@ def query_ways(ways_ids):
 				ways[idx]={}
 				ways[idx]['name']=s[0]
 				ways[idx]['types']=s[1]
-				ways[idx]['center']=s[2].replace(' ',',')
+				ways[idx]['center']=s[2].split(' ')[1]+','+s[2].split(' ')[0]
 				ways[idx]['difficulty']=s[3]
 				ways[idx]['grooming']=s[4]
 				ways[idx]['lit']=s[5]
@@ -158,7 +158,7 @@ def query_aerialways(ways_ids):
 				aerialways[idx]={}
 				aerialways[idx]['name']=s[0]
 				aerialways[idx]['types']=s[1]
-				aerialways[idx]['center']=s[2].replace(' ',',')
+				aerialways[idx]['center']=s[2].split(' ')[1]+','+s[2].split(' ')[0]
 	con.close()
 	return aerialways
 #6.46,46.83
