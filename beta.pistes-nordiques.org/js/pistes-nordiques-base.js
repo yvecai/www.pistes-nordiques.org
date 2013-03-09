@@ -471,7 +471,7 @@ function loadend(){
         htmlResponse += '</ul></p>'
         
         htmlResponse += '<hr/>'
-        htmlResponse='<p><ul>'
+        htmlResponse += '<p><ul>'
         for (var i=0;i<nom.length;i++) {
             htmlResponse += '<li><a onclick="setCenterMap('
             + nom[i].lon +','
