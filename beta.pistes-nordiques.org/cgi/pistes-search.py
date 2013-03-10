@@ -9,12 +9,19 @@ import sys, os
 from lxml import etree
 import json
 import cgi
+import urllib
 
 def application(environ,start_response):
-	request = environ['QUERY_STRING']
+	request = urllib.unquote(environ['QUERY_STRING'])
+	#~ status = '200 OK'
+	#~ response_body=request
+	#~ response_headers = [('Content-Type', 'application/json; charset=utf-8'),('Content-Length', str(len(response_body)))]
+	#~ start_response(status, response_headers)
+	#~ return [response_body]
 	name=''
 	point=''
 	radius=''
+	
 	if request.find('name=') !=-1:
 		name=request.split('name=')[1]
 		if name.find('&'): name=name.split('&')[0]
@@ -34,7 +41,6 @@ def application(environ,start_response):
 	response_body=json.dumps(response)
 	status = '200 OK'
 	response_headers = [('Content-Type', 'application/json'),('Content-Length', str(len(response_body)))]
-	
 	start_response(status, response_headers)
 	return [response_body]
 	
