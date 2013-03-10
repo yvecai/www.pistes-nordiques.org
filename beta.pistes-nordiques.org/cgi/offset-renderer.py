@@ -53,12 +53,11 @@ def RepresentsInt(s):
         return True
     except ValueError:
         return False
-def handle(req):
-	# This function handle the apach request
-	from mod_python import apache, util
+def application(environ,start_response):
+	request = environ['QUERY_STRING']
 	
 	# decode the parameters given by url:
-	z, x, name = req.args.split('/', 3)
+	rels, z, x, name = request.split('/', 4)
 	y=name.split('.')[0]
 	ext='png'
 	
@@ -78,9 +77,51 @@ def handle(req):
 	proj = "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over"
 
 	m = Map(sx,sy,proj)
-	mapfile="/home/website/mapnik-settings/offset-style/map.xml"
-	load_map(m,mapfile)
+	#load_map(m,mapfile)
 	m.background = Color("transparent")
+	# Database settings
+	db_params = dict(
+	dbname = 'pistes-mapnik',
+	user = 'mapnik',
+	table = 'planet_osm_line',
+	password = 'mapnik',
+	estimate_extent = True,
+	host = 'localhost',
+	port = 5432
+	)
+	
+	offset=3
+	i=0
+	
+	
+	try :
+		relations = rels.strip('|').split('|')
+		for rel in relations:
+			
+			osm_id=rel.split(':')[0]
+			of=int(rel.split(':')[1])
+			col=rel.split(':')[2]
+			if (col == 'None'):
+				col='pink'
+			
+			if (RepresentsInt(osm_id) and RepresentsInt(of)):
+				s = (Style())
+				r=Rule()
+				try: l = (LineSymbolizer(Color(col),3))
+				except: 
+					try: l = (LineSymbolizer(Color('#'+col),3))
+					except : l = (LineSymbolizer(Color('black'),3))
+				l.offset = of*offset
+				r.symbols.append(l)
+				s.rules.append(r)
+				m.append_style('My Style'+str(i),s)
+				lyr= Layer('shape'+str(i), proj)
+				db_params['table']='(Select way from planet_osm_line where osm_id = %s) as mysubquery' % (osm_id)
+				lyr.datasource = PostGIS(**db_params)
+				lyr.styles.append('My Style'+str(i))
+				m.layers.append(lyr)
+				i+=1
+	except: pass # maybe there's nothing in the viewport
 	
 	# compute the bbox corresponding to the requested tile
 	ll = num2bbox(x, y, z)
@@ -106,18 +147,14 @@ def handle(req):
 	
 	# reopen it as an image
 	fd = open(outname)
-	out = fd.read()
+	response_body = fd.read()
 	fd.close()
+	status = '200 OK'
+	response_headers = [('Content-Type', 'image/png'),('Content-Length', str(len(response_body)))]
+	start_response(status, response_headers)
 	
-	#~ req.status = 200
-	#~ req.content_type = 'text/plain'
-	#~ req.write(req.args)
-	#~ #req.write(str(bbox)+'\n')
-	#~ #req.write(str(z)+'/'+str(x)+'/'+str(y)+'.png')
-	#~ #req.write(save_map_to_string(m))
-	#~ return apache.OK
+	return [response_body]
+
 	
-	req.content_type = 'image/png'
-	req.write(out)
-	return apache.OK
+#
 

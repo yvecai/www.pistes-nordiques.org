@@ -59,7 +59,7 @@ function offset(id, of, side) {
 
 function requestRelations() {
 	var XMLHttp = new XMLHttpRequest();
-	XMLHttp.open("GET", server+"cgi/pgsql-mapnik-handle/pgsql-mapnik-handle/handle?bbox="+map.getExtent().toBBOX(), false);
+	XMLHttp.open("GET", server+"offset-list_routes?bbox="+map.getExtent().toBBOX(), false);
 	XMLHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	XMLHttp.send();
 	if (XMLHttp.status === 200) {
@@ -223,7 +223,7 @@ function map_init() {
     map.addLayer(PistesTilesLowZoom);
 	
 	tilesLayer = new OpenLayers.Layer.XYZ("mapnik",
-	server+"cgi/renderer-offset/renderer.py/handle?",{
+	server+"offset-renderer?",{
 			getURL: get_extended_osm_url, 
 			isBaseLayer: false,
 			minScale: 1000000
