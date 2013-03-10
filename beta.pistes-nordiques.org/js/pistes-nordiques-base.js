@@ -49,6 +49,14 @@ icon = {
 "rope_tow":'pics/drag_lift.png',
 "station":'pics/station.png',
 }
+diffcolor = {
+"novice":'green',
+"easy":'blue',
+"intermediate":'red',
+"advanced":'black',
+"expert":'orange',
+"freeride":'yellow'
+}
 function switch2vector() {
     if (mode == "raster") {
         loadjscssfile("js/pistes-nordiques-plus.js", "js");
@@ -457,6 +465,7 @@ function loadend(){
             + pist.pistes[r].center +','
             + 15 +');">'
             + pist.pistes[r].name +'</a>'
+            +'<b style="color:'+diffcolor[pist.pistes[r].difficulty]+';font-weight:900;">&nbsp;&#9830 </b>'
             +'&nbsp;<img src="'+icon[type]+'"></li>';
         }
         htmlResponse += '</ul></p><p><ul>'
