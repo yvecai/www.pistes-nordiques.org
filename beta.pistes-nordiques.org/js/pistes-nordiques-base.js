@@ -47,7 +47,7 @@ icon = {
 "j-bar":'pics/drag_lift.png',
 "platter":'pics/drag_lift.png',
 "rope_tow":'pics/drag_lift.png',
-"station":'pics/station.png',
+"station":'pics/station.png'
 }
 diffcolor = {
 "novice":'green',
