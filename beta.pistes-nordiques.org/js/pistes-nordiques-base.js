@@ -417,6 +417,8 @@ function loadend(){
     function nominatimSearch(string) {
         if (string == '') {return false;};
         close_sideBar();
+        document.getElementById("sideBarContent").innerHTML ='<p><img style="margin-left: 100px;" src="pics/snake_transparent.gif" /></p>';
+        
         document.search.nom_search.value='';
         document.getElementById('sideBar').style.display='inline';
         //document.getElementById('search_result').style.display='inline';
