@@ -1,6 +1,0 @@
-      AddHandler mod_python .py
-      #PythonHandler mod_python.publisher
-      #PythonHandler osmosis_wrapper::handle
-      PythonHandler routing::handle
-      #PythonDebug On
-

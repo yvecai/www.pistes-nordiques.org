@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # Source is GPL
-# fichier execute par mod_python. handle() est le point d'entree.
-#http://192.168.1.3/test_ol_vec/getBbox.py/6.26/46.66/6.35/46.69
-#from mod_python import apache
-#from mod_python import util
+
 import Image, ImageDraw, ImageFont
 import sys
 #from lxml import etree
@@ -27,7 +24,32 @@ import atexit
 # slopes and cumulated climb over 100m
 def goodbye():
     return 'goodbye'
+    
+def application(environ,start_response):
+    try:
+        request_body_size = int(environ.get('CONTENT_LENGTH', 0))
+    except (ValueError):
+        request_body_size = 0
+    data = environ['wsgi.input'].read(request_body_size)
+    tracks=listTracks(data)
+    
+    for track in tracks:
+        for d in track:
+            if d['lat'] > 71.9999:
+                response_body = 'Sorry, dataset does not contain elevation data beyond 72 deg. latitude'
+                status = '200 OK'
+                response_headers = [('Content-Type', 'text/plain'),('Content-Length', str(len(response_body)))]
+                start_response(status, response_headers)
+                return [response_body]
 
+    tracks=processData(tracks)
+    
+    response_body = createPics(tracks)
+    status = '200 OK'
+    response_headers = [('Content-Type', 'image/png'),('Content-Length', str(len(response_body)))]
+    start_response(status, response_headers)
+    return [response_body]
+    
 def handle(req):
     from mod_python import apache, util
     #req.content_type = 'text/plain'
