@@ -55,7 +55,7 @@ def query_ids(name='', point='', radius=''):
 	
 	# Query db, looking for 'name'
 	if name != '':
-		name=name.replace(' ','&').replace('%20','&')
+		name=name.replace(' ','&').replace('%20','&').replace('"', '&').replace("'", "&")
 		
 		cur.execute("select osm_id from planet_osm_point where to_tsvector(site_name) @@ to_tsquery('%s');"\
 			%(name))
