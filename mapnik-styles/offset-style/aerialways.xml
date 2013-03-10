@@ -48,7 +48,7 @@
 		&maxscale_zoom14;
 		&minscale_zoom18;
 		<Filter>[aerialway]='t-bar' or [aerialway]='j-bar' or [aerialway]='platter' or [aerialway]='rope-tow' or [aerialway]='drag_lift'</Filter>
-		<MarkersSymbolizer file="drag_lift.svg" spacing="500" transform="translate(10 10) scale(0.12)"/>
+		<MarkersSymbolizer file="drag_lift.svg" placement="line" spacing="500" transform="translate(10 10) scale(0.12)"/>
 	</Rule>
 	<Rule>
 		&maxscale_zoom14;
