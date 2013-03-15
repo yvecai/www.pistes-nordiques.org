@@ -30,7 +30,7 @@ var permalink_potlatch;
 var zoomBar;
 var PRINT_TYPE= 'small';
 var ONCE=false;
-icon = {
+var icon = {
 "downhill":'pics/alpine.png',
 "cable_car":'pics/cable_car.png',
 "chair_lift":'pics/chair_lift.png',
@@ -49,7 +49,7 @@ icon = {
 "rope_tow":'pics/drag_lift.png',
 "station":'pics/station.png'
 }
-diffcolor = {
+var diffcolor = {
 "novice":'green',
 "easy":'blue',
 "intermediate":'red',
@@ -60,7 +60,7 @@ diffcolor = {
 function switch2vector() {
     if (mode == "raster") {
         loadjscssfile("js/pistes-nordiques-plus.js", "js");
-        map.getLayersByName("Pistes Tiles LZ")[0].setVisibility(false);
+        //map.getLayersByName("Pistes Tiles LZ")[0].setVisibility(false);
         map.getLayersByName("Pistes Tiles")[0].setVisibility(false);
         document.getElementById('vector-help').style.display='none';
         // extended menu controls
@@ -88,7 +88,7 @@ function switch2raster() {
         for (var m in marks) {marks[m].destroy();}
 
         removejscssfile("js/pistes-nordiques-plus.js", "js");
-        map.getLayersByName("Pistes Tiles LZ")[0].setVisibility(true);
+        //map.getLayersByName("Pistes Tiles LZ")[0].setVisibility(true);
         map.getLayersByName("Pistes Tiles")[0].setVisibility(true);
         document.getElementById('vector-help').style.display='inline';
         document.getElementById('routing').style.display='none';

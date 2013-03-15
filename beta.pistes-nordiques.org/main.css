@@ -312,6 +312,7 @@ display: none;
     top: 5px;
     width: 100%;
     z-index: 1000;
+    height:2px;
 }
 #helper{
     position: relative;
@@ -325,6 +326,14 @@ display: none;
     border: 1px solid #aaaaaa;
     background-color:#EEE; /*fallback*/
     background-color: rgba(245,245,245,0.7);}
+#waiter{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    /*text-align: center;*/
+    padding-top: 250px;
+    width: 50px;
+}
 #print-settings{
     position: relative;
     margin-left: auto;
