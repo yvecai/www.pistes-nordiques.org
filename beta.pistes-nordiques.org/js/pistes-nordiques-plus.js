@@ -561,7 +561,7 @@ var routeStyle = { strokeColor: '#FFFFFF',
 			strokeLinecap : 'round',
 			strokeOpacity: 1,
 			graphicZIndex: 18,
-			strokeWidth: 2
+			strokeWidth: 5
 };
 
 // Style work for 'pistesLayerLowZoom'-----------------------------
