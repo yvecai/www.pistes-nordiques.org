@@ -59,18 +59,18 @@ var diffcolor = {
 }
 function switch2vector() {
     if (mode == "raster") {
-        loadjscssfile("js/pistes-nordiques-plus.js", "js");
-        //map.getLayersByName("Pistes Tiles LZ")[0].setVisibility(false);
-        map.getLayersByName("Pistes Tiles")[0].setVisibility(false);
-        document.getElementById('vector-help').style.display='none';
-        // extended menu controls
-        document.getElementsByName("Mode")[0].checked=true;
-        document.getElementsByName("live")[0].disabled=false;
-        document.getElementsByName("live")[1].disabled=false;
-        document.getElementsByName("live")[2].disabled=false;
-        $("status").innerHTML = '<b style="color:#FFFFFF;">'+_('loading...')+'</b>'; 
-        $("status").style.backgroundColor = '#FF7800';
-        
+        loadjscssfile("js/interactive.js", "js");
+        //~ //map.getLayersByName("Pistes Tiles LZ")[0].setVisibility(false);
+        //~ map.getLayersByName("Pistes Tiles")[0].setVisibility(false);
+        //~ document.getElementById('vector-help').style.display='none';
+        //~ // extended menu controls
+        //~ document.getElementsByName("Mode")[0].checked=true;
+        //~ document.getElementsByName("live")[0].disabled=false;
+        //~ document.getElementsByName("live")[1].disabled=false;
+        //~ document.getElementsByName("live")[2].disabled=false;
+        //~ $("status").innerHTML = '<b style="color:#FFFFFF;">'+_('loading...')+'</b>'; 
+        //~ $("status").style.backgroundColor = '#FF7800';
+        //~ 
         mode="vector";
         map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
         show_helper();
@@ -79,6 +79,7 @@ function switch2vector() {
 function switch2raster() {
     if (mode == "vector") {
         // first destroy the selet and highlight controls
+        map.events.unregister("click", map, onMapClick);
         var ctrls= map.getControlsByClass("OpenLayers.Control.SelectFeature");
         for (var c in ctrls) {ctrls[c].destroy();}
         // then layers
@@ -87,9 +88,9 @@ function switch2raster() {
         var marks = map.getLayersByClass("OpenLayers.Layer.Markers");
         for (var m in marks) {marks[m].destroy();}
 
-        removejscssfile("js/pistes-nordiques-plus.js", "js");
+        removejscssfile("js/interactive.js", "js");
         //map.getLayersByName("Pistes Tiles LZ")[0].setVisibility(true);
-        map.getLayersByName("Pistes Tiles")[0].setVisibility(true);
+        //map.getLayersByName("Pistes Tiles")[0].setVisibility(true);
         document.getElementById('vector-help').style.display='inline';
         document.getElementById('routing').style.display='none';
         // extended menu controls

@@ -165,7 +165,7 @@ function requestRoute() {
 			if (XMLHttp.readyState == 4) {			  
 				var responseXML = XMLHttp.responseXML;
 				var routeWKT = getNodeText(responseXML.getElementsByTagName('wkt')[0])
-				var routeDesc = responseXML.getElementsByTagName('route_topo')[0];
+				var routeDesc = responseXML.getElementsByTagName('ids')[0];
 				
 				if (routeWKT.length > 30) {
 					$("routingstatus").innerHTML = '<i style="color:#000000;">'+_('select_next')+'</i>'; 
@@ -288,76 +288,76 @@ function removeRoutePoint(feature) {
 	
 function routeInfos(routeDesc) {
 show_profile();
-ways = routeDesc.getElementsByTagName('way');
-var topo= '<p></p>\n'
-			+'<a onclick="new_window()"'
-			+' onmouseover="document.images[\'printPic\'].src=\'pics/print_hover.png\'"\n'
-			+' onmouseout="document.images[\'printPic\'].src=\'pics/print.png\'">\n'
-			+'<img name="printPic" src="pics/print.png"></a>'
-			+'<table class="topoTable">';
-
-totalLength = 0;
-for (var w=0;w<ways.length;w++) {
-	var section = {}
-	tags = ways[w].getElementsByTagName('tag');
-	for (var t=0;t<tags.length;t++) {
-		if (tags[t].getAttribute('k')=='piste:grooming')
-		{section['grooming']=tags[t].childNodes[0].nodeValue;}
-		if (tags[t].getAttribute('k')=='piste:difficulty')
-		{section['difficulty']=tags[t].childNodes[0].nodeValue;}
-		if (tags[t].getAttribute('k')=='piste:lit')
-		{section['lit']=tags[t].childNodes[0].nodeValue;}
-		if (tags[t].getAttribute('k')=='length')
-		{
-		section['length']=totalLength;
-		totalLength = totalLength + parseFloat(tags[t].childNodes[0].nodeValue);
-		}
-	}
-	relationText = '';
-	
-	rels = ways[w].getElementsByTagName('member_of');
-	if (rels.length == 0) {section['member_of']=null;}
-	else {
-		// loop trough relation and create the html
-		for (var r=0;r<rels.length;r++) {
-			var color='black'
-			var id = rels[r].getAttribute('id')
-			var rel_tags = rels[r].getElementsByTagName('rel_tag');
-
-				for (var rt=0;rt<rel_tags.length;rt++) {
-					if (rel_tags[rt].getAttribute('k')=='color') 
-					{color=rel_tags[rt].childNodes[0].nodeValue;}
-					if (rel_tags[rt].getAttribute('k')=='colour') 
-					{color=rel_tags[rt].childNodes[0].nodeValue;}
-					if (rel_tags[rt].getAttribute('k')=='name')
-					{var name=rel_tags[rt].childNodes[0].nodeValue;}
-					if (rel_tags[rt].getAttribute('k')=='website')
-					{var website=rel_tags[rt].childNodes[0].nodeValue;}
-				}
-			
-			relationText += '<a onmouseover="highlightRelation('+id+')"'
-			+'onmouseout="highlightRelation()"'
-			+'onclick="selectRelation('+id+');">'
-			+'<b style="color:'+color+';font-weight:900;">&#9679 </b><b> '
-			+ name + '</b></a>  ';
-		}
-		section['member_of']=relationText;
-	}
-	
-	topo += '<tr><td>'+ section['length'].toFixed(1) +'km'+'</td><td><ul>' //.toFixed(1)
-	topo +='<li><b>'+_('difficulty')+':</b> '+_(section['difficulty'])+'</li>\n'
-			+ '<li><b>'+_('grooming')+':</b> '+_(section['grooming'])+'</li>\n'
-if (section['lit'] =='yes') {
-	topo += '<li><b>'+_('lit')+'</b></li>\n'
-	}
-if (section['member_of']) {
-	topo += '<li><b>'+_('member_of')+':</b>'+_(section['member_of'])+'</li>\n'
-	}
-	topo += '</ul></td></tr>\n';		
-}
-
-topo += '</table></br> Total: '+totalLength.toFixed(1)+'km\n';
-
+//ways = routeDesc.getElementsByTagName('way');
+//~ var topo= '<p></p>\n'
+			//~ +'<a onclick="new_window()"'
+			//~ +' onmouseover="document.images[\'printPic\'].src=\'pics/print_hover.png\'"\n'
+			//~ +' onmouseout="document.images[\'printPic\'].src=\'pics/print.png\'">\n'
+			//~ +'<img name="printPic" src="pics/print.png"></a>'
+			//~ +'<table class="topoTable">';
+//~ 
+//~ totalLength = 0;
+//~ for (var w=0;w<ways.length;w++) {
+	//~ var section = {}
+	//~ tags = ways[w].getElementsByTagName('tag');
+	//~ for (var t=0;t<tags.length;t++) {
+		//~ if (tags[t].getAttribute('k')=='piste:grooming')
+		//~ {section['grooming']=tags[t].childNodes[0].nodeValue;}
+		//~ if (tags[t].getAttribute('k')=='piste:difficulty')
+		//~ {section['difficulty']=tags[t].childNodes[0].nodeValue;}
+		//~ if (tags[t].getAttribute('k')=='piste:lit')
+		//~ {section['lit']=tags[t].childNodes[0].nodeValue;}
+		//~ if (tags[t].getAttribute('k')=='length')
+		//~ {
+		//~ section['length']=totalLength;
+		//~ totalLength = totalLength + parseFloat(tags[t].childNodes[0].nodeValue);
+		//~ }
+	//~ }
+	//~ relationText = '';
+	//~ 
+	//~ rels = ways[w].getElementsByTagName('member_of');
+	//~ if (rels.length == 0) {section['member_of']=null;}
+	//~ else {
+		//~ // loop trough relation and create the html
+		//~ for (var r=0;r<rels.length;r++) {
+			//~ var color='black'
+			//~ var id = rels[r].getAttribute('id')
+			//~ var rel_tags = rels[r].getElementsByTagName('rel_tag');
+//~ 
+				//~ for (var rt=0;rt<rel_tags.length;rt++) {
+					//~ if (rel_tags[rt].getAttribute('k')=='color') 
+					//~ {color=rel_tags[rt].childNodes[0].nodeValue;}
+					//~ if (rel_tags[rt].getAttribute('k')=='colour') 
+					//~ {color=rel_tags[rt].childNodes[0].nodeValue;}
+					//~ if (rel_tags[rt].getAttribute('k')=='name')
+					//~ {var name=rel_tags[rt].childNodes[0].nodeValue;}
+					//~ if (rel_tags[rt].getAttribute('k')=='website')
+					//~ {var website=rel_tags[rt].childNodes[0].nodeValue;}
+				//~ }
+			//~ 
+			//~ relationText += '<a onmouseover="highlightRelation('+id+')"'
+			//~ +'onmouseout="highlightRelation()"'
+			//~ +'onclick="selectRelation('+id+');">'
+			//~ +'<b style="color:'+color+';font-weight:900;">&#9679 </b><b> '
+			//~ + name + '</b></a>  ';
+		//~ }
+		//~ section['member_of']=relationText;
+	//~ }
+	//~ 
+	//~ topo += '<tr><td>'+ section['length'].toFixed(1) +'km'+'</td><td><ul>' //.toFixed(1)
+	//~ topo +='<li><b>'+_('difficulty')+':</b> '+_(section['difficulty'])+'</li>\n'
+			//~ + '<li><b>'+_('grooming')+':</b> '+_(section['grooming'])+'</li>\n'
+//~ if (section['lit'] =='yes') {
+	//~ topo += '<li><b>'+_('lit')+'</b></li>\n'
+	//~ }
+//~ if (section['member_of']) {
+	//~ topo += '<li><b>'+_('member_of')+':</b>'+_(section['member_of'])+'</li>\n'
+	//~ }
+	//~ topo += '</ul></td></tr>\n';		
+//~ }
+//~ 
+//~ topo += '</table></br> Total: '+totalLength.toFixed(1)+'km\n';
+topo=routeDesc.childNodes[0].nodeValue;;
 html ='<div id="topo_profile"></div>';
 $("sideBarContent").innerHTML =  html+topo;
 
