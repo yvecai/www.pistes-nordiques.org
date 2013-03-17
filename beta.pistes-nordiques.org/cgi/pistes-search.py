@@ -22,6 +22,18 @@ def application(environ,start_response):
 	point=''
 	radius=''
 	
+	if request.find('ids=') !=-1:
+		ids=request.split('ids=')[1]
+		if ids.find('&'):
+			ids=ids.split('&')[0]
+			response={}
+			response=query_topo(ids)
+			response_body=json.dumps(response)
+			status = '200 OK'
+			response_headers = [('Content-Type', 'application/json'),('Content-Length', str(len(response_body)))]
+			start_response(status, response_headers)
+			return [response_body]
+		
 	if request.find('name=') !=-1:
 		name=request.split('name=')[1]
 		if name.find('&'): name=name.split('&')[0]
@@ -31,7 +43,6 @@ def application(environ,start_response):
 	if request.find('radius=') !=-1:
 		radius=request.split('radius=')[1]
 		if radius.find('&'): radius=radius.split('&')[0]
-	
 	sites, entrances, routes, ways = query_ids(name,point,radius)
 	response={}
 	response['sites']= query_sites(sites)
@@ -94,6 +105,29 @@ def query_ids(name='', point='', radius=''):
 	con.close()
 	return sites_ids, entrances_ids, routes_ids, ways_ids
 	
+	
+def query_topo(str_id):
+	ids=str_id.split(',')
+	con = psycopg2.connect("dbname=pistes-mapnik user=mapnik")
+	cur = con.cursor()
+	topo={}
+	for idx in ids:
+		cur.execute("select \
+		\"piste:type\", \
+		\"piste:difficulty\", \
+		\"piste:grooming\", \
+		\"piste:name\" \
+		from planet_osm_line where osm_id = %s" % (idx))
+		resp=cur.fetchall()
+		for s in resp:
+			if s:
+				topo[idx]={}
+				topo[idx]['type']=s[0]
+				topo[idx]['difficulty']=s[1]
+				topo[idx]['grooming']=s[0]
+				topo[idx]['piste_name']=s[1]
+	con.close()
+	return topo
 	
 def query_sites(sites_ids):
 	con = psycopg2.connect("dbname=pistes-mapnik user=mapnik")

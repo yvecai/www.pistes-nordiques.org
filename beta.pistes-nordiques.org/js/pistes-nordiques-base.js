@@ -263,7 +263,7 @@ function show_profile() {
     if (mode=="raster") {
         document.getElementById('sideBarContent').innerHTML=_('vector_help');
     }else if (map.getZoom() > 13) {
-        document.getElementById('sideBarContent').innerHTML='<img style="margin-left: 3px;"src="pics/interactive-help.png"/>';
+        document.getElementById('sideBarContent').innerHTML='<div id="topo_profile" style="display:inline"></div><div id="topo_list" style="display:inline"></div>';
     }else if (map.getZoom() <= 13) {
         document.getElementById('sideBarContent').innerHTML=_('zoom_in');
     }

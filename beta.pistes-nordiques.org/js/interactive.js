@@ -105,18 +105,20 @@ function requestRoute() {
 				return null
 			}
 			if (responseXML.getElementsByTagName('info')[0]!=null) {
+				show_profile();
 				var info=getNodeText(responseXML.getElementsByTagName('info')[0]);
-				routeInfos(info);
+				requestInfos(info);
 			}
 			else if (responseXML.getElementsByTagName('wkt')[0]!=null) {
+				show_profile();
 				var routeIds=getNodeText(responseXML.getElementsByTagName('ids')[0]);
 				var routeWKT = getNodeText(responseXML.getElementsByTagName('wkt')[0]);
-				routeInfos(routeIds);
+				requestInfos(routeIds);
 				trace_route(routeWKT);
 			}
 			else {
 				removeLastRoutePoint();
-				routeInfos('no route');
+				$("topo_list").innerHTML = 'no route';
 				}
 			}
 		}
@@ -212,13 +214,32 @@ function removeLastRoutePoint() {
 }
 
 
-function routeInfos(routeDesc) {
-	show_profile();
-	//topo=routeDesc.childNodes[0].nodeValue;
+function requestInfos(ids) {
 	
-	html ='<div id="topo_profile"></div>';
-	$("sideBarContent").innerHTML =  html+routeDesc;
+	var XMLHttp = new XMLHttpRequest();
+	XMLHttp.open("GET", server+'search?ids=' + ids);
+	XMLHttp.onreadystatechange= function () {
+		if (XMLHttp.readyState == 4) {
+			var topo = JSON.parse(XMLHttp.responseText);
+			makeTopo(topo);
+			}
+		}
+	XMLHttp.send();
 }
+
+function makeTopo(topo){
+	var htmlResponse='\n<p><ul>\n'
+	for (r in topo) {
+		var id=r;
+		var type=topo[r].type;
+		var grooming=topo[r].grooming;
+		var difficulty=topo[r].difficulty;
+		htmlResponse += '<li>'+type+'-'+difficulty+'-'+grooming+'<li/>'
+	}
+	htmlResponse='\n<ul/><p/>\n'
+	document.getElementById('topo_list').innerHTML = htmlResponse;
+}
+
 
 var vectorLayer = new OpenLayers.Layer.Vector("Vector",{
 		styleMap: new OpenLayers.StyleMap({
