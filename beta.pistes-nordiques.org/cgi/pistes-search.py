@@ -114,7 +114,7 @@ def query_topo(str_id):
 		\"piste:type\", \
 		\"piste:difficulty\", \
 		\"piste:grooming\", \
-		\"piste:name\", \
+		COALESCE(route_name,'')||' '||COALESCE(name,'')||' '||COALESCE(\"piste:name\",''), \
 		member_of, \
 		\"aerialway\" \
 		from planet_osm_line where osm_id = %s" % (idx))

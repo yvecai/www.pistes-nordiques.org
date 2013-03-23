@@ -80,9 +80,6 @@ function onClick(lonlat) {
 	
 	routingPoint = lonlat.transform(new OpenLayers.Projection("EPSG:900913"), new OpenLayers.Projection("EPSG:4326"));
 	routingPoints.push(routingPoint);
-	
-	document.getElementById('routing').style.display='block';
-	document.getElementById('RoutingTitle').innerHTML='&nbsp;'+_('routing_title');
 	loadWait();
 	requestRoute();
 }
@@ -104,22 +101,22 @@ function requestRoute() {
 				return null
 			}
 			if (responseXML.getElementsByTagName('info')[0]!=null) {
-				show_profile();
+				show_profile_small();
 				if($("topo_profile")){$("topo_profile").innerHTML ='';}
 				var info=getNodeText(responseXML.getElementsByTagName('info')[0]);
 				requestInfos(info,'');
 			}
 			else if (responseXML.getElementsByTagName('wkt')[0]!=null) {
+				var routeWKT = getNodeText(responseXML.getElementsByTagName('wkt')[0]);
 				show_profile();
 				var routeIds=getNodeText(responseXML.getElementsByTagName('ids')[0]);
-				var routeWKT = getNodeText(responseXML.getElementsByTagName('wkt')[0]);
 				var routeLength = getNodeText(responseXML.getElementsByTagName('length')[0]);
 				requestInfos(routeIds,routeLength);
 				trace_route(routeWKT);
 			}
 			else {
 				removeLastRoutePoint();
-				show_profile();
+				show_profile_small();
 				if($("topo_profile")){$("topo_profile").innerHTML ='';}
 				$("topo_list").innerHTML = '\n'+_('no route');
 				}
@@ -229,7 +226,7 @@ function requestInfos(ids,routeLength) {
 	XMLHttp.send();
 }
 
-function makeTopo(topo,routeLength){
+function makeTopoBK(topo,routeLength){
 	var htmlResponse='\n<p><ul>\n';
 	total=parseFloat(routeLength);
 	for (r in topo) {
@@ -259,7 +256,9 @@ function makeTopo(topo,routeLength){
 			if (member_of[0] != null) {
 				rel='<br/><i>'+_('member_of')+':</i>&nbsp;';
 				for (m in member_of) {
+					if (member_of[m] != null){
 					rel+=member_of[m][0]+'<b style="color:'+member_of[m][1]+';font-weight:900;">&nbsp;&#9679 </b><br/>';
+					}
 				}
 			}
 			
@@ -274,6 +273,83 @@ function makeTopo(topo,routeLength){
 	document.getElementById('topo_list').innerHTML = htmlResponse;
 }
 
+function makeTopo(topo,routeLength){
+	var htmlResponse='\n'
+			+'<a onclick="new_window()"'
+			+' onmouseover="document.images[\'printPic\'].src=\'pics/print_hover.png\'"\n'
+			+' onmouseout="document.images[\'printPic\'].src=\'pics/print.png\'">\n'
+			+'<img name="printPic" src="pics/print.png"></a><br/>'
+			
+	htmlResponse+='\n<table border="0">\n';
+	
+	total=parseFloat(routeLength);
+	for (r in topo) {
+		if (r != null) {
+			
+			var type=topo[r].type;
+			
+			var grooming;
+			var difficulty;
+			var member_of;
+			var name;
+			name=topo[r].piste_name;
+			if (name == null){name='unknown';}
+			
+			htmlResponse += '<tr><td>&nbsp;<img src="'+icon[type]+'">&nbsp;<td>';
+			
+			if (type == 'nordic' || type == 'hike') {
+				grooming=topo[r].grooming;
+				if (grooming == null){grooming='unknown';}
+				difficulty=topo[r].difficulty;
+				if (difficulty == null){difficulty='unknown';}
+			}
+			if (type == 'downhill') {
+				difficulty=topo[r].difficulty;
+				if (difficulty == null){difficulty='unknown';}
+			}
+			
+			
+			member_of=topo[r].member_of;
+			var rel='';
+			if (member_of[0] != null) {
+				rel='<br/><i>'+_('member_of')+':</i><br/>';
+				for (m in member_of) {
+					if (member_of[m] != null){
+					rel+='&nbsp;&nbsp;<b style="color:'+member_of[m][1]+';font-weight:900;">&nbsp;&#9679 </b>'+member_of[m][0]+'<br/>';
+					}
+				}
+			}
+			htmlResponse += '<td>'
+			if (name !=null) {htmlResponse +='<br/>&nbsp;'+name }
+			if (difficulty !=null) {htmlResponse +='<br/><i>'+_('difficulty')+':</i>&nbsp;'+_(difficulty) }
+			if (grooming !=null) {htmlResponse +='<br/><i>'+_('grooming')+':</i>&nbsp;'+_(grooming)+'.&nbsp;' }
+			htmlResponse +=rel;
+			htmlResponse +='</td>';
+		}
+	
+	}
+	htmlResponse+='\n</table>\n';
+	if (total != 0. && !isNaN(total)) {htmlResponse +='<p>'+total.toFixed(1)+' km</p>'}
+	document.getElementById('topo_list').innerHTML = htmlResponse;
+}
+function new_window() {
+printWindow=window.open('print.html');
+printWindow.document.write(
+'<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html>\n'
++'<head>\n'
+		+'<meta name="http-equiv" content="Content-type: text/html; charset=UTF-8"/>\n'
+		+'<title>Topo Ski Nordique / Nordic Ski Topo</title>\n'
+		+'<link rel="stylesheet" href="main.css" media="print" />\n'
+		+'<link rel="stylesheet" href="main.css" media="screen" />\n'
++'</head>\n'
++'<body>\n');
+
+printWindow.document.write(document.getElementById('sideBarContent').innerHTML);
+//printWindow.document.write(document.getElementById('contextual2').innerHTML);
+printWindow.document.write('<p></p><img src="pics/pistes-nordiques-238-45.png">');
+printWindow.document.write(document.getElementById('Attributions').innerHTML);
+printWindow.document.write('\n</body></html>');
+}
 
 var vectorLayer = new OpenLayers.Layer.Vector("Vector",{
 		styleMap: new OpenLayers.StyleMap({

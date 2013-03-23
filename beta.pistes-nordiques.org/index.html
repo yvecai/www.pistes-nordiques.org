@@ -169,16 +169,6 @@
                 
                 <div id="extendedcontrols" class="float-right">
                     
-                    <input type="radio" class="radio" 
-                    name="Mode" value="VectorMode"  onClick="switch2vector()" />
-                        <label><script>document.write(_('Interactive map'))</script></label>
-                    <br/>
-                    <input type="radio" class="radio" checked="yes"
-                     name="Mode" value="RasterMode" onClick="switch2raster()"   />
-                        <label><script>document.write(_('Normal map'))</script></label>
-                    <br/>
-                    
-                    <hr class="hrmenu">
                     
                     <input type="radio" id="mode_radio2" class="radio"
                     name="basemap" value="mapnik"  onClick="toggleBaseLayer()" />
@@ -209,13 +199,6 @@
                     <script>document.write(_('vector_help'))</script>
                     </div>
                     
-                    <div id="routing" style="display:none">
-                        <div id="RoutingTitle" class="sideBarHeader"></div>
-                        <div class="RoutingContentClass">
-                            <div id="routingstatus" class="box"></div>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="clear"></div>
@@ -254,7 +237,8 @@
                         style="margin: 1px 2px 2px 8px;opacity:0.2;" ALT="align box" ALIGN="right">
                         <a onclick="infoMode()"
                         onmouseover="document.images['pointPic'].src='pics/pistes-pointer-hover.png'"
-                        onmouseout="document.images['pointPic'].src='pics/pistes-pointer.png'">
+                        onmouseout="if (mode == 'vector') {document.images['pointPic'].src='pics/pistes-pointer-on.png';}
+									else {document.images['pointPic'].src='pics/pistes-pointer.png'}">
                         <img style="margin: 2px 2px 2px 2px;" name="pointPic" src="pics/pistes-pointer.png"></a>
                     </div>
                 </div>

@@ -39,16 +39,11 @@ def application(environ,start_response):
             if (float(c.split(';')[0])>maxlat):maxlat=float(c.split(';')[0])
             if (float(c.split(';')[1])<minlon):minlon=float(c.split(';')[1])
             if (float(c.split(';')[1])>maxlon):maxlon=float(c.split(';')[1])
-    margin = 0.1
+    margin = 0.02
     left=str(minlon-margin)
     right=str(maxlon+margin)
     top=str(maxlat+margin)
     bottom=str(minlat-margin)
-    randFilename = random.randrange(0, 100001, 2)
-    dir = '/var/tmp/'
-    #PIL_images_dir = 'images/' #XX
-    filename = str(randFilename)+'.osm'
-    
     
     db='pistes-xapi-all'
     conn = psycopg2.connect("dbname="+db+" user=mapnik")
@@ -113,9 +108,7 @@ def application(environ,start_response):
         
         if (result == 'success'): continue
         else:
-            wkt = result
             xml = '<?xml version="1.0" encoding="UTF-8" ?>\n  <route>\n'
-            xml += '    <wkt>' + wkt + '\n    </wkt>\n'
             xml += '  </route>\n'
             status = '200 OK'
             response_body=xml
@@ -202,7 +195,7 @@ class Router:
                 nextItem = self.queue.pop(0)
             except IndexError:
                 print "Queue is empty: failed"
-                return('no_route',[],[])
+                return('',[],[])
             x = nextItem['end']
             if x in closed:
                 continue

@@ -57,15 +57,20 @@ var diffcolor = {
 "freeride":'yellow'
 }
 function infoMode(){
+    var m=''
     if (mode == "raster") {
         loadjscssfile("js/interactive.js", "js");
-        mode="vector";
+        m="vector";
         map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
         show_helper();
         document.body.style.cursor = 'pointer';
+        document.images['pointPic'].src='pics/pistes-pointer-on.png';
     }
     if (mode == "vector") {
-        // first destroy the selet and highlight controls
+        // first destroy the select and highlight controls
+        document.getElementById('sideBarContent').innerHTML='';
+        document.getElementById('sideBar').style.display='none';
+        
         map.events.unregister("click", map, onMapClick);
         var ctrls= map.getControlsByClass("OpenLayers.Control.SelectFeature");
         for (var c in ctrls) {ctrls[c].destroy();}
@@ -76,72 +81,19 @@ function infoMode(){
         for (var m in marks) {marks[m].destroy();}
 
         removejscssfile("js/interactive.js", "js");
-        //map.getLayersByName("Pistes Tiles LZ")[0].setVisibility(true);
-        //map.getLayersByName("Pistes Tiles")[0].setVisibility(true);
         document.getElementById('vector-help').style.display='inline';
-        document.getElementById('routing').style.display='none';
         // extended menu controls
-        document.getElementsByName("Mode")[1].checked=true;
         document.getElementsByName("live")[0].disabled=true;
         document.getElementsByName("live")[1].disabled=true;
         document.getElementsByName("live")[2].disabled=true;
         
-        mode="raster";
+        m="raster";
         map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
         close_helper();
         document.body.style.cursor = 'default';
+        document.images['pointPic'].src='pics/pistes-pointer.png';
     }
-}
-function switch2vector() {
-    if (mode == "raster") {
-        loadjscssfile("js/interactive.js", "js");
-        //~ //map.getLayersByName("Pistes Tiles LZ")[0].setVisibility(false);
-        //~ map.getLayersByName("Pistes Tiles")[0].setVisibility(false);
-        //~ document.getElementById('vector-help').style.display='none';
-        //~ // extended menu controls
-        //~ document.getElementsByName("Mode")[0].checked=true;
-        //~ document.getElementsByName("live")[0].disabled=false;
-        //~ document.getElementsByName("live")[1].disabled=false;
-        //~ document.getElementsByName("live")[2].disabled=false;
-        //~ $("status").innerHTML = '<b style="color:#FFFFFF;">'+_('loading...')+'</b>'; 
-        //~ $("status").style.backgroundColor = '#FF7800';
-        //~ 
-        mode="vector";
-        map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
-        show_helper();
-    }
-}
-function switch2raster() {
-    if (mode == "vector") {
-        // first destroy the selet and highlight controls
-        map.events.unregister("click", map, onMapClick);
-        var ctrls= map.getControlsByClass("OpenLayers.Control.SelectFeature");
-        for (var c in ctrls) {ctrls[c].destroy();}
-        // then layers
-        var lays = map.getLayersByClass("OpenLayers.Layer.Vector");
-        for (var l in lays) {lays[l].destroy();}
-        var marks = map.getLayersByClass("OpenLayers.Layer.Markers");
-        for (var m in marks) {marks[m].destroy();}
-
-        removejscssfile("js/interactive.js", "js");
-        //map.getLayersByName("Pistes Tiles LZ")[0].setVisibility(true);
-        //map.getLayersByName("Pistes Tiles")[0].setVisibility(true);
-        document.getElementById('vector-help').style.display='inline';
-        document.getElementById('routing').style.display='none';
-        // extended menu controls
-        document.getElementsByName("Mode")[1].checked=true;
-        document.getElementsByName("live")[0].disabled=true;
-        document.getElementsByName("live")[1].disabled=true;
-        document.getElementsByName("live")[2].disabled=true;
-        
-        mode="raster";
-        map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
-        close_helper();
-    }
-}
-function setmode(m){
-    if (m == "vector") {switch2vector();}
-    if (m == "raster") {switch2raster();}
+    mode=m;
 }
 function loadjscssfile(filename, filetype){
  if (filetype=="js"){ //if filename is a external JavaScript file
@@ -293,13 +245,25 @@ function show_edit() {
     }
 }
 function show_profile() {
+	resize_sideBar();
     document.getElementById('sideBar').style.display='inline';
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('TOPO');
     if (mode=="raster") {
         document.getElementById('sideBarContent').innerHTML=_('vector_help');
-    }else if (map.getZoom() > 11) {
+    }else if (map.getZoom() > 10) {
         document.getElementById('sideBarContent').innerHTML='<div id="topo_profile" style="display:inline"></div><div id="topo_list" style="display:inline"></div>';
-    }else if (map.getZoom() <= 11) {
+    }else if (map.getZoom() <= 10) {
+        document.getElementById('sideBarContent').innerHTML=_('zoom_in');
+    }
+}
+function show_profile_small() {
+	document.getElementById('sideBar').style.display='inline';
+	document.getElementById('sideBar').style.height='150px';
+	document.getElementById('sideBarContent').style.height='127px';
+    document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('TOPO');
+    if (map.getZoom() > 10) {
+        document.getElementById('sideBarContent').innerHTML='<div id="topo_profile" style="display:inline"></div><div id="topo_list" style="display:inline"></div>';
+    }else if (map.getZoom() <= 10) {
         document.getElementById('sideBarContent').innerHTML=_('zoom_in');
     }
 }
@@ -342,6 +306,14 @@ function checkKey(e) {
         }
     }
     if(keynum == 27) {
+		echap();
+        }
+    if(keynum == 13) {
+        // fires nominatim search
+        nominatimSearch(document.search.nom_search.value);
+        }
+}
+function echap() {
         close_sideBar();
         close_catcher();
         close_printSettings();
@@ -352,13 +324,7 @@ function checkKey(e) {
         em.style.display = 'none';
         }
         clearRoute();
-        }
-    if(keynum == 13) {
-        // fires nominatim search
-        nominatimSearch(document.search.nom_search.value);
-        }
 }
-
 function get_length(){
     var oRequest = new XMLHttpRequest();
     oRequest.open("GET",server+'data/ways_length.txt',false);
@@ -419,7 +385,7 @@ function resize_sideBar() {
     document.getElementById('sideBarContent').style.height= (getWinHeight() - 73
         - document.getElementById('menu').offsetHeight
         - document.getElementById('extendedmenu').offsetHeight)+"px";
-        
+    return true
     //document.getElementById('search_result').style.height= getWinHeight()-25-110-40;
     //document.getElementById('snow_info').style.height= getWinHeight()-25-110-40;
     //document.getElementById('add_link').style.height= getWinHeight()-25-110-40;
@@ -808,7 +774,6 @@ function map_init(){
     //map.getControlsByClass("OpenLayers.Control.PanZoomBar")[0].div.style.top=0;
     map.getControlsByClass("OpenLayers.Control.PanZoomBar")[0].div.style.left=0;
     // map.setCenter moved after the strategy.bbox, otherwise it won't load the wfs layer at first load
-    setmode(m);
     map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
     loadend();
 }
