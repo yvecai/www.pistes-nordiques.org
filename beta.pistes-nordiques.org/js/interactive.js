@@ -88,7 +88,6 @@ function onClick(lonlat) {
 }
 
 function requestRoute() {
-	
 	var q = '';
 	for (pt in routingPoints) {
 		q = q + routingPoints[pt].lat + ';' +routingPoints[pt].lon + ',';
@@ -106,19 +105,23 @@ function requestRoute() {
 			}
 			if (responseXML.getElementsByTagName('info')[0]!=null) {
 				show_profile();
+				if($("topo_profile")){$("topo_profile").innerHTML ='';}
 				var info=getNodeText(responseXML.getElementsByTagName('info')[0]);
-				requestInfos(info);
+				requestInfos(info,'');
 			}
 			else if (responseXML.getElementsByTagName('wkt')[0]!=null) {
 				show_profile();
 				var routeIds=getNodeText(responseXML.getElementsByTagName('ids')[0]);
 				var routeWKT = getNodeText(responseXML.getElementsByTagName('wkt')[0]);
-				requestInfos(routeIds);
+				var routeLength = getNodeText(responseXML.getElementsByTagName('length')[0]);
+				requestInfos(routeIds,routeLength);
 				trace_route(routeWKT);
 			}
 			else {
 				removeLastRoutePoint();
-				$("topo_list").innerHTML = 'no route';
+				show_profile();
+				if($("topo_profile")){$("topo_profile").innerHTML ='';}
+				$("topo_list").innerHTML = '\n'+_('no route');
 				}
 			}
 		}
@@ -213,30 +216,61 @@ function removeLastRoutePoint() {
 	}
 }
 
-
-function requestInfos(ids) {
+function requestInfos(ids,routeLength) {
 	
 	var XMLHttp = new XMLHttpRequest();
 	XMLHttp.open("GET", server+'search?ids=' + ids);
 	XMLHttp.onreadystatechange= function () {
 		if (XMLHttp.readyState == 4) {
 			var topo = JSON.parse(XMLHttp.responseText);
-			makeTopo(topo);
+			makeTopo(topo,routeLength);
 			}
 		}
 	XMLHttp.send();
 }
 
-function makeTopo(topo){
-	var htmlResponse='\n<p><ul>\n'
+function makeTopo(topo,routeLength){
+	var htmlResponse='\n<p><ul>\n';
+	total=parseFloat(routeLength);
 	for (r in topo) {
-		var id=r;
-		var type=topo[r].type;
-		var grooming=topo[r].grooming;
-		var difficulty=topo[r].difficulty;
-		htmlResponse += '<li>'+type+'-'+difficulty+'-'+grooming+'<li/>'
+		if (r != null) {
+			
+			var type=topo[r].type;
+			
+			var grooming;
+			var difficulty;
+			var member_of;
+			
+			htmlResponse += '<li><img src="'+icon[type]+'">&nbsp;&nbsp;';
+			
+			if (type == 'nordic' || type == 'hike') {
+				grooming=topo[r].grooming;
+				if (grooming == null){grooming='unknown';}
+				difficulty=topo[r].difficulty;
+				if (difficulty == null){difficulty='unknown';}
+			}
+			if (type == 'downhill') {
+				difficulty=topo[r].difficulty;
+				if (difficulty == null){difficulty='unknown';}
+			}
+			
+			member_of=topo[r].member_of;
+			var rel='';
+			if (member_of[0] != null) {
+				rel='<br/><i>'+_('member_of')+':</i>&nbsp;';
+				for (m in member_of) {
+					rel+=member_of[m][0]+'<b style="color:'+member_of[m][1]+';font-weight:900;">&nbsp;&#9679 </b><br/>';
+				}
+			}
+			
+			if (difficulty !=null) {htmlResponse +='<br/><i>'+_('difficulty')+':</i>&nbsp;'+_(difficulty) }
+			if (grooming !=null) {htmlResponse +='<br/><i>'+_('grooming')+':</i>&nbsp;'+_(grooming)+'.&nbsp;' }
+			htmlResponse +=rel+'</li>';
+		}
+	
 	}
-	htmlResponse='\n<ul/><p/>\n'
+	htmlResponse+='\n</ul></p>\n';
+	if (total != 0. && !isNaN(total)) {htmlResponse +='<p>'+total.toFixed(1)+' km</p>'}
 	document.getElementById('topo_list').innerHTML = htmlResponse;
 }
 

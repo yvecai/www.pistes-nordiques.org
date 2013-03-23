@@ -21,7 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 var server="http://"+window.location.host+"/";
 
 var mode="raster";
-var m="raster";
 var EXT_MENU=false;
 var EDIT_SHOWED=false;
 var CATCHER=true;
@@ -56,6 +55,42 @@ var diffcolor = {
 "advanced":'black',
 "expert":'orange',
 "freeride":'yellow'
+}
+function infoMode(){
+    if (mode == "raster") {
+        loadjscssfile("js/interactive.js", "js");
+        mode="vector";
+        map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
+        show_helper();
+        document.body.style.cursor = 'pointer';
+    }
+    if (mode == "vector") {
+        // first destroy the selet and highlight controls
+        map.events.unregister("click", map, onMapClick);
+        var ctrls= map.getControlsByClass("OpenLayers.Control.SelectFeature");
+        for (var c in ctrls) {ctrls[c].destroy();}
+        // then layers
+        var lays = map.getLayersByClass("OpenLayers.Layer.Vector");
+        for (var l in lays) {lays[l].destroy();}
+        var marks = map.getLayersByClass("OpenLayers.Layer.Markers");
+        for (var m in marks) {marks[m].destroy();}
+
+        removejscssfile("js/interactive.js", "js");
+        //map.getLayersByName("Pistes Tiles LZ")[0].setVisibility(true);
+        //map.getLayersByName("Pistes Tiles")[0].setVisibility(true);
+        document.getElementById('vector-help').style.display='inline';
+        document.getElementById('routing').style.display='none';
+        // extended menu controls
+        document.getElementsByName("Mode")[1].checked=true;
+        document.getElementsByName("live")[0].disabled=true;
+        document.getElementsByName("live")[1].disabled=true;
+        document.getElementsByName("live")[2].disabled=true;
+        
+        mode="raster";
+        map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
+        close_helper();
+        document.body.style.cursor = 'default';
+    }
 }
 function switch2vector() {
     if (mode == "raster") {
@@ -262,9 +297,9 @@ function show_profile() {
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('TOPO');
     if (mode=="raster") {
         document.getElementById('sideBarContent').innerHTML=_('vector_help');
-    }else if (map.getZoom() > 13) {
+    }else if (map.getZoom() > 11) {
         document.getElementById('sideBarContent').innerHTML='<div id="topo_profile" style="display:inline"></div><div id="topo_list" style="display:inline"></div>';
-    }else if (map.getZoom() <= 13) {
+    }else if (map.getZoom() <= 11) {
         document.getElementById('sideBarContent').innerHTML=_('zoom_in');
     }
 }

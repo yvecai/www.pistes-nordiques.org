@@ -13,11 +13,6 @@ import urllib
 
 def application(environ,start_response):
 	request = urllib.unquote(environ['QUERY_STRING'])
-	#~ status = '200 OK'
-	#~ response_body=request
-	#~ response_headers = [('Content-Type', 'application/json; charset=utf-8'),('Content-Length', str(len(response_body)))]
-	#~ start_response(status, response_headers)
-	#~ return [response_body]
 	name=''
 	point=''
 	radius=''
@@ -76,7 +71,8 @@ def query_ids(name='', point='', radius=''):
 			if idx < 0: sites_ids.append(str(idx))
 			else: entrances_ids.append(str(idx))
 			
-		cur.execute("select osm_id from planet_osm_line where to_tsvector(COALESCE(route_name,'')||' '||COALESCE(name,'')||' '||COALESCE(\"piste:name\",'')) @@ to_tsquery('%s');"\
+		cur.execute("select osm_id from planet_osm_line where \
+		to_tsvector(COALESCE(route_name,'')||' '||COALESCE(name,'')||' '||COALESCE(\"piste:name\",'')) @@ to_tsquery('%s');"\
 			%(name))
 		ids=cur.fetchall()
 		for i in ids:
@@ -105,36 +101,67 @@ def query_ids(name='', point='', radius=''):
 	con.close()
 	return sites_ids, entrances_ids, routes_ids, ways_ids
 	
-	
 def query_topo(str_id):
 	ids=str_id.split(',')
-	con = psycopg2.connect("dbname=pistes-mapnik user=mapnik")
+	con = psycopg2.connect("dbname=pistes-mapnik2 user=mapnik")
 	cur = con.cursor()
 	topo={}
+	
+	i=0 # we want to keep json order
 	for idx in ids:
+		i+=1
 		cur.execute("select \
 		\"piste:type\", \
 		\"piste:difficulty\", \
 		\"piste:grooming\", \
-		\"piste:name\" \
+		\"piste:name\", \
+		member_of, \
+		\"aerialway\" \
 		from planet_osm_line where osm_id = %s" % (idx))
-		resp=cur.fetchall()
-		for s in resp:
-			if s:
-				topo[idx]={}
-				topo[idx]['type']=s[0]
-				topo[idx]['difficulty']=s[1]
-				topo[idx]['grooming']=s[0]
-				topo[idx]['piste_name']=s[1]
+		s=cur.fetchone()
+		if s:
+			topo[i]={}
+			#topo[i]['id']=idx
+			if s[0]:
+				topo[i]['type']=s[0]
+			else:
+				topo[i]['type']=s[5]
+			topo[i]['difficulty']=s[1]
+			topo[i]['grooming']=s[2]
+			topo[i]['piste_name']=s[3]
+			topo[i]['member_of']=[]
+			if s[4]:
+				for m in s[4]:
+					cur.execute("select \
+					route_name, COALESCE(color,'')||''||COALESCE(colour,'') \
+					from planet_osm_line where osm_id = -%s" % (m))
+					topo[i]['member_of'].append(cur.fetchone())
+			topo[i]['aerialway']=s[5]
+	
+	#remove duplicates
+	clean_topo={}
+	clean_topo[1]=topo[1]
+	j=1
+	for i in topo:
+		if not equal(topo[i],clean_topo[j]):
+			j+=1
+			clean_topo[j]=topo[i]
+	
 	con.close()
-	return topo
+	return clean_topo
+	
+def equal(d1,d2):
+	for i in d1:
+		if d1[i] != d2[i]: return False
+	return True
 	
 def query_sites(sites_ids):
 	con = psycopg2.connect("dbname=pistes-mapnik user=mapnik")
 	cur = con.cursor()
 	sites={}
 	for idx in sites_ids:
-		cur.execute("select site_name, \"piste:type\", ST_AsLatLonText(ST_Transform(way,4326), 'D.DDDDD') from planet_osm_point where osm_id = %s and \"piste:type\" is not null;"\
+		cur.execute("select site_name, \"piste:type\", ST_AsLatLonText(ST_Transform(way,4326), 'D.DDDDD') \
+		from planet_osm_point where osm_id = %s and \"piste:type\" is not null;"\
 		%(idx))
 		resp=cur.fetchall()
 		for s in resp:
@@ -151,7 +178,8 @@ def query_routes(routes_ids):
 	cur = con.cursor()
 	routes={}
 	for idx in routes_ids:
-		cur.execute("select route_name, \"piste:type\", ST_AsLatLonText(st_centroid(ST_Transform(way,4326)), 'D.DDDDD'), color, colour from planet_osm_line where osm_id = %s and \"piste:type\" is not null"\
+		cur.execute("select route_name, \"piste:type\", ST_AsLatLonText(st_centroid(ST_Transform(way,4326)), 'D.DDDDD'), color, colour \
+		from planet_osm_line where osm_id = %s and \"piste:type\" is not null"\
 		%(idx))
 		resp=cur.fetchall()
 		for s in resp:
@@ -170,7 +198,9 @@ def query_ways(ways_ids):
 	cur = con.cursor()
 	ways={}
 	for idx in ways_ids:
-		cur.execute("select COALESCE(name,'')||' '||COALESCE(\"piste:name\",''), \"piste:type\", ST_AsLatLonText(st_centroid(ST_Transform(way,4326)), 'D.DDDDD'), \"piste:difficulty\", \"piste:grooming\", \"piste:lit\" from planet_osm_line where osm_id = %s and \"piste:type\" is not null;"\
+		cur.execute("select COALESCE(name,'')||' '||COALESCE(\"piste:name\",''), \"piste:type\", \
+		ST_AsLatLonText(st_centroid(ST_Transform(way,4326)), 'D.DDDDD'), \"piste:difficulty\", \"piste:grooming\", \"piste:lit\" \
+		from planet_osm_line where osm_id = %s and \"piste:type\" is not null;"\
 		%(idx))
 		resp=cur.fetchall()
 		for s in resp:

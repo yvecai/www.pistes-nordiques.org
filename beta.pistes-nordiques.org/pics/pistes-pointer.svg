@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="21.019663"
+   height="40.018169"
+   viewBox="0 0 16.81573 32.014536"
+   id="svg3010"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="pistes-pointer.svg"
+   inkscape:export-filename="/home/yves/KIMSUFI/www.git/beta.pistes-nordiques.org/pics/pistes-pointer-off.png"
+   inkscape:export-xdpi="170.92236"
+   inkscape:export-ydpi="170.92236">
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1512"
+     inkscape:window-height="886"
+     id="namedview18"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="4.79"
+     inkscape:cx="-31.664692"
+     inkscape:cy="2.84799"
+     inkscape:window-x="49"
+     inkscape:window-y="24"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3010" />
+  <defs
+     id="defs3042" />
+  <path
+     sodipodi:type="arc"
+     style="opacity:0.98999999000000005;fill:none;stroke:#b3b3b3;stroke-width:0.57831734000000001;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.99738216;stroke-dasharray:none;stroke-dashoffset:0"
+     id="path3821"
+     sodipodi:cx="838.82861"
+     sodipodi:cy="482.64011"
+     sodipodi:rx="4.4089069"
+     sodipodi:ry="4.4089069"
+     d="m 843.23752,482.64011 a 4.4089069,4.4089069 0 1 1 -8.81781,0 4.4089069,4.4089069 0 1 1 8.81781,0 z"
+     transform="matrix(1.4016703,0,0,1.3652168,-1169.1682,-652.4883)" />
+  <path
+     style="fill:#ffffff;fill-opacity:1;stroke:#4b7ee2;stroke-width:1.20000005000000010;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     d="m 6.549481,31.400976 c 3.81612,-0.0601 4.05414,-0.0826 7.91267,0 0.66689,-3.84714 1.27154,-6.67467 1.66233,-11.70377 0.11862,-1.52574 0.37008,-3.19794 -1.26336,-4.18603 -1.30097,-0.0483 -1.26338,3.58801 -1.26338,3.58801 0,0 0.26345,-4.92859 -1.52934,-4.784 -1.50681,0.1215 -1.19686,3.84429 -1.19686,3.84429 0,0 0.30578,-5.10869 -1.46285,-5.12574 -1.59785,-0.0153 -1.39636,4.95489 -1.39636,4.95489 0,0 0.15892,-11.0649704 -1.59582,-11.1912004 -2.04648,-0.1471 -0.93091,13.2414804 -0.93091,13.2414804 0,0 -1.68011,-4.59335 -3.12518,-2.47743 -1.10291,1.61488 3.69759,6.12539 4.18906,13.8395 z"
+     id="path2997"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccsccscscscsc"
+     inkscape:export-filename="/home/yves/KIMSUFI/www.git/beta.pistes-nordiques.org/pics/pistes-pointer.png"
+     inkscape:export-xdpi="170.92236"
+     inkscape:export-ydpi="170.92236" />
+</svg>
