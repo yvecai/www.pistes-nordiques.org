@@ -47,6 +47,8 @@ var icon = {
 "platter":'pics/drag_lift.png',
 "rope_tow":'pics/drag_lift.png',
 "station":'pics/station.png',
+"station":'pics/playground.png',
+"station":'pics/sled.png',
 "snow_park":'pics/snow_park.png'
 }
 var diffcolor = {
