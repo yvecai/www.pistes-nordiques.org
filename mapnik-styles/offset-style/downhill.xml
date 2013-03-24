@@ -220,7 +220,7 @@
 		<LineSymbolizer stroke-width="2" stroke="#0074F3"/>
 	</Rule>
 	<Rule>
-		&maxscale_zoom13;
+		&maxscale_zoom14;
 		&minscale_zoom18;
 		<PointSymbolizer file="snow_park.png" />
 	</Rule>
@@ -235,7 +235,7 @@
 	<Rule>
 		&maxscale_zoom12;
 		&minscale_zoom18;
-		<MarkerSymbolizer file="jump.png" placement="line" spacing="400"/>
+		<PointSymbolizer file="jump.png"/>
 	</Rule>
 </Style>
        
