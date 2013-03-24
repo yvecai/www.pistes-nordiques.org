@@ -404,12 +404,8 @@ function getWinHeight(){
 }
 
 function resize_sideBar() {
-    document.getElementById('sideBar').style.height= (getWinHeight() - 50
-        - document.getElementById('menu').offsetHeight
-        - document.getElementById('extendedmenu').offsetHeight)+"px";
-    document.getElementById('sideBarContent').style.height= (getWinHeight() - 73
-        - document.getElementById('menu').offsetHeight
-        - document.getElementById('extendedmenu').offsetHeight)+"px";
+    document.getElementById('sideBar').style.height= (getWinHeight() - 80)+"px";
+    document.getElementById('sideBarContent').style.height= (getWinHeight() - 103)+"px";
     return true
     //document.getElementById('search_result').style.height= getWinHeight()-25-110-40;
     //document.getElementById('snow_info').style.height= getWinHeight()-25-110-40;
