@@ -233,7 +233,7 @@
 		<LineSymbolizer stroke-width="2" stroke="#655ABE"/>
 	</Rule>
 	<Rule>
-		&maxscale_zoom12;
+		&maxscale_zoom14;
 		&minscale_zoom18;
 		<PointSymbolizer file="jump.png"/>
 	</Rule>
@@ -246,7 +246,7 @@
 		<LineSymbolizer stroke-width="2" stroke="#7ADEAE"/>
 	</Rule>
 	<Rule>
-		&maxscale_zoom12;
+		&maxscale_zoom14;
 		&minscale_zoom18;
 		<PointSymbolizer file="sled.png"/>
 	</Rule>
@@ -259,7 +259,7 @@
 		<LineSymbolizer stroke-width="2" stroke="#6FC4D0"/>
 	</Rule>
 	<Rule>
-		&maxscale_zoom12;
+		&maxscale_zoom14;
 		&minscale_zoom18;
 		<PointSymbolizer file="ice-skate.png"/>
 	</Rule>
