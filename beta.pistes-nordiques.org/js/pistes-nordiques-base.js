@@ -311,6 +311,8 @@ function show_legend() {
 function show_settings() {
     document.getElementById('sideBar').style.display='inline';
     document.getElementById('sideBarContent').style.display='inline';
+	document.getElementById('sideBar').style.height='200px';
+	document.getElementById('sideBarContent').style.height='177px';
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('settings').replace('<br/>',' ');
     html = '';
     html +=' <input type="radio" id="mode_radio2" class="radio"';
@@ -337,10 +339,72 @@ function show_settings() {
     html +=' <br/>';
     html +=' <hr class="hrmenu">';
     html +=' <div id="vector-help">';
+	html +='	<table style="border:0px;"><tr><td><a onclick="infoMode()"';
+	html +='	onmouseover="document.images[\'pointPic\'].src=\'pics/pistes-pointer-hover.png\'"';
+	html +='	onmouseout="if (mode == \'vector\') {document.images[\'pointPic\'].src=\'pics/pistes-pointer-on.png\';}';
+	html +='				else {document.images[\'pointPic\'].src=\'pics/pistes-pointer.png\'}">';
+	html +='	<img style="margin: 2px 2px 2px 2px;display: block;" name="pointPic" src="pics/pistes-pointer.png"></a></td><td>';
     html +=_('vector_help');
-    html +=' </div>';
+    html +=' </td></table></div>';
     document.getElementById('sideBarContent').innerHTML=html;
-    resize_sideBar();
+}
+
+function show_live_edits(when,display) {
+	if (display) {
+		var DiffStyle = new OpenLayers.Style({
+				pointRadius: 1.5,
+				fillColor: "#FF1200",
+				strokeColor:"#FF1200"})
+		if (when == "daily") {
+			var DailyLayer=new OpenLayers.Layer.Vector("Daily", {
+						strategies: [new OpenLayers.Strategy.Fixed(),
+									new OpenLayers.Strategy.Cluster()],
+						protocol: new OpenLayers.Protocol.HTTP({
+							url: "data/daily.tsv",
+							format: new OpenLayers.Format.Text()
+							}),
+						styleMap: new OpenLayers.StyleMap({
+							"default": DiffStyle
+							}),
+						projection: new OpenLayers.Projection("EPSG:4326")
+					});
+			map.addLayers([DailyLayer]);
+		}
+		if (when == "weekly") {
+			var WeeklyLayer=new OpenLayers.Layer.Vector("Weekly", {
+						strategies: [new OpenLayers.Strategy.Fixed(),
+									new OpenLayers.Strategy.Cluster()],
+						protocol: new OpenLayers.Protocol.HTTP({
+							url: "data/weekly.tsv",
+							format: new OpenLayers.Format.Text()
+							}),
+						styleMap: new OpenLayers.StyleMap({
+							"default": DiffStyle
+							}),
+						projection: new OpenLayers.Projection("EPSG:4326")
+					});
+			map.addLayers([WeeklyLayer]);
+		}
+		if (when == "monthly") {
+			var MonthlyLayer=new OpenLayers.Layer.Vector("Monthly", {
+						strategies: [new OpenLayers.Strategy.Fixed(),
+									new OpenLayers.Strategy.Cluster()],
+						protocol: new OpenLayers.Protocol.HTTP({
+							url: "data/monthly.tsv",
+							format: new OpenLayers.Format.Text()
+							}),
+						styleMap: new OpenLayers.StyleMap({
+							"default": DiffStyle
+							}),
+						projection: new OpenLayers.Projection("EPSG:4326")
+					});
+			map.addLayers([MonthlyLayer]);
+		}
+	} else {
+		if (when == "daily") {map.getLayersByName("Daily")[0].destroy();}
+		if (when == "weekly") {map.getLayersByName("Weekly")[0].destroy();}
+		if (when == "monthly") {map.getLayersByName("Monthly")[0].destroy();}
+	}
 }
 //======================================================================
 // INIT
@@ -369,9 +433,7 @@ function checkKey(e) {
 }
 function echap() {
         close_sideBar();
-        close_catcher();
         close_printSettings();
-        close_helper();
         // close extendedmenu
         var em = document.getElementById('extendedmenu');
         if (em.style.display == "inline") {
