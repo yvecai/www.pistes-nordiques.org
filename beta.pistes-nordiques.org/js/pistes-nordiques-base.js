@@ -23,7 +23,7 @@ var server="http://"+window.location.host+"/";
 var mode="raster";
 var EXT_MENU=false;
 var EDIT_SHOWED=false;
-var CATCHER=true;
+var CATCHER;
 var permalink_potlatch2;
 var permalink_potlatch;
 var zoomBar;
@@ -169,10 +169,8 @@ function close_sideBar() {
 function close_helper(){
     close_sideBar();
 }
-function close_catcher(){
-    close_sideBar();
-}
 function show_catcher(){
+    CATCHER=true;
 	document.getElementById('sideBar').style.display='inline';
 	document.getElementById('sideBar').style.height='150px';
 	document.getElementById('sideBarContent').style.display='inline';
@@ -611,9 +609,9 @@ function updateZoom() {
 }
 function onZoomEnd(){
     
-    if (ONCE) {close_catcher();}
     ONCE=true;
-    if (map.getZoom()<13){
+    if(CATCHER && ONCE){close_sideBar();CATCHER=false;}
+    if (map.getZoom()<11){
         if (document.getElementById('zoomin-helper')) {
         document.getElementById('zoomin-helper').style.display = 'inline';}
     } else {
