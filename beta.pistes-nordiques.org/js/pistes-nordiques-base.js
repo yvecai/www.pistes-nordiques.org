@@ -160,8 +160,8 @@ function closeMenu() {
 function close_sideBar() {
     document.getElementById('sideBarTitle').innerHTML='';
     document.getElementById('sideBarContent').innerHTML='';
-	document.getElementById('sideBar').style.height='33px';
-	document.getElementById('sideBarContent').style.height='10px';
+    document.getElementById('sideBar').style.height='33px';
+    document.getElementById('sideBarContent').style.height='10px';
     
     document.getElementById('sideBar').style.display='none';
     EDIT_SHOWED = false;
@@ -171,10 +171,10 @@ function close_helper(){
 }
 function show_catcher(){
     CATCHER=true;
-	document.getElementById('sideBar').style.display='inline';
-	document.getElementById('sideBar').style.height='150px';
-	document.getElementById('sideBarContent').style.display='inline';
-	document.getElementById('sideBarContent').style.height='127px';
+    document.getElementById('sideBar').style.display='inline';
+    document.getElementById('sideBar').style.height='150px';
+    document.getElementById('sideBarContent').style.display='inline';
+    document.getElementById('sideBarContent').style.height='127px';
     document.getElementById('sideBarTitle').innerHTML='';
         var html='<a href="http://wiki.openstreetmap.org" target="blank"><img src="pics/osm-pistes-nordiques_logo-80px.png" style="float: left;margin: 5px;"></img></a>';
         html+='<p>';
@@ -189,12 +189,11 @@ function show_catcher(){
     document.getElementById('sideBarContent').innerHTML=html;
     
 }
-
 function show_helper(){
-	document.getElementById('sideBar').style.display='inline';
-	document.getElementById('sideBar').style.height='150px';
-	document.getElementById('sideBarContent').style.display='inline';
-	document.getElementById('sideBarContent').style.height='127px';
+    document.getElementById('sideBar').style.display='inline';
+    document.getElementById('sideBar').style.height='150px';
+    document.getElementById('sideBarContent').style.display='inline';
+    document.getElementById('sideBarContent').style.height='127px';
     document.getElementById('sideBarTitle').innerHTML='';
     
     var html='<img style="margin-left: 3px;"src="pics/interactive-help.png"/><br/>'
@@ -272,7 +271,7 @@ function show_edit() {
     }
 }
 function show_profile() {
-	resize_sideBar();
+    resize_sideBar();
     document.getElementById('sideBar').style.display='inline';
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('TOPO');
     if (mode=="raster") {
@@ -284,9 +283,9 @@ function show_profile() {
     }
 }
 function show_profile_small() {
-	document.getElementById('sideBar').style.display='inline';
-	document.getElementById('sideBar').style.height='150px';
-	document.getElementById('sideBarContent').style.height='127px';
+    document.getElementById('sideBar').style.display='inline';
+    document.getElementById('sideBar').style.height='150px';
+    document.getElementById('sideBarContent').style.height='127px';
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('TOPO');
     if (map.getZoom() > 10) {
         document.getElementById('sideBarContent').innerHTML='<div id="topo_profile" style="display:inline"></div><div id="topo_list" style="display:inline"></div>';
@@ -298,7 +297,7 @@ function show_legend() {
     document.getElementById('sideBar').style.display='inline';
     document.getElementById('sideBarContent').style.display='inline';
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('map_key').replace('<br/>',' ');
-    html =  '<p><img src="pics/mapkey.png" ></p>'
+    html =  '<p><img style="position: relative; left: 20px;" src="pics/mapkey.png"></p>'
     +'<p>'+_('key-color')
     + '<a target="blank" href="http://wiki.openstreetmap.org/wiki/Proposed_features/Tag:route%3Dpiste"> (1)</a>.</p>'
     +'<p>'+_('learn-difficulties')
@@ -311,8 +310,8 @@ function show_legend() {
 function show_settings() {
     document.getElementById('sideBar').style.display='inline';
     document.getElementById('sideBarContent').style.display='inline';
-	document.getElementById('sideBar').style.height='200px';
-	document.getElementById('sideBarContent').style.height='177px';
+    document.getElementById('sideBar').style.height='200px';
+    document.getElementById('sideBarContent').style.height='177px';
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('settings').replace('<br/>',' ');
     html = '';
     html +=' <input type="radio" id="mode_radio2" class="radio"';
@@ -339,72 +338,100 @@ function show_settings() {
     html +=' <br/>';
     html +=' <hr class="hrmenu">';
     html +=' <div id="vector-help">';
-	html +='	<table style="border:0px;"><tr><td><a onclick="infoMode()"';
-	html +='	onmouseover="document.images[\'pointPic\'].src=\'pics/pistes-pointer-hover.png\'"';
-	html +='	onmouseout="if (mode == \'vector\') {document.images[\'pointPic\'].src=\'pics/pistes-pointer-on.png\';}';
-	html +='				else {document.images[\'pointPic\'].src=\'pics/pistes-pointer.png\'}">';
-	html +='	<img style="margin: 2px 2px 2px 2px;display: block;" name="pointPic" src="pics/pistes-pointer.png"></a></td><td>';
+    html +='    <table style="border:0px;"><tr><td><a onclick="infoMode()"';
+    html +='    onmouseover="document.images[\'pointPic\'].src=\'pics/pistes-pointer-hover.png\'"';
+    html +='    onmouseout="if (mode == \'vector\') {document.images[\'pointPic\'].src=\'pics/pistes-pointer-on.png\';}';
+    html +='                else {document.images[\'pointPic\'].src=\'pics/pistes-pointer.png\'}">';
+    html +='    <img style="margin: 2px 2px 2px 2px;display: block;" name="pointPic" src="pics/pistes-pointer.png"></a></td><td>';
     html +=_('vector_help');
     html +=' </td></table></div>';
     document.getElementById('sideBarContent').innerHTML=html;
 }
-
+function getWinHeight(){
+      var myWidth = 0, myHeight = 0;
+      if( typeof( window.innerWidth ) == 'number' ) {
+        //Non-IE
+        myWidth = window.innerWidth;
+        myHeight = window.innerHeight;
+      } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+        //IE 6+ in 'standards compliant mode'
+        myWidth = document.documentElement.clientWidth;
+        myHeight = document.documentElement.clientHeight;
+      } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+        //IE 4 compatible
+        myWidth = document.body.clientWidth;
+        myHeight = document.body.clientHeight;
+      }
+    return parseInt(myHeight);
+}
+function resize_sideBar() {
+    document.getElementById('sideBar').style.height= (getWinHeight() - 80)+"px";
+    document.getElementById('sideBarContent').style.height= (getWinHeight() - 103)+"px";
+    return true
+    //document.getElementById('search_result').style.height= getWinHeight()-25-110-40;
+    //document.getElementById('snow_info').style.height= getWinHeight()-25-110-40;
+    //document.getElementById('add_link').style.height= getWinHeight()-25-110-40;
+    //document.getElementById('topo').style.height= getWinHeight()-25-110-40;
+    //document.getElementById('edit').style.height= getWinHeight()-25-110-40;
+    //document.getElementById('about').style.height= getWinHeight()-25-110-40;
+    //document.getElementById('help').style.height= getWinHeight()-25-110-40;
+}
 function show_live_edits(when,display) {
-	if (display) {
-		var DiffStyle = new OpenLayers.Style({
-				pointRadius: 1.5,
-				fillColor: "#FF1200",
-				strokeColor:"#FF1200"})
-		if (when == "daily") {
-			var DailyLayer=new OpenLayers.Layer.Vector("Daily", {
-						strategies: [new OpenLayers.Strategy.Fixed(),
-									new OpenLayers.Strategy.Cluster()],
-						protocol: new OpenLayers.Protocol.HTTP({
-							url: "data/daily.tsv",
-							format: new OpenLayers.Format.Text()
-							}),
-						styleMap: new OpenLayers.StyleMap({
-							"default": DiffStyle
-							}),
-						projection: new OpenLayers.Projection("EPSG:4326")
-					});
-			map.addLayers([DailyLayer]);
-		}
-		if (when == "weekly") {
-			var WeeklyLayer=new OpenLayers.Layer.Vector("Weekly", {
-						strategies: [new OpenLayers.Strategy.Fixed(),
-									new OpenLayers.Strategy.Cluster()],
-						protocol: new OpenLayers.Protocol.HTTP({
-							url: "data/weekly.tsv",
-							format: new OpenLayers.Format.Text()
-							}),
-						styleMap: new OpenLayers.StyleMap({
-							"default": DiffStyle
-							}),
-						projection: new OpenLayers.Projection("EPSG:4326")
-					});
-			map.addLayers([WeeklyLayer]);
-		}
-		if (when == "monthly") {
-			var MonthlyLayer=new OpenLayers.Layer.Vector("Monthly", {
-						strategies: [new OpenLayers.Strategy.Fixed(),
-									new OpenLayers.Strategy.Cluster()],
-						protocol: new OpenLayers.Protocol.HTTP({
-							url: "data/monthly.tsv",
-							format: new OpenLayers.Format.Text()
-							}),
-						styleMap: new OpenLayers.StyleMap({
-							"default": DiffStyle
-							}),
-						projection: new OpenLayers.Projection("EPSG:4326")
-					});
-			map.addLayers([MonthlyLayer]);
-		}
-	} else {
-		if (when == "daily") {map.getLayersByName("Daily")[0].destroy();}
-		if (when == "weekly") {map.getLayersByName("Weekly")[0].destroy();}
-		if (when == "monthly") {map.getLayersByName("Monthly")[0].destroy();}
-	}
+    if (display) {
+        var DiffStyle = new OpenLayers.Style({
+                pointRadius: 1.5,
+                fillColor: "#FF1200",
+                strokeColor:"#FF1200"})
+        if (when == "daily") {
+            var DailyLayer=new OpenLayers.Layer.Vector("Daily", {
+                        strategies: [new OpenLayers.Strategy.Fixed(),
+                                    new OpenLayers.Strategy.Cluster()],
+                        protocol: new OpenLayers.Protocol.HTTP({
+                            url: "data/daily.tsv",
+                            format: new OpenLayers.Format.Text()
+                            }),
+                        styleMap: new OpenLayers.StyleMap({
+                            "default": DiffStyle
+                            }),
+                        projection: new OpenLayers.Projection("EPSG:4326")
+                    });
+            map.addLayers([DailyLayer]);
+        }
+        if (when == "weekly") {
+            var WeeklyLayer=new OpenLayers.Layer.Vector("Weekly", {
+                        strategies: [new OpenLayers.Strategy.Fixed(),
+                                    new OpenLayers.Strategy.Cluster()],
+                        protocol: new OpenLayers.Protocol.HTTP({
+                            url: "data/weekly.tsv",
+                            format: new OpenLayers.Format.Text()
+                            }),
+                        styleMap: new OpenLayers.StyleMap({
+                            "default": DiffStyle
+                            }),
+                        projection: new OpenLayers.Projection("EPSG:4326")
+                    });
+            map.addLayers([WeeklyLayer]);
+        }
+        if (when == "monthly") {
+            var MonthlyLayer=new OpenLayers.Layer.Vector("Monthly", {
+                        strategies: [new OpenLayers.Strategy.Fixed(),
+                                    new OpenLayers.Strategy.Cluster()],
+                        protocol: new OpenLayers.Protocol.HTTP({
+                            url: "data/monthly.tsv",
+                            format: new OpenLayers.Format.Text()
+                            }),
+                        styleMap: new OpenLayers.StyleMap({
+                            "default": DiffStyle
+                            }),
+                        projection: new OpenLayers.Projection("EPSG:4326")
+                    });
+            map.addLayers([MonthlyLayer]);
+        }
+    } else {
+        if (when == "daily") {map.getLayersByName("Daily")[0].destroy();}
+        if (when == "weekly") {map.getLayersByName("Weekly")[0].destroy();}
+        if (when == "monthly") {map.getLayersByName("Monthly")[0].destroy();}
+    }
 }
 //======================================================================
 // INIT
@@ -424,7 +451,7 @@ function checkKey(e) {
         }
     }
     if(keynum == 27) {
-		echap();
+        echap();
         }
     if(keynum == 13) {
         // fires nominatim search
@@ -474,37 +501,6 @@ function stopRKey(evt) {
   var evt = (evt) ? evt : ((event) ? event : null);
   var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
   if ((evt.keyCode == 13) && (node.type=="text"))  {return false;}
-}
-
-function getWinHeight(){
-      var myWidth = 0, myHeight = 0;
-      if( typeof( window.innerWidth ) == 'number' ) {
-        //Non-IE
-        myWidth = window.innerWidth;
-        myHeight = window.innerHeight;
-      } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
-        //IE 6+ in 'standards compliant mode'
-        myWidth = document.documentElement.clientWidth;
-        myHeight = document.documentElement.clientHeight;
-      } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
-        //IE 4 compatible
-        myWidth = document.body.clientWidth;
-        myHeight = document.body.clientHeight;
-      }
-    return parseInt(myHeight);
-}
-
-function resize_sideBar() {
-    document.getElementById('sideBar').style.height= (getWinHeight() - 80)+"px";
-    document.getElementById('sideBarContent').style.height= (getWinHeight() - 103)+"px";
-    return true
-    //document.getElementById('search_result').style.height= getWinHeight()-25-110-40;
-    //document.getElementById('snow_info').style.height= getWinHeight()-25-110-40;
-    //document.getElementById('add_link').style.height= getWinHeight()-25-110-40;
-    //document.getElementById('topo').style.height= getWinHeight()-25-110-40;
-    //document.getElementById('edit').style.height= getWinHeight()-25-110-40;
-    //document.getElementById('about').style.height= getWinHeight()-25-110-40;
-    //document.getElementById('help').style.height= getWinHeight()-25-110-40;
 }
 
 function page_init(){
@@ -607,6 +603,7 @@ function loadend(){
         htmlResponse += '</p></ul> <p>Nominatim Search Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png"></p>';
         
         document.getElementById("sideBarContent").innerHTML = htmlResponse;
+        resize_sideBar();
     }
 
 //======================================================================

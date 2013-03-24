@@ -24,9 +24,6 @@ def application(environ,start_response):
         start_response(status, response_headers)
         return [response_body]
         
-        
-    #coord = req[:-1].split(',')
-    
     # define the bbox where requesting the data
     minlat=float(coord[0].split(';')[0])
     minlon=float(coord[0].split(';')[1])
@@ -44,46 +41,7 @@ def application(environ,start_response):
     right=str(maxlon+margin)
     top=str(maxlat+margin)
     bottom=str(minlat-margin)
-    
-    db='pistes-xapi-all'
-    conn = psycopg2.connect("dbname="+db+" user=mapnik")
-    
-    cur = conn.cursor()
-    cur.execute(" \
-                    SELECT id, nodes \
-                    FROM ways WHERE \
-                    st_intersects(\
-                            ways.linestring,\
-                            ST_MakeEnvelope(%s,%s,%s,%s, 4326)\
-                            ); "\
-                    , (left, bottom, right, top))
-    result=cur.fetchall()
-    ways={}
-    for r in result:
-        ways[r[0]]=[]
-        for i in range(len(r[1])):
-            nid=r[1][i]
-            cur.execute(" select st_x(geom), st_y(geom) from nodes where id=%s" % (nid))
-            nll=cur.fetchone()
-            ways[r[0]].append([nid,nll])
-    
-    root = etree.Element("osm")
-    for wid in ways:
-        nids=[]
-        for node in ways[wid]:
-            nid=node[0]
-            lon=str(node[1][0])
-            lat=str(node[1][1])
-            nids.append(nid)
-            node=etree.Element("node", id=str(nid), lon=lon, lat=lat)
-            root.append(node)
-        way=etree.Element("way", id=str(wid))
-        for nid in nids:
-            way.append(etree.Element("nd", ref=str(nid)))
-        root.append(way)
-    s=StringIO.StringIO()
-    s.write(etree.tostring(root, pretty_print=True))
-    s.seek(0)
+    s=getOsm(left, bottom, right, top)
     
     # Load data from the bbox
     data = LoadOsm(s)
@@ -143,7 +101,50 @@ def application(environ,start_response):
     response_headers = [('Content-Type', 'application/xml'),('Content-Length', str(len(response_body)))]
     start_response(status, response_headers)
     return [response_body]
-
+    
+def getOsm(left, bottom, right, top):
+    db='pistes-xapi-all'
+    conn = psycopg2.connect("dbname="+db+" user=mapnik")
+    
+    cur = conn.cursor()
+    cur.execute(" \
+                    SELECT id, nodes \
+                    FROM ways WHERE \
+                    st_intersects(\
+                            ways.linestring,\
+                            ST_MakeEnvelope(%s,%s,%s,%s, 4326)\
+                            ) \
+                     and \"piste:type\" is not null; "\
+                    , (left, bottom, right, top))
+    result=cur.fetchall()
+    ways={}
+    for r in result:
+        ways[r[0]]=[]
+        for i in range(len(r[1])):
+            nid=r[1][i]
+            cur.execute(" select st_x(geom), st_y(geom) from nodes where id=%s" % (nid))
+            nll=cur.fetchone()
+            ways[r[0]].append([nid,nll])
+    
+    root = etree.Element("osm")
+    for wid in ways:
+        nids=[]
+        for node in ways[wid]:
+            nid=node[0]
+            lon=str(node[1][0])
+            lat=str(node[1][1])
+            nids.append(nid)
+            node=etree.Element("node", id=str(nid), lon=lon, lat=lat)
+            root.append(node)
+        way=etree.Element("way", id=str(wid))
+        for nid in nids:
+            way.append(etree.Element("nd", ref=str(nid)))
+        root.append(way)
+    s=StringIO.StringIO()
+    s.write(etree.tostring(root, pretty_print=True))
+    s.seek(0)
+    return s
+    
 class Router:
     def __init__(self, data):
         self.data = data

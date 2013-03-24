@@ -164,10 +164,11 @@ label {
 }
 #slide{
     position: relative;
-    top: 8px;
+    top: 5px;
     float:right;
     overflow: none;
     height: 12px;
+    width: 75px;
     margin-top: -15px;
     -moz-border-radius:6px;
     border-radius:6px;
