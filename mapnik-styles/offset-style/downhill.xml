@@ -272,6 +272,11 @@
 		<LineSymbolizer stroke-width="2" stroke="#A6E05B"/>
 	</Rule>
 	<Rule>
+		&maxscale_zoom9;
+		&minscale_zoom18;
+		<PolygonSymbolizer fill="#A6E05B" fill-opacity="0.5" />
+	</Rule>
+	<Rule>
 		&maxscale_zoom14;
 		&minscale_zoom18;
 		<PointSymbolizer file="playground.png"/>
