@@ -82,9 +82,9 @@ function infoMode(){
 
         removejscssfile("js/interactive.js", "js");
         // extended menu controls
-        document.getElementsByName("live")[0].disabled=true;
-        document.getElementsByName("live")[1].disabled=true;
-        document.getElementsByName("live")[2].disabled=true;
+        //~ document.getElementsByName("live")[0].disabled=true;
+        //~ document.getElementsByName("live")[1].disabled=true;
+        //~ document.getElementsByName("live")[2].disabled=true;
         
         m="raster";
         map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
