@@ -222,7 +222,7 @@
 	<Rule>
 		&maxscale_zoom13;
 		&minscale_zoom18;
-		<PointSymbolizer file="snow_park.svg"  transform="translate(10 10) scale(0.12)"/>
+		<PointSymbolizer file="snow_park.png"  transform="scale(0.12)"/>
 	</Rule>
 </Style>
        
