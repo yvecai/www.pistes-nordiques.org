@@ -225,4 +225,17 @@
 		<PointSymbolizer file="snow_park.png" />
 	</Rule>
 </Style>
+<Style name="ski_jump">
+	<!--novice-->
+	<Rule>
+		&maxscale_zoom9;
+		&minscale_zoom18;
+		<LineSymbolizer stroke-width="2" stroke="#503FE3"/>
+	</Rule>
+	<Rule>
+		&maxscale_zoom12;
+		&minscale_zoom18;
+		<MarkerSymbolizer file="jump.png" placement="line" spacing="400"/>
+	</Rule>
+</Style>
        
