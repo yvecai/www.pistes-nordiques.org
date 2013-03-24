@@ -264,4 +264,17 @@
 		<PointSymbolizer file="ice-skate.png"/>
 	</Rule>
 </Style>
+<Style name="playground">
+	<!--novice-->
+	<Rule>
+		&maxscale_zoom9;
+		&minscale_zoom18;
+		<LineSymbolizer stroke-width="2" stroke="#A6E05B"/>
+	</Rule>
+	<Rule>
+		&maxscale_zoom14;
+		&minscale_zoom18;
+		<PointSymbolizer file="playground.png"/>
+	</Rule>
+</Style>
        

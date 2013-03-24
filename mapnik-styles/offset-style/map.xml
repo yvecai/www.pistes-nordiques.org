@@ -344,45 +344,6 @@ background-color="transparent" >
         </Datasource>
     </Layer>
 
-    <Layer name="snow_park" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-        <StyleName>snow_park</StyleName>
-        <Datasource>
-            &datasource-settings;
-            <Parameter name="table">
-            (select * from planet_osm_line where "piste:type"='snow_park'order by z_order) as pistes
-            </Parameter>
-        </Datasource>
-    </Layer>
-
-    <Layer name="ski_jump" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-        <StyleName>ski_jump</StyleName>
-        <Datasource>
-            &datasource-settings;
-            <Parameter name="table">
-            (select * from planet_osm_line where "piste:type"='ski_jump' or "sport"='ski_jump' order by z_order) as pistes
-            </Parameter>
-        </Datasource>
-    </Layer>
-
-    <Layer name="sled" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-        <StyleName>sled</StyleName>
-        <Datasource>
-            &datasource-settings;
-            <Parameter name="table">
-            (select * from planet_osm_line where "piste:type"='sled' order by z_order) as pistes
-            </Parameter>
-        </Datasource>
-    </Layer>
-    <Layer name="skating" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-        <StyleName>skating</StyleName>
-        <Datasource>
-            &datasource-settings;
-            <Parameter name="table">
-            (select * from planet_osm_line where "piste:type"='ice_skate' or "sport"='skating' order by z_order) as pistes
-            </Parameter>
-        </Datasource>
-    </Layer>
-
     <Layer name="snowshoeing" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
         <StyleName>snowshoeing</StyleName>
         <Datasource>
@@ -507,6 +468,54 @@ background-color="transparent" >
             <Parameter name="geometry_table">planet_osm_line</Parameter>
             <Parameter name="table">
             (select * from planet_osm_line where "aerialway" is not null order by z_order) as pistes
+            </Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="snow_park" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+        <StyleName>snow_park</StyleName>
+        <Datasource>
+            &datasource-settings;
+            <Parameter name="table">
+            (select * from planet_osm_line where "piste:type"='snow_park'order by z_order) as pistes
+            </Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="ski_jump" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+        <StyleName>ski_jump</StyleName>
+        <Datasource>
+            &datasource-settings;
+            <Parameter name="table">
+            (select * from planet_osm_line where "piste:type"='ski_jump' or "sport"='ski_jump' order by z_order) as pistes
+            </Parameter>
+        </Datasource>
+    </Layer>
+
+    <Layer name="sled" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+        <StyleName>sled</StyleName>
+        <Datasource>
+            &datasource-settings;
+            <Parameter name="table">
+            (select * from planet_osm_line where "piste:type"='sled' order by z_order) as pistes
+            </Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="skating" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+        <StyleName>skating</StyleName>
+        <Datasource>
+            &datasource-settings;
+            <Parameter name="table">
+            (select * from planet_osm_line where "piste:type"='ice_skate' or "sport"='skating' order by z_order) as pistes
+            </Parameter>
+        </Datasource>
+    </Layer>
+    <Layer name="playground" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+        <StyleName>playground</StyleName>
+        <Datasource>
+            &datasource-settings;
+            <Parameter name="table">
+            (select * from planet_osm_line where "piste:type"='playground' order by z_order) as pistes
             </Parameter>
         </Datasource>
     </Layer>
