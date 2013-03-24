@@ -67,6 +67,7 @@ function infoMode(){
             document.body.style.cursor = 'pointer';
             document.images['pointPic'].src='pics/pistes-pointer-on.png';
         }
+        else {m="raster";}
     }
     if (mode == "vector") {
         // first destroy the select and highlight controls
