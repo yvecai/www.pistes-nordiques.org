@@ -114,7 +114,7 @@ def getOsm(left, bottom, right, top):
                             ways.linestring,\
                             ST_MakeEnvelope(%s,%s,%s,%s, 4326)\
                             ) \
-                     and \"piste:type\" is not null; "\
+                     and tags ? 'piste:type'; "\
                     , (left, bottom, right, top))
     result=cur.fetchall()
     ways={}
