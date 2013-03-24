@@ -130,7 +130,6 @@ function get_page(url){
 }
 function toggleMenu() {
     var em = document.getElementById('extendedmenu');
-    var sl = document.getElementById('slide');
     // At loadtime, m.style.display=""
     if (em.style.display == "none" || em.style.display == "") {
         em.style.display ='inline';
@@ -141,24 +140,19 @@ function toggleMenu() {
         EXT_MENU=false;
         }
     map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
-    resize_sideBar();
     return true;
     
 }
 function showMenu() {
     var em = document.getElementById('extendedmenu');
-    var sl = document.getElementById('slide');
     em.style.display ='inline';
     EXT_MENU=true;
-    resize_sideBar();
     return true;
 }
 function closeMenu() {
     var em = document.getElementById('extendedmenu');
-    var sl = document.getElementById('slide');
     em.style.display ='none';
     EXT_MENU=false;
-    resize_sideBar();
     return true;
 }
 function close_sideBar() {
@@ -166,22 +160,50 @@ function close_sideBar() {
     EDIT_SHOWED = false;
 }
 function close_helper(){
-    document.getElementById('helper').style.display='none';
+    close_sideBar();
 }
 function close_catcher(){
-    if (document.getElementById('catcher').style.display != 'none') {
-        document.getElementById('catcher').style.display='none';
-    }
+    close_sideBar();
 }
+function show_catcher(){
+	document.getElementById('sideBar').style.display='inline';
+	document.getElementById('sideBar').style.height='150px';
+	document.getElementById('sideBarContent').style.display='inline';
+	document.getElementById('sideBarContent').style.height='127px';
+    document.getElementById('sideBarTitle').innerHTML='';
+        var html='<a href="http://wiki.openstreetmap.org" target="blank"><img src="pics/osm-pistes-nordiques_logo-80px.png" style="float: left;margin: 5px;"></img></a>';
+        html+='<p>';
+        html+=get_length()+' '+_('piste_length');
+        html+=_('you');
+        html+='</p>';
+        html+='<p>';
+        html+='<a class="amenu" href="javascript:void(0);" onclick="close_sideBar();show_edit();return false;">';
+        html+=_('edit');
+        html+='</a>';
+        html+='</p>';
+    document.getElementById('sideBarContent').innerHTML=html;
+    
+}
+
 function show_helper(){
-    document.getElementById('helper').style.display='block';
-    if (map.getZoom()<13){
+	document.getElementById('sideBar').style.display='inline';
+	document.getElementById('sideBar').style.height='150px';
+	document.getElementById('sideBarContent').style.display='inline';
+	document.getElementById('sideBarContent').style.height='127px';
+    document.getElementById('sideBarTitle').innerHTML='';
+    
+    var html='<img style="margin-left: 3px;"src="pics/interactive-help.png"/><br/>'
+    html+='<div id="zoomin-helper">'+_('zoom_in')+'</div>';
+    document.getElementById('sideBarContent').innerHTML=html;
+    
+    if (map.getZoom()<11){
         document.getElementById('zoomin-helper').style.display = 'inline';
     } else {
         document.getElementById('zoomin-helper').style.display = 'none';
     }
 }
 function show_about() {
+    resize_sideBar();
     document.getElementById('sideBar').style.display='inline';
     url = server+'iframes/about.'+iframelocale+'.html';
     content = get_page(url).replace('**update**',get_update()).replace('**length**',get_length()).replace('**modis-update**',get_modisupdate());
@@ -198,7 +220,7 @@ function show_help() {
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('help');
 }
 function show_edit() {
-
+    resize_sideBar();
     document.getElementById('sideBar').style.display='inline';
     document.getElementById('sideBarContent').style.display='inline';
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('edit').replace('<br/>',' ');
@@ -279,6 +301,7 @@ function show_legend() {
          +'<p><a href="iframes/how-to-en.html" target="blank">'+_('how_to')+'</a></p>'
          +'<hr class="hrmenu">';
     document.getElementById('sideBarContent').innerHTML=html;
+    resize_sideBar();
 }
 function show_settings() {
     document.getElementById('sideBar').style.display='inline';
@@ -312,6 +335,7 @@ function show_settings() {
     html +=_('vector_help');
     html +=' </div>';
     document.getElementById('sideBarContent').innerHTML=html;
+    resize_sideBar();
 }
 //======================================================================
 // INIT
@@ -583,9 +607,11 @@ function onZoomEnd(){
     if (ONCE) {close_catcher();}
     ONCE=true;
     if (map.getZoom()<13){
-        document.getElementById('zoomin-helper').style.display = 'inline';
+        if (document.getElementById('zoomin-helper')) {
+        document.getElementById('zoomin-helper').style.display = 'inline';}
     } else {
-        document.getElementById('zoomin-helper').style.display = 'none';
+        if (document.getElementById('zoomin-helper')) {
+        document.getElementById('zoomin-helper').style.display = 'none';}
     }
     if (EDIT_SHOWED){
         if (map.getZoom() < 13) {

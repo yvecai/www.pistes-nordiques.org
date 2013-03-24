@@ -14,7 +14,7 @@
         <script src="js/i18n.js" type="text/javascript"></script> 
         <script src="js/pistes-nordiques-base.js" type="text/javascript"></script>
     </head>
-    <body onload="map_init(); page_init();">
+    <body onload="map_init(); page_init();show_catcher();">
         <div id="summary" style="display:none">
         <H1>www.pistes-nordiques.org</H1>
         <H2><b>Worldwide crosscountry skiing tracks / 22'000km Pistes de ski de fond du monde entier</b></H2>
@@ -28,16 +28,6 @@
         <div id="map">
             <!-- inside of map div to allow z-indexing under panzoombar -->
             <div id="helper-centering">
-                <div id="helper" style="display: none;">
-                    <div id="closeBox">
-                        <a onclick="close_helper();"
-                        onmouseover="document.images['closePic3'].src='pics/close-simple-hover.png'"
-                        onmouseout="document.images['closePic3'].src='pics/close-simple.png'">
-                         <img name="closePic3" src="pics/close-simple.png"></a>
-                    </div>
-                    <img style="margin-left: 3px;"src="pics/interactive-help.png"/>
-                    <div id="zoomin-helper"><script>document.write(_('zoom_in'))</script></div>
-                </div>
                 <div id="print-settings" style="display: none;">
                     <div id="closeBox">
                         <a onclick="close_printSettings();"
@@ -67,24 +57,6 @@
                         onmouseout="document.images['printPic2'].src='pics/print.png'">
                          <img style="margin-left: 10px;border: 1px solid #aaaaaa; padding: 6px;" name="printPic2" src="pics/print.png"></a>
                     <div id='print_result' class="amenu"></div>
-                </div>
-                <div id="catcher" style="display: block;">
-                    <div id="closeBox">
-                        <a onclick="close_catcher();"
-                        onmouseover="document.images['closePic31'].src='pics/close-simple-hover.png'"
-                        onmouseout="document.images['closePic31'].src='pics/close-simple.png'">
-                         <img name="closePic31" src="pics/close-simple.png"></a>
-                    </div>
-                    <a href="http://wiki.openstreetmap.org" target="blank"><img src="pics/osm-pistes-nordiques_logo-80px.png" style="float: left;margin: 5px;"></img></a>
-                    <p>
-                        <script>document.write(get_length()+' '+_('piste_length'))</script>
-                        <script>document.write(_('you'))</script>
-                    </p>
-                    <p> 
-                        <a class="amenu" href="javascript:void(0);" onclick="close_sideBar();show_edit();return false;">
-                        <script>document.write(_('edit'))</script>
-                        </a>
-                    </p>
                 </div>
                 <div id="waiter" style="display: none;"><img src="pics/snake_transparent.gif"></div>
             </div>       
