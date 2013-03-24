@@ -81,7 +81,6 @@ function infoMode(){
         for (var m in marks) {marks[m].destroy();}
 
         removejscssfile("js/interactive.js", "js");
-        document.getElementById('vector-help').style.display='inline';
         // extended menu controls
         document.getElementsByName("live")[0].disabled=true;
         document.getElementsByName("live")[1].disabled=true;
@@ -156,6 +155,11 @@ function closeMenu() {
     return true;
 }
 function close_sideBar() {
+    document.getElementById('sideBarTitle').innerHTML='';
+    document.getElementById('sideBarContent').innerHTML='';
+	document.getElementById('sideBar').style.height='33px';
+	document.getElementById('sideBarContent').style.height='10px';
+    
     document.getElementById('sideBar').style.display='none';
     EDIT_SHOWED = false;
 }
