@@ -220,7 +220,7 @@
 		<LineSymbolizer stroke-width="2" stroke="#0F6DD3"/>
 	</Rule>
 	<Rule>
-		&maxscale_zoom14;
+		&maxscale_zoom15;
 		&minscale_zoom18;
 		<PointSymbolizer file="snow_park.png" />
 	</Rule>
@@ -233,7 +233,7 @@
 		<LineSymbolizer stroke-width="2" stroke="#655ABE"/>
 	</Rule>
 	<Rule>
-		&maxscale_zoom14;
+		&maxscale_zoom15;
 		&minscale_zoom18;
 		<PointSymbolizer file="jump.png"/>
 	</Rule>
@@ -246,7 +246,7 @@
 		<LineSymbolizer stroke-width="2" stroke="#7ADEAE"/>
 	</Rule>
 	<Rule>
-		&maxscale_zoom14;
+		&maxscale_zoom15;
 		&minscale_zoom18;
 		<PointSymbolizer file="sled.png"/>
 	</Rule>
@@ -259,7 +259,7 @@
 		<LineSymbolizer stroke-width="2" stroke="#6FC4D0"/>
 	</Rule>
 	<Rule>
-		&maxscale_zoom14;
+		&maxscale_zoom15;
 		&minscale_zoom18;
 		<PointSymbolizer file="ice-skate.png"/>
 	</Rule>
@@ -277,7 +277,7 @@
 		<PolygonSymbolizer fill="#A6E05B" fill-opacity="0.5" />
 	</Rule>
 	<Rule>
-		&maxscale_zoom14;
+		&maxscale_zoom15;
 		&minscale_zoom18;
 		<PointSymbolizer file="playground.png"/>
 	</Rule>
