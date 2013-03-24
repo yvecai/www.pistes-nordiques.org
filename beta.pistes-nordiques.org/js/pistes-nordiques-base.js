@@ -271,21 +271,46 @@ function show_legend() {
     document.getElementById('sideBar').style.display='inline';
     document.getElementById('sideBarContent').style.display='inline';
     document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('map_key').replace('<br/>',' ');
-    html = '<p>'+_('key-color')
+    html =  '<p><img src="pics/mapkey.png" ></p>'
+    +'<p>'+_('key-color')
     + '<a target="blank" href="http://wiki.openstreetmap.org/wiki/Proposed_features/Tag:route%3Dpiste"> (1)</a>.</p>'
-    + '<p><img src="pics/key-normal.png" style="float:left" >'
-    + '<b>'+_('key-normal')+'</b>'+'&nbsp;&nbsp;'+_('key-normal_exp')+'</p>'
-    + '<p class="clear"><img src="pics/key-intermediate.png" style="float:left" >'
-    + '<b>'+_('key-intermediate')+'</b>'+'&nbsp;&nbsp;'+_('key-intermediate_exp')+'</p>'
-    + '<p class="clear"><img src="pics/key-hard.png" style="float:left" >'
-    + '<b>'+_('key-hard')+'</b>'+'&nbsp;&nbsp;'+_('key-hard_exp')+'</p>'
-    + '<p class="clear"><img src="pics/key-unknow.png" style="float:left" >'
-    + '<b>'+_('key-unknow')+'</b>'+'&nbsp;&nbsp;'+_('key-unknow_exp')
-    +'<a onclick="show_edit();"> ('+ _('edit')+')</a></p>'
     +'<p>'+_('learn-difficulties')
     +'<a target="blank" href="http://wiki.openstreetmap.org/wiki/Proposed_features/Piste_Maps#Difficulty"> (2)</a>.</p>'         +'<hr class="hrmenu">'
          +'<p><a href="iframes/how-to-en.html" target="blank">'+_('how_to')+'</a></p>'
          +'<hr class="hrmenu">';
+    document.getElementById('sideBarContent').innerHTML=html;
+}
+function show_settings() {
+    document.getElementById('sideBar').style.display='inline';
+    document.getElementById('sideBarContent').style.display='inline';
+    document.getElementById('sideBarTitle').innerHTML='&nbsp;'+_('settings').replace('<br/>',' ');
+    html = '';
+    html +=' <input type="radio" id="mode_radio2" class="radio"';
+    html +=' name="basemap" value="mapnik"  onClick="toggleBaseLayer()" />';
+    html +=' <label>Openstreetmap&nbsp;'+_('base_map')+'</label>';
+    html +=' <br/>';
+    html +=' <input type="radio" id="mode_radio1" class="radio" checked="yes"';
+    html +=' name="basemap" value="Mapquest" onClick="toggleBaseLayer()"   />';
+    html +=' <label>OpenMapquest&nbsp;'+_('base_map')+'</label>';
+    html +=' <br/>';
+                    
+    html +=' <hr class="hrmenu">';
+    html +=' <p>'+_('last_edits')+'</p>';
+    html +=' <input type="checkbox" id="check1" class="radio" "';
+    html +=' name="live" value="daily" onClick="show_live_edits(value,checked)"   />';
+    html +=' <label style="margin-top: 10px;">'+_('yesterday')+'</label>';
+    html +=' <input type="checkbox" id="check2" class="radio" "';
+    html +=' name="live" value="weekly" onClick="show_live_edits(value,checked)"   />';
+    html +=' <label>'+_('weekly')+'</label>';
+    html +=' <br/>';
+    html +=' <input type="checkbox" id="check2" class="radio" ';
+    html +=' name="live" value="monthly" onClick="show_live_edits(value,checked)"   />';
+    html +=' <label>'+_('monthly')+'</label>';
+    html +=' <br/>';
+    html +=' <hr class="hrmenu">';
+    html +=' <div id="vector-help">';
+    html +=_('vector_help');
+    html +=' </div>';
     document.getElementById('sideBarContent').innerHTML=html;
 }
 //======================================================================

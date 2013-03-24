@@ -208,7 +208,7 @@ label {
 display: none;
     position: relative;
     right: 0px;
-    width: 257px;
+    width: 75px;
     -moz-border-radius:6px;
     border-radius:6px;
     border: 1px solid #aaaaaa;
@@ -216,9 +216,6 @@ display: none;
     color: #444444;
     background-color:#EEE; /*fallback*/
     background-color: rgba(245,245,245,0.7);
-}
-#extendedcontrols{
-    width: 180px;
 }
 
 #menubar{
@@ -228,7 +225,7 @@ display: none;
     color: #444444;
     font-size: 0.82em;
     line-height: 14px;
-    width: 60px;
+    width: 70px;
     margin: 3px;
 }
 #vector-help{
