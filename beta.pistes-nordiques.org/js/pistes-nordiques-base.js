@@ -59,12 +59,14 @@ var diffcolor = {
 function infoMode(){
     var m=''
     if (mode == "raster") {
-        loadjscssfile("js/interactive.js", "js");
-        m="vector";
-        map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
         show_helper();
-        document.body.style.cursor = 'pointer';
-        document.images['pointPic'].src='pics/pistes-pointer-on.png';
+        if (map.getZoom()>=11) {
+            loadjscssfile("js/interactive.js", "js");
+            m="vector";
+            map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
+            document.body.style.cursor = 'pointer';
+            document.images['pointPic'].src='pics/pistes-pointer-on.png';
+        }
     }
     if (mode == "vector") {
         // first destroy the select and highlight controls

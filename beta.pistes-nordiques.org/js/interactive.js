@@ -360,7 +360,7 @@ var vectorLayer = new OpenLayers.Layer.Vector("Vector",{
 map.addLayer(vectorLayer);
 function onMapClick(e) {
 	var lonlat = map.getLonLatFromPixel(e.xy);
-	onClick(lonlat);
+	if (map.getZoom()>=11) {onClick(lonlat);}
 }
 map.events.register("click", map, onMapClick);
 
