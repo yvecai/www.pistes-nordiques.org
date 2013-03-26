@@ -5,7 +5,7 @@ import Image, ImageDraw, ImageFont
 import sys
 #from lxml import etree
 import math
-from math import floor, ceil
+from math import floor, ceil, sqrt
 import sys, random, re, zipfile
 import StringIO
 
@@ -16,7 +16,7 @@ import os, os.path
 import random
 import atexit
 
-
+SRTMFilesDir='/home/website/SRTM-filled/'
 #TODO:
 # Clean and master the elevation code
 
@@ -435,7 +435,7 @@ class SrtmLayer(object):
         Returns the elevation in metres of point (lat, lon).
         """
         srtm_filename = self.get_srtm_filename(lat, lon)
-        SRTMFilesDir='/home/website/SRTM-filled'
+        
         srtm_path = os.path.join(SRTMFilesDir, srtm_filename)
         if not os.path.isfile(srtm_path):
             self._unzip_srtm_tiff(srtm_path)
@@ -484,11 +484,13 @@ def linearDist(lat1, lon1, lat2, lon2):
                   math.cos(lat1)*math.cos(lat2) * \
                   math.cos(lon2-lon1)) * 6371 
     return d
-
 #
 def clamp(value, minvalue, maxvalue):
     return max(minvalue, min(value, maxvalue))
 #
+def llDistance(ll1,ll2):
+    return math.sqrt((ll2['lon']-ll1['lon'])**2+(ll2['lat']-ll1['lat'])**2)
+
 def listTracks(data):
     # split the multiline into a list of line
     lines = re.findall('\([-0-9., ]+\)',data)
@@ -497,11 +499,33 @@ def listTracks(data):
         track=[]
         # split the line into a list of lon lat
         lon_lat = line.replace('(','').replace(')','').split(',')
-        for ll in lon_lat:
-            t={}
-            t['lon']=float(ll.split(' ')[0])
-            t['lat']=float(ll.split(' ')[1])
-            track.append(t)
+        
+        track.append({'lon': float(lon_lat[0].split(' ')[0]), 
+                      'lat':float(lon_lat[0].split(' ')[1])})
+        
+        for i in range(1,len(lon_lat)):
+            t={'lon': float(lon_lat[i].split(' ')[0]), 
+                'lat':float(lon_lat[i].split(' ')[1])}
+            lim=0.02
+            segLength=llDistance(track[i-1],t)
+            if segLength < lim:
+                track.append(t)
+            else:
+                # add a point every 0.002deg at least
+                n = int(segLength/lim)
+                print n
+                lon1=track[-1]['lon']
+                lat1=track[-1]['lat']
+                lon2=t['lon']
+                lat2=t['lat']
+                a = (lat2-lat1)/(lon2-lon1)
+                b= lat1-a*lon1
+                DLON=(lon2-lon1)/float(n)
+                for j in range(0,n+1):
+                    LON=lon1+float(j)*DLON
+                    LAT=a*LON+b
+                    track.append({'lon': LON, 'lat':LAT})
+                    
         tracks.append(track)
     return tracks
 
@@ -516,10 +540,10 @@ def processData(tracks):
             if pt['lat'] == 0 and pt['lon'] ==0 : pt['ele']= 0
             else:
                 pt['ele']=_srtm.get_elevation(float(pt['lat']),float(pt['lon']))
-                if lstEle != 0:
-                    if abs(pt['ele'] - lstEle) > 100: pt['ele']=0 #detect voids
-                    else: lstEle=pt['ele']
-                else: lstEle=pt['ele']
+                #~ if lstEle != 0:
+                    #~ if abs(pt['ele'] - lstEle) > 100: pt['ele']=0 #detect voids
+                    #~ else: lstEle=pt['ele']
+                #~ else: lstEle=pt['ele']
             
         track[0]['dist']=dist
     
@@ -564,8 +588,14 @@ def addtionnalComputation(track):
     return None
 #
 if __name__ == "__main__":
-    data=StringIO.StringIO()
-    testFile=open('test_bad.wkt','r')
-    data=testFile.read()
+    f=open(sys.argv[1],'r')
+    data=f.read()
+    tracks=listTracks(data)
     print data
-    test(data)
+    for track in tracks:
+        for d in track:
+            if d['lat'] > 71.9999:
+                print 'Sorry, dataset does not contain elevation data beyond 72 deg. latitude'
+
+
+        
