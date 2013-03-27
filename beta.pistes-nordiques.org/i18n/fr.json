@@ -6,7 +6,7 @@
 "help": 'AIDE',
 "edit": 'MODIFIER LA CARTE',
 "routing_title": 'PARCOURS',
-"piste_length":'km de pistes de ski de fond tracées!',
+"piste_length":'km de pistes de ski !',
 "you":' Et vous?',
 "unknown": '<a style="color: #5ca5ff;" onclick="show_about()">(Information non disponible)</a>',
 "grooming" : 'Damage',

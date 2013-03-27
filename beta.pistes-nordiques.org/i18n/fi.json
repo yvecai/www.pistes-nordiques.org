@@ -6,7 +6,7 @@
 "help": 'APUA',
 "edit": 'MUOKKAA KARTTAA',
 "routing_title": 'REITTI',
-"piste_length": 'km murtomaahiihtolatuja jo kartoitettuna!',
+"piste_length": 'km laskettelurinteitä jo kartoitettuna!',
 "you":' Entä sinä?',
 "unknown": '<a style="color: #5ca5ff;" onclick="show_about()">(Tietoa ei saatavilla)</a>',
 "grooming" : 'Tyyli',

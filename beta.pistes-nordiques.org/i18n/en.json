@@ -6,7 +6,7 @@
 "help": 'HELP',
 "edit": 'EDIT THE MAP',
 "routing_title": 'ROUTE',
-"piste_length": 'km of cross-country skiing trails already mapped!',
+"piste_length": 'km of skiing trails already mapped!',
 "you":' And you?',
 "unknown": '<a style="color: #5ca5ff;" onclick="show_about()">(No information available)</a>',
 "grooming" : 'Grooming',

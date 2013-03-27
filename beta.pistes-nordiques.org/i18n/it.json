@@ -6,7 +6,7 @@
 "help": 'AIUTO',
 "edit": 'MODIFICA LA MAPPA',
 "routing_title": 'PERCORSO',
-"piste_length": 'km di fondo pista da sci già mappati!',
+"piste_length": 'km di pista da sci già mappati!',
 "you":' E tu?',
 "unknown": '<a style="color: #5ca5ff;" onclick="show_about()">(Nessuna informazione disponibile)</a>',
 "grooming" : 'Grooming',

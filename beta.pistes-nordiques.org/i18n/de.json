@@ -6,7 +6,7 @@
 "help": 'HILFE',
 "edit": 'KARTE BEARBEITEN',
 "routing_title": 'ROUTE',
-"piste_length":'km Langlauf-Loipen sind bereits erfasst!',
+"piste_length":'km Loipen sind bereits erfasst!',
 "you":' Und Du?',
 "unknown":  '<a style="color: #5ca5ff;" onclick="show_about()">(Keine Daten verfügbar)</a>',
 "grooming" : 'Laufstil',

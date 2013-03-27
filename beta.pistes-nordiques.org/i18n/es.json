@@ -6,7 +6,7 @@
 "help": 'AYUDA',
 "edit": 'EDITAR EL MAPA',
 "routing_title": 'ENRUTADO',
-"piste_length": 'kms de pistas de esquí de fondo mapeados!',
+"piste_length": 'kms de pistas de esquí mapeados!',
 "you":' ¿Y tú?',
 "unknown": '<a style="color: #5ca5ff;" onclick="show_about()">(No hay información disponible)</a>',
 "grooming" : 'Marcado',

@@ -174,6 +174,15 @@ function close_helper(){
 }
 function show_catcher(){
     CATCHER=true;
+	//~ var XMLHttp = new XMLHttpRequest();
+	//~ oRequest.open("GET",server+'data/stats.json',false);
+	//~ XMLHttp.onreadystatechange= function () {
+		//~ if (XMLHttp.readyState == 4) {
+			//~ var topo = JSON.parse(XMLHttp.responseText);
+			//~ makeTopo(topo,routeLength);
+			//~ }
+		//~ }
+	//~ XMLHttp.send();
     document.getElementById('sideBar').style.display='inline';
     document.getElementById('sideBar').style.height='150px';
     document.getElementById('sideBarContent').style.display='inline';
@@ -473,10 +482,12 @@ function echap() {
 }
 function get_length(){
     var oRequest = new XMLHttpRequest();
-    oRequest.open("GET",server+'data/ways_length.txt',false);
+    oRequest.open("GET",server+'data/stats.json',false);
     oRequest.setRequestHeader("User-Agent",navigator.userAgent);
-    oRequest.send()
-    return oRequest.responseText;
+    oRequest.send();
+    var lengthes = JSON.parse(oRequest.responseText);
+	var length= parseFloat(lengthes.downhill) + parseFloat(lengthes.nordic) + parseFloat(lengthes.aerialway) + parseFloat(lengthes.skitour) + parseFloat(lengthes.sled) + parseFloat(lengthes.snowshoeing);
+    return length;
 }
 
 function get_update(){
