@@ -17,6 +17,7 @@ import random
 import atexit
 
 SRTMFilesDir='/home/website/SRTM-filled/'
+PIL_images_dir = '/var/www/tmp/' 
 #TODO:
 # Clean and master the elevation code
 
@@ -79,7 +80,6 @@ def createPics(tracks):
 
     randFilename = random.randrange(0, 100001, 2)
     #PIL_images_dir = os.path.join(os.path.dirname(__file__) , 'tmp/')
-    PIL_images_dir = '/var/www/tmp/' 
     profile_filename = 'profile'+str(randFilename)+'.png'
     
     # serialize tracks
@@ -117,14 +117,14 @@ def createPics(tracks):
             if t['lon'] > maxLon: maxLon=t['lon']
     
     # Set markers near the track fourth
-    markers=[]
-    for i in range(1, len(track)):
-        if track[i-1]['dist'] < maxDist/4 and track[i]['dist'] > maxDist/4:
-             markers.append(track[i])
-        if track[i-1]['dist'] < maxDist/2 and track[i]['dist'] > maxDist/2:
-             markers.append(track[i])
-        if track[i-1]['dist'] < maxDist*3/4 and track[i]['dist'] > maxDist*3/4:
-             markers.append(track[i])
+    #~ markers=[]
+    #~ for i in range(1, len(track)):
+        #~ if track[i-1]['dist'] < maxDist/4 and track[i]['dist'] > maxDist/4:
+             #~ markers.append(track[i])
+        #~ if track[i-1]['dist'] < maxDist/2 and track[i]['dist'] > maxDist/2:
+             #~ markers.append(track[i])
+        #~ if track[i-1]['dist'] < maxDist*3/4 and track[i]['dist'] > maxDist*3/4:
+             #~ markers.append(track[i])
              
     # Set the route points
     points=[]
@@ -145,7 +145,7 @@ def createPics(tracks):
     
     sans=ImageFont.truetype(fontfile,10*2)
     #sans=ImageFont.truetype('FreeSans.ttf',10*2) # XX
-    width=230*2
+    width=250*2
     height=120*2
     margin=15
     marginLeft=sans.getsize(str(maxEleValue))[0]
@@ -199,19 +199,19 @@ def createPics(tracks):
     draw.rectangle((0,0,marginLeft,height),\
         fill='#EEEEEE', outline='#EEEEEE')
     # Draw scales:
-    draw.text((margin+marginLeft,height-marginBottom),'0',fill='#000000',font=sans)
-    draw.text((width-sans.getsize(str(maxDistValue))[0],\
-    height-marginBottom),str(maxDistValue),fill='#000000',font=sans)
+    #~ draw.text((margin+marginLeft,height-marginBottom),'0',fill='#000000',font=sans)
+    #~ draw.text((width-sans.getsize(str(maxDistValue))[0],\
+    #~ height-marginBottom),str(maxDistValue),fill='#000000',font=sans)
     draw.text((2,height-marginBottom - sans.getsize('1')[1]/2),minEleValue,fill='#000000',font=sans)
     draw.text((2,\
       height-marginBottom-plotHeight - sans.getsize('1')[1]/2),maxEleValue,fill='#000000',font=sans)
     #Draw markers
-    for m in markers:
-        mDist=" %.1fkm" % m['dist']
-        x=margin+marginLeft+m['dist']/maxDist*plotWidth\
-         -sans.getsize(str(m['dist']))[0]/2
-        y=height-marginBottom
-        draw.text((x,y),mDist,fill='#000000',font=sans)
+    #~ for m in markers:
+        #~ mDist=" %.1fkm" % m['dist']
+        #~ x=margin+marginLeft+m['dist']/maxDist*plotWidth\
+         #~ -sans.getsize(str(m['dist']))[0]/2
+        #~ y=height-marginBottom
+        #~ draw.text((x,y),mDist,fill='#000000',font=sans)
     
     del draw 
     resolution=(int(width/2),int(height/2))
@@ -540,17 +540,11 @@ def processData(tracks):
             if pt['lat'] == 0 and pt['lon'] ==0 : pt['ele']= 0
             else:
                 pt['ele']=_srtm.get_elevation(float(pt['lat']),float(pt['lon']))
-                #~ if lstEle != 0:
-                    #~ if abs(pt['ele'] - lstEle) > 100: pt['ele']=0 #detect voids
-                    #~ else: lstEle=pt['ele']
-                #~ else: lstEle=pt['ele']
             
         track[0]['dist']=dist
     
         for i in range(1,len(track)):
-                track[i]['dist']=track[i-1]['dist']+\
-                 linearDist(track[i]['lon'],track[i]['lat'],\
-                 track[i-1]['lon'],track[i-1]['lat'])
+                track[i]['dist']=track[i-1]['dist']+llDistance(track[i],track[i-1])
                 dist=track[i]['dist']
         
     return tracks
@@ -588,14 +582,17 @@ def addtionnalComputation(track):
     return None
 #
 if __name__ == "__main__":
+    SRTMFilesDir=''
+    PIL_images_dir = '/var/tmp/' 
     f=open(sys.argv[1],'r')
     data=f.read()
     tracks=listTracks(data)
+    tracks=processData(tracks)
     print data
     for track in tracks:
         for d in track:
             if d['lat'] > 71.9999:
                 print 'Sorry, dataset does not contain elevation data beyond 72 deg. latitude'
-
+    createPics(tracks)
 
         
