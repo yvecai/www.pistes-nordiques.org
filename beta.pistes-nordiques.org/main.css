@@ -144,7 +144,7 @@ label {
     position: relative;
     bottom:0px;
     right: 0px;
-    height: 50px;
+    height: 62px;
     width: 420px;
     }
 
@@ -155,7 +155,7 @@ label {
     border: 1px solid #AAAAAA;
     font-size: 0.75em;
     color: #050505;
-    height: 52px;
+    height: 62px;
     text-align: center;
     vertical-align: center;
     background-color:#EEE; /*fallback*/
@@ -167,13 +167,13 @@ label {
     top: 5px;
     float:right;
     overflow: none;
-    height: 12px;
+    height: 18px;
     width: 75px;
     margin-top: -15px;
     -moz-border-radius:6px;
     border-radius:6px;
     border: 1px solid #AAAAAA;
-    font-size: 0.75em;
+    font-size: 0.95em;
     color: #888888;
     text-align: right;
     vertical-align: middle;
@@ -186,14 +186,14 @@ label {
 }
 #search_input{
         border: 1px solid #CCCCCC;
-        font-size: 0.9em;
+        font-size: 1.1em;
         width: 80px;
         margin-left: 5px;
-        margin-top: 5px;
+        margin-top: 10px;
         margin-bottom: 0px
 }
 #status {
-        font-size: 0.8em;
+        font-size: 0.9em;
         margin: 5px;
         padding: 2px;
         width: 88px;
@@ -218,7 +218,6 @@ display: none;
     background-color:#EEE; /*fallback*/
     background-color: rgba(245,245,245,0.7);
 }
-
 #menubar{
     top:2px;
     text-align: center;
@@ -241,8 +240,8 @@ display: none;
     position: absolute;
     right: 75px;
     height: 200px;
-    width: 277px;
-    bottom: 50px;
+    width: 287px;
+    bottom: 60px;
     background-color:#EEE; /*fallback*/
     background-color: rgba(245,245,245,0.7);
     -moz-border-radius:6px;
@@ -366,33 +365,6 @@ display: none;
     margin: 5px;
     font-size: 0.95em;
     color: #444444;
-}
-#featureinfos{
-    position: absolute;
-    top: 5px;
-    left: 60px;
-    width: 200px;
-    height:150px;
-    -moz-border-radius:6px;
-    border-radius:6px;
-    border: 1px solid #aaaaaa;
-    background-color:#EEE; /*fallback*/
-    background-color: rgba(245,245,245,0.7)
-}
-#featureinfosContent{
-        background-color:#EEE; /*fallback*/
-        background-color: rgba(245,245,245,0.6);
-        opacity:1;
-        height:120px;
-        font-size: 0.8em;
-        color: #444444;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        margin-left: 5px;
-        margin-right:5px;
-        padding-left: 15px;
-        overflow: auto;
-        position: absolute
 }
 #routing{
         padding-top: 10px;

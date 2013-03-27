@@ -13,7 +13,7 @@
    height="16"
    id="svg2"
    version="1.1"
-   inkscape:version="0.47 r22583"
+   inkscape:version="0.48.3.1 r9886"
    sodipodi:docname="close-simple.svg">
   <defs
      id="defs4">
@@ -34,14 +34,14 @@
      inkscape:pageshadow="2"
      inkscape:zoom="11.09"
      inkscape:cx="13.226341"
-     inkscape:cy="5.2376603"
+     inkscape:cy="-1.9760457"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="961"
      inkscape:window-height="659"
-     inkscape:window-x="451"
-     inkscape:window-y="80"
+     inkscape:window-x="240"
+     inkscape:window-y="94"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -51,7 +51,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -62,21 +62,64 @@
      transform="translate(0,-1036.3622)">
     <path
        sodipodi:type="arc"
-       style="fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1.43845044000000000;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#b3b3b3;stroke:#b3b3b3;stroke-width:1.31567656999999993;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="path2816"
        sodipodi:cx="7.5872235"
        sodipodi:cy="7.9803438"
        sodipodi:rx="5.189189"
        sodipodi:ry="5.189189"
-       d="m 12.776412,7.9803438 c 0,2.8659102 -2.323279,5.1891892 -5.1891885,5.1891892 -2.8659099,0 -5.1891889,-2.323279 -5.1891889,-5.1891892 0,-2.8659099 2.323279,-5.1891889 5.1891889,-5.1891889 2.8659095,0 5.1891885,2.323279 5.1891885,5.1891889 z"
-       transform="matrix(1.2513466,0,0,1.2513465,-1.4942462,1034.376)" />
+       d="m 12.776412,7.9803438 a 5.189189,5.189189 0 1 1 -10.3783774,0 5.189189,5.189189 0 1 1 10.3783774,0 z"
+       transform="matrix(1.3681175,0,0,1.3681174,-2.380793,1033.4447)"
+       inkscape:export-filename="/home/yves/KIMSUFI/www.git/beta.pistes-nordiques.org/pics/close-simple.png"
+       inkscape:export-xdpi="82.368874"
+       inkscape:export-ydpi="82.368874" />
+    <g
+       id="g2986"
+       transform="matrix(1.0624618,0,0,1.0624603,-0.31811872,-65.412754)"
+       inkscape:export-filename="/home/yves/KIMSUFI/www.git/beta.pistes-nordiques.org/pics/close-simple.png"
+       inkscape:export-xdpi="82.368874"
+       inkscape:export-ydpi="82.368874">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3590"
+         d="m 4.5378892,1041.1304 6.6938878,6.6939"
+         style="fill:none;stroke:#ffffff;stroke-width:1.67253625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#ffffff;stroke-width:1.67253625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         d="m 11.231777,1041.1304 -6.6938878,6.6939"
+         id="path3592" />
+    </g>
     <path
-       style="fill:none;stroke:#000000;stroke-width:1.77700484;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 4.8885024,1041.2507 6.2229956,6.223"
-       id="path3590" />
-    <path
-       id="path3592"
-       d="m 11.111498,1041.2507 -6.2229956,6.223"
-       style="fill:none;stroke:#000000;stroke-width:1.77700484;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+       transform="matrix(1.3681175,0,0,1.3681174,-2.380793,1051.4447)"
+       d="m 12.776412,7.9803438 a 5.189189,5.189189 0 1 1 -10.3783774,0 5.189189,5.189189 0 1 1 10.3783774,0 z"
+       sodipodi:ry="5.189189"
+       sodipodi:rx="5.189189"
+       sodipodi:cy="7.9803438"
+       sodipodi:cx="7.5872235"
+       id="path2990"
+       style="fill:#b3b3b3;stroke:#b3b3b3;stroke-width:1.31567657;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/yves/KIMSUFI/www.git/beta.pistes-nordiques.org/pics/close-simple-hover.png"
+       inkscape:export-xdpi="82.368874"
+       inkscape:export-ydpi="82.368874" />
+    <g
+       transform="matrix(1.0624618,0,0,1.0624603,-0.31811872,-47.412754)"
+       id="g2992"
+       style="stroke:#1a1a1a"
+       inkscape:export-filename="/home/yves/KIMSUFI/www.git/beta.pistes-nordiques.org/pics/close-simple-hover.png"
+       inkscape:export-xdpi="82.368874"
+       inkscape:export-ydpi="82.368874">
+      <path
+         style="fill:none;stroke:#1a1a1a;stroke-width:1.67253625000000006;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         d="m 4.5378892,1041.1304 6.6938878,6.6939"
+         id="path2994"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path2996"
+         d="m 11.231777,1041.1304 -6.6938878,6.6939"
+         style="fill:none;stroke:#1a1a1a;stroke-width:1.67253625000000006;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         inkscape:connector-curvature="0" />
+    </g>
   </g>
 </svg>
