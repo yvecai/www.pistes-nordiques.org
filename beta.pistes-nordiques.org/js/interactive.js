@@ -105,6 +105,7 @@ function requestRoute() {
 				if($("topo_profile")){$("topo_profile").innerHTML ='';}
 				var info=getNodeText(responseXML.getElementsByTagName('info')[0]);
 				requestInfos(info,'');
+				if (routingPoints.length > 1){clearRouteButLast();}
 			}
 			else if (responseXML.getElementsByTagName('wkt')[0]!=null) {
 				var routeWKT = getNodeText(responseXML.getElementsByTagName('wkt')[0]);
@@ -172,6 +173,18 @@ function clearRoute() {
 	vectorLayer.destroyFeatures(routingFeatures);
 	routingFeatures =new Array();
 	routingGeom =new Array();
+}
+
+function clearRouteButLast() {
+	routingPoints=routingPoints.splice(-1);
+	vectorLayer.destroyFeatures(routingFeatures);
+	routingFeatures=routingFeatures.splice(-1);
+	routingGeom=routingGeom.splice(-1);
+	for (p in routingPoints){
+		ll= new OpenLayers.LonLat(routingPoints[p].lon,routingPoints[p].lat).transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
+		routingGeom.push(new OpenLayers.Geometry.Point(ll.lon,ll.lat));
+	}
+	redrawRoute();
 }
 
 function removeRoutePoint(feature) {
