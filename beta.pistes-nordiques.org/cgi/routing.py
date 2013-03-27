@@ -62,14 +62,22 @@ def getOsm(left, bottom, right, top):
 	conn = psycopg2.connect("dbname="+db+" user=mapnik")
 	
 	cur = conn.cursor()
+	#~ cur.execute(" \
+					#~ SELECT id, nodes \
+					#~ FROM ways WHERE \
+					#~ st_intersects(\
+							#~ ways.linestring,\
+							#~ ST_MakeEnvelope(%s,%s,%s,%s, 4326)\
+							#~ ) \
+					 #~ and tags ? 'piste:type'; "\
+					#~ , (left, bottom, right, top))
 	cur.execute(" \
 					SELECT id, nodes \
 					FROM ways WHERE \
 					st_intersects(\
 							ways.linestring,\
 							ST_MakeEnvelope(%s,%s,%s,%s, 4326)\
-							) \
-					 and tags ? 'piste:type'; "\
+							); "\
 					, (left, bottom, right, top))
 	result=cur.fetchall()
 	ways={}
