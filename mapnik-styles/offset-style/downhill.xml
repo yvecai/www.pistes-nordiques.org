@@ -178,11 +178,12 @@
 		<LineSymbolizer stroke-width="8" stroke="#FFE72D" 
 		stroke-linejoin="round" stroke-linecap="round"/>
 	</Rule>
+
+</Style>
+<Style name="downhill-overlay">
 	<Rule>
 		&maxscale_zoom9;
 		&minscale_zoom11;
-</Style>
-<Style name="downhill-overlay">
 		<LineSymbolizer stroke-width="1" stroke="#FFFFFF" stroke-opacity="0.5" 
 		stroke-linejoin="round" stroke-linecap="round"/>
 	</Rule>
