@@ -67,7 +67,7 @@ function infoMode(){
             loadjscssfile("js/interactive.js", "js");
             m="vector";
             map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
-            document.body.style.cursor = 'pointer';
+            map.div.style.cursor='pointer';
             document.images['pointPic'].src='pics/pistes-pointer-on.png';
         }
         else {m="raster";}
@@ -87,16 +87,12 @@ function infoMode(){
         for (var m in marks) {marks[m].destroy();}
 
         removejscssfile("js/interactive.js", "js");
-        // extended menu controls
-        //~ document.getElementsByName("live")[0].disabled=true;
-        //~ document.getElementsByName("live")[1].disabled=true;
-        //~ document.getElementsByName("live")[2].disabled=true;
         
         m="raster";
         map.getControlsByClass("OpenLayers.Control.Permalink")[0].updateLink();
         close_helper();
-        document.body.style.cursor = 'default';
         document.images['pointPic'].src='pics/pistes-pointer.png';
+        map.div.style.cursor='default';
     }
     mode=m;
 }
